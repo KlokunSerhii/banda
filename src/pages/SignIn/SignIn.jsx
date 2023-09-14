@@ -1,7 +1,12 @@
+import SignInForm from 'components/welcome/SignInForm/SignInForm';
 import React from 'react';
 
 function SignIn() {
-  return <div style={{ color: 'red' }}>SignIn</div>;
+  return (
+    <>
+      <SignInForm />
+    </>
+  );
 }
 
 export default SignIn;
