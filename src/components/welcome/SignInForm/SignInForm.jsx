@@ -6,6 +6,7 @@ import styles from './SignInForm.module.css';
 import { useDispatch } from 'react-redux';
 import { login } from '../../../redux/auth/operations';
 import bg from '../../../images/side-view-people-training-gym 1.jpg';
+import { NavLink } from 'react-router-dom';
 
 function SignInForm() {
   const email = '';
@@ -17,21 +18,21 @@ function SignInForm() {
     resetForm();
   };
 
-  const validPassword =
-    /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
-  const validEmail =
-    /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/;
+  // const validPassword =
+  //   /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
+  // const validEmail =
+  //   /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/;
 
   const SignupSchemaLogin = Yup.object().shape({
     password: Yup.string()
       .min(2, 'Too Short!')
       .max(50, 'Too Long!')
-      .matches(validPassword)
+      // .matches(validPassword)
       .required('Please enter your password'),
 
     email: Yup.string()
       .email('invalid email')
-      .matches(validEmail)
+      // .matches(validEmail)
       .required('Please enter your email'),
   });
 
@@ -87,6 +88,9 @@ function SignInForm() {
             <button className={styles.button} type="submit">
               Sign In
             </button>
+            <p style={{ color: '#ffffff' }}>
+              Don’t have an account?<NavLink to={'/singup'}>Sign Up </NavLink>
+            </p>
           </Form>
         </Formik>
       </div>
