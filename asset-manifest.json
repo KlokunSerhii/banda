@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/banda/static/css/main.b5320759.css",
+    "main.js": "/banda/static/js/main.d52c15fe.js",
+    "index.html": "/banda/index.html",
+    "main.b5320759.css.map": "/banda/static/css/main.b5320759.css.map",
+    "main.d52c15fe.js.map": "/banda/static/js/main.d52c15fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5320759.css",
+    "static/js/main.d52c15fe.js"
+  ]
+}
