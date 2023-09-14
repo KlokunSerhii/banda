@@ -6,6 +6,7 @@ import styles from './SignUpForm.module.css';
 import { useDispatch } from 'react-redux';
 import { login } from '../../../redux/auth/operations';
 import bg from '../../../images/side-view-people-training-gym 1.jpg';
+import { NavLink } from 'react-router-dom';
 
 function SignUpForm() {
   const name = '';
@@ -18,21 +19,21 @@ function SignUpForm() {
     resetForm();
   };
 
-  const validPassword =
-    /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
-  const validEmail =
-    /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/;
+  // const validPassword =
+  //   /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
+  // const validEmail =
+  //   /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/;
 
   const SignupSchemaLogin = Yup.object().shape({
     password: Yup.string()
       .min(2, 'Too Short!')
       .max(50, 'Too Long!')
-      .matches(validPassword)
+      // .matches(validPassword)
       .required('Please enter your password'),
 
     email: Yup.string()
       .email('invalid email')
-      .matches(validEmail)
+      // .matches(validEmail)
       .required('Please enter your email'),
   });
 
@@ -40,7 +41,7 @@ function SignUpForm() {
     <div className={styles.containerSingUp}>
       <img src={bg} alt="bg" className={styles.bg} />
       <div className={styles.formContainer}>
-        <h1 className={styles.title}>Sign In</h1>
+        <h1 className={styles.title}>Sign Up</h1>
         <p className={styles.welcome}>
           Thank you for your interest in our platform. To complete the
           registration process, please provide us with the following
@@ -105,8 +106,11 @@ function SignUpForm() {
               )}
             />
             <button className={styles.button} type="submit">
-              Sign In
+              Sign Up
             </button>
+            <p style={{ color: '#ffffff' }}>
+              Already have account? <NavLink to={'/singin'}>Sign In </NavLink>
+            </p>
           </Form>
         </Formik>
       </div>
