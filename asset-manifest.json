@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/banda/static/css/main.594a1e7c.css",
-    "main.js": "/banda/static/js/main.345e9161.js",
+    "main.js": "/banda/static/js/main.2fd61fda.js",
     "static/media/side-view-people-training-gym 1.jpg": "/banda/static/media/side-view-people-training-gym 1.50728ab26a419a72385a.jpg",
     "index.html": "/banda/index.html",
     "main.594a1e7c.css.map": "/banda/static/css/main.594a1e7c.css.map",
-    "main.345e9161.js.map": "/banda/static/js/main.345e9161.js.map"
+    "main.2fd61fda.js.map": "/banda/static/js/main.2fd61fda.js.map"
   },
   "entrypoints": [
     "static/css/main.594a1e7c.css",
-    "static/js/main.345e9161.js"
+    "static/js/main.2fd61fda.js"
   ]
 }
