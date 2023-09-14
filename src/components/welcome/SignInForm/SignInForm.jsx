@@ -6,6 +6,7 @@ import styles from './SignInForm.module.css';
 import { useDispatch } from 'react-redux';
 import { login } from '../../../redux/auth/operations';
 import bg from '../../../images/side-view-people-training-gym 1.jpg';
+
 function SignInForm() {
   const email = '';
   const password = '';
