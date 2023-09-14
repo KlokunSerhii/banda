@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 import styles from './SignUpForm.module.css';
 import { useDispatch } from 'react-redux';
-import { login } from '../../../redux/auth/operations';
+import { register } from '../../../redux/auth/operations';
 import bg from '../../../images/side-view-people-training-gym 1.jpg';
 import { NavLink } from 'react-router-dom';
 
@@ -14,8 +14,8 @@ function SignUpForm() {
   const password = '';
   const dispatch = useDispatch();
 
-  const handleSubmitLogin = ({ email, password }, { resetForm }) => {
-    dispatch(login({ email, password }));
+  const handleSubmitLogin = ({ email, password, name }, { resetForm }) => {
+    dispatch(register({ email, password, name }));
     resetForm();
   };
 
@@ -35,6 +35,7 @@ function SignUpForm() {
       .email('invalid email')
       // .matches(validEmail)
       .required('Please enter your email'),
+    name: Yup.string().required('Please enter your name'),
   });
 
   return (

@@ -23,16 +23,28 @@ export const App = () => {
         />
         <Route
           path="/singup"
-          element={<PublicRoute redirectto="/diary" component={SignUp} />}
+          element={<PublicRoute redirectto="/params" component={SignUp} />}
         />
         <Route
           path="/diary"
-          element={<PrivateRoute redirectto="/singin" component={Diary} />}
+          element={<PrivateRoute redirectto="/" component={Diary} />}
         />
-        <Route path="/exercices" element={<Exercices />} />
-        <Route path="/params" element={<Params />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/exercices"
+          element={<PrivateRoute redirectto="/" component={Exercices} />}
+        />
+        <Route
+          path="/params"
+          element={<PrivateRoute redirectto="/" component={Params} />}
+        />
+        <Route
+          path="/products"
+          element={<PrivateRoute redirectto="/" component={Products} />}
+        />
+        <Route
+          path="/profile"
+          element={<PrivateRoute redirectto="/" component={Profile} />}
+        />
 
         <Route path="*" element={<div>NotFound </div>} />
       </Route>
