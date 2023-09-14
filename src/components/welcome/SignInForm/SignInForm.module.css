@@ -1,0 +1,85 @@
+.containerSingIn {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #040404;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+.bg {
+  width: 670px;
+}
+.title {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.37;
+  color: #efede8;
+}
+.welcome {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #efede84d;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 364px;
+  height: 52px;
+  font-size: 14px;
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 12px;
+  color: #efede8;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #efede8;
+  &::placeholder {
+    color: #efede8;
+  }
+  &:focus {
+    border: 1px solid #efede8;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  width: 182px;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 64px;
+  padding: 16px 60px 16px 60px;
+  background: #e6533c;
+  color: #efede8;
+  border-radius: 12px;
+  cursor: pointer;
+  :hover {
+  }
+}
+
+.errorMessage {
+  color: #f0f0f0;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
