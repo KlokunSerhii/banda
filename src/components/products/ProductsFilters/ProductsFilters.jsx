@@ -1,6 +1,6 @@
 import React from 'react';
 import "./ProductsFilter.css";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BiSearch } from "react-icons/bi";
 import { IoClose, IoChevronDown } from "react-icons/io5";
 
