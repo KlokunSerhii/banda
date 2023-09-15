@@ -6,25 +6,27 @@ import { IoClose, IoChevronDown } from "react-icons/io5";
 // import { HiChevronDown } from "react-icons/hi2";
 
 
-import {
-  SearchWrapper,
-  CategoriesWrapper,
-  FilterWrapper,
-  Container,
-  CategoriesList,
-  FiltersList,
-  Text,
-  SearchBar,
-  CategoriesBar,
-  FilterBar,
-  CategoriesListItem,
-  FilterListItem,
-  CloseBtn,
-  SearchBtn,
-  ChevronBtn,
-  Div
-  // SvgIcon
-} from './ProductsFilter.module';
+// import {
+//   SearchWrapper,
+//   CategoriesWrapper,
+//   FilterWrapper,
+//   Container,
+//   CategoriesList,
+//   FiltersList,
+//   Text,
+//   SearchBar,
+//   CategoriesBar,
+//   FilterBar,
+//   CategoriesListItem,
+//   FilterListItem,
+//   CloseBtn,
+//   SearchBtn,
+//   ChevronBtn,
+//   Div
+//   // SvgIcon
+// } from './ProductsFilter.module';
+
+import "./ProductsFilter.css";
 
 const categories = [
   "alcoholic drinks",
@@ -106,60 +108,60 @@ function ProductsFilters() {
 
   
   return (
-    <Container>
-      <Text>Products</Text>
-      <SearchWrapper>
-        <SearchBar type='text' placeholder='Search' onChange={handleInputChange}></SearchBar>
-        {focus && <CloseBtn type="button" onClick={handleClose}><IoClose style={{
+    <div className="container">
+      <h2 className='text'>Products</h2>
+      <div className='search-wrapper'>
+        <input className='search-bar' type='text' placeholder='Search' onChange={handleInputChange}></input>
+        {focus && <button className='close-btn' type="button" onClick={handleClose}><IoClose style={{
           fill: "#E6533C", width: "21px", height: "21px"
-        }} /></CloseBtn>}
-        <SearchBtn type='submit' onSubmit={handleSearch}><BiSearch style={{ fill: "#EFEDE8",
+        }} /></button>}
+        <button className='search-btn' type='submit' onSubmit={handleSearch}><BiSearch style={{ fill: "#EFEDE8",
           width: "18px", height: "18px"
-        }} /></SearchBtn>
+        }} /></button>
       
     
-      </SearchWrapper>
+      </div>
 
-       <Div>
-         <CategoriesWrapper>
+       <div className='box'>
+         <div className='categories-wrapper'>
         
-        <CategoriesBar type='text' placeholder='Categories' onChange={handleChange} />
-        <ChevronBtn onClick={handleShowCategories}>
+        <input className='categories-bar' type='text' placeholder='Categories' onChange={handleChange} />
+        <button className='chevron-btn' onClick={handleShowCategories}>
           <IoChevronDown style={{
             color:"#EFEDE8",
           width:"18px", height:"18px"}}/>
-          </ChevronBtn> 
+          </button> 
           
-        </CategoriesWrapper>
-       {showCategories &&  <CategoriesList>
+        </div>
+       {showCategories &&  <ul className='categories-list'>
           {categories.map(category => {
-            return <CategoriesListItem key={category} >{category}</CategoriesListItem>
+            return <li className='categories-list-item' key={category} >{category}</li>
           })}
-        </CategoriesList>}
-      </Div> 
+        </ul>}
+      </div> 
      
     
 
-      <Div>
-        <FilterWrapper>
-          <FilterBar type='text' placeholder='Filter' onChange={handleChange} />
-        <ChevronBtn onClick={handleShowFilter}>
+      <div className='box'>
+        <div className='filters-wrapper'>
+          <input className='filters-bar' type='text' placeholder='Filter' onChange={handleChange} />
+        <button className='chevron-btn' onClick={handleShowFilter}>
           <IoChevronDown style={{
           color:"#EFEDE8",
           width:"18px", height:"18px"}}/>
-          </ChevronBtn>
+          </button>
           
-        </FilterWrapper>
-        {showFilters && <FiltersList>
+        </div>
+        {showFilters && <ul className='filters-list'>
           {filters.map(filter => {
-            return <FilterListItem key={filter} >{filter}</FilterListItem>
+            return <li className='filters-list-item' key={filter} >{filter}</li>
           })}
-        </FiltersList>}
-      </Div>
+        </ul>}
+      </div>
       
       
     
-    </Container>
+    </div>
   );
 }
 
