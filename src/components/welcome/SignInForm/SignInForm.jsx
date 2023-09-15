@@ -5,6 +5,7 @@ import { AiFillPlayCircle } from 'react-icons/ai';
 import { MdRunCircle } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { AiFillCheckCircle } from 'react-icons/ai';
 
 import styles from './SignInForm.module.css';
 import { login } from '../../../redux/auth/operations';
@@ -83,7 +84,8 @@ function SignInForm() {
               name="email"
               render={() => (
                 <div className={styles.errorMessage}>
-                  {'Please enter your email'}
+                  <AiFillCheckCircle className={styles.ErrorIcon} />
+                  {'Error email'}
                 </div>
               )}
             />
@@ -101,7 +103,8 @@ function SignInForm() {
               name="password"
               render={() => (
                 <div className={styles.errorMessage}>
-                  {'Please enter your password'}
+                  <AiFillCheckCircle className={styles.ErrorIcon} />
+                  {'Error password'}
                 </div>
               )}
             />
