@@ -1,32 +1,9 @@
 import React from 'react';
-import "./ProductsFilter.module";
+import "./ProductsFilter.css";
 import { useState, useEffect } from 'react';
 import { BiSearch } from "react-icons/bi";
 import { IoClose, IoChevronDown } from "react-icons/io5";
-// import { HiChevronDown } from "react-icons/hi2";
 
-
-// import {
-//   SearchWrapper,
-//   CategoriesWrapper,
-//   FilterWrapper,
-//   Container,
-//   CategoriesList,
-//   FiltersList,
-//   Text,
-//   SearchBar,
-//   CategoriesBar,
-//   FilterBar,
-//   CategoriesListItem,
-//   FilterListItem,
-//   CloseBtn,
-//   SearchBtn,
-//   ChevronBtn,
-//   Div
-//   // SvgIcon
-// } from './ProductsFilter.module';
-
-import "./ProductsFilter.css";
 
 const categories = [
   "alcoholic drinks",
