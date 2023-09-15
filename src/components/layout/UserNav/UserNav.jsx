@@ -8,7 +8,7 @@ function UserNav() {
   return (
     <Tabs variant="unstyled" _selected={{ color: 'white', bg: 'blue.500' }}>
       <TabList>
-        <Tab as={Link} to="/diary" >
+        <Tab as={Link} to="/diary">
           Diary
         </Tab>
         <Tab as={Link} to="/products">
