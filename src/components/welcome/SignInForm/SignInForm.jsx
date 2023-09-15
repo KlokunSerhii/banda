@@ -1,12 +1,14 @@
 import React from 'react';
 import { ErrorMessage, Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
+import { AiFillPlayCircle } from 'react-icons/ai';
+import { MdRunCircle } from 'react-icons/md';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import styles from './SignInForm.module.css';
-import { useDispatch } from 'react-redux';
 import { login } from '../../../redux/auth/operations';
 import bg from '../../../images/side-view-people-training-gym 1.jpg';
-import { NavLink } from 'react-router-dom';
 
 function SignInForm() {
   const email = '';
@@ -38,12 +40,30 @@ function SignInForm() {
 
   return (
     <div className={styles.containerSingIn}>
-      <img src={bg} alt="bg" className={styles.bg} />
+      <div className={styles.imgContainer}>
+        <div className={styles.video}>
+          <AiFillPlayCircle className={styles.iconPlay} />
+          <div className={styles.videoInfo}>
+            <p className={styles.videoQuantity}>350+</p>
+            <p className={styles.videoText}>Video tutorial</p>
+          </div>
+        </div>
+        <div className={styles.calories}>
+          <MdRunCircle className={styles.iconRun} />
+          <div className={styles.caloriesInfo}>
+            <p className={styles.caloriesQuantity}>500</p>
+            <p className={styles.caloriesText}>cal</p>
+          </div>
+        </div>
+        <img src={bg} alt="bg" className={styles.bg} />
+      </div>
+
       <div className={styles.formContainer}>
         <h1 className={styles.title}>Sign In</h1>
         <p className={styles.welcome}>
           Welcome! Please enter your credentials to login to the platform:
         </p>
+
         <Formik
           initialValues={{ email, password }}
           validationSchema={SignupSchemaLogin}
@@ -88,8 +108,11 @@ function SignInForm() {
             <button className={styles.button} type="submit">
               Sign In
             </button>
-            <p style={{ color: '#ffffff' }}>
-              Don’t have an account?<NavLink to={'/singup'}>Sign Up </NavLink>
+            <p className={styles.linkSingUp}>
+              Don’t have an account?
+              <NavLink to={'/singup'} className={styles.link}>
+                Sign Up
+              </NavLink>
             </p>
           </Form>
         </Formik>
