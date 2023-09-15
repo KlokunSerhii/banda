@@ -19,31 +19,31 @@ export const App = () => {
         <Route index element={<Welcome />} />
         <Route
           path="/singin"
-          element={<PublicRoute redirectTo="/diary" component={SignIn} />}
+          element={<PublicRoute redirectto="/diary" component={SignIn} />}
         />
         <Route
           path="/singup"
-          element={<PublicRoute redirectTo="/params" component={SignUp} />}
+          element={<PublicRoute redirectto="/params" component={SignUp} />}
         />
         <Route
           path="/diary"
-          element={<PrivateRoute redirectTo="/" component={Diary} />}
+          element={<PrivateRoute redirectto="/" component={Diary} />}
         />
         <Route
           path="/exercises"
-          element={<PrivateRoute redirectTo="/" component={Exercices} />}
+          element={<PrivateRoute redirectto="/" component={Exercices} />}
         />
         <Route
           path="/params"
-          element={<PrivateRoute redirectTo="/" component={Params} />}
+          element={<PrivateRoute redirectto="/" component={Params} />}
         />
         <Route
           path="/products"
-          element={<PrivateRoute redirectTo="/" component={Products} />}
+          element={<PrivateRoute redirectto="/" component={Products} />}
         />
         <Route
           path="/profile"
-          element={<PrivateRoute redirectTo="/" component={Profile} />}
+          element={<PrivateRoute redirectto="/" component={Profile} />}
         />
 
         <Route path="*" element={<div>NotFound </div>} />
