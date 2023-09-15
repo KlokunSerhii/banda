@@ -15,6 +15,14 @@
   padding-top: 200;
 }
 
+.line {
+  position: absolute;
+  top: 300px;
+  left: 70px;
+  width: 185px;
+  height: 67px;
+}
+
 .title {
   margin-bottom: 16px;
   font-weight: 500;

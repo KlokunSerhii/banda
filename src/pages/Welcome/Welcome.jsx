@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Welcome.module.css';
 import bg from '../../images/side-view-people-training-gym 1.jpg';
+import line from '../../images/Line.png';
 import polygon from '../../images/Polygon 1.png';
 import man from '../../images/Group.png';
 function Welcome() {
@@ -8,6 +9,7 @@ function Welcome() {
     <div className={styles.containerWelcome}>
       <img src={bg} alt="bg" className={styles.bg} />
       <div className={styles.infoWelcome}>
+        <img src={line} alt="line" className={styles.line} />
         <h1 className={styles.title}>
           Transforming your body shape with Power Pulse
         </h1>
