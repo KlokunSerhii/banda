@@ -1,7 +1,11 @@
 import React from 'react';
 
-function TitlePage() {
-  return <div>TitlePage</div>;
+function TitlePage({ title }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+    </div>
+  );
 }
 
 export default TitlePage;
