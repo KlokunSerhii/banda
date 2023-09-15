@@ -30,7 +30,7 @@ export const App = () => {
           element={<PrivateRoute redirectTo="/" component={Diary} />}
         />
         <Route
-          path="/exercices"
+          path="/exercises"
           element={<PrivateRoute redirectTo="/" component={Exercices} />}
         />
         <Route
