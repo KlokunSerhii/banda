@@ -12,7 +12,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <Logo />
-      {!isLoggedIn && (
+      {isLoggedIn && (
         <>
           <UserNav />
           <UserBar />
