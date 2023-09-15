@@ -29,6 +29,7 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.1",
     "@react-navigation/native": "^6.1.7",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.3",
