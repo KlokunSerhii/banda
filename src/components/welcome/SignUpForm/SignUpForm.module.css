@@ -65,7 +65,7 @@
     color: #efede84d;
   }
   &:focus {
-    border: 1px solid #efede84d;
+    border: 1px solid #e6533c;
   }
 }
 
@@ -90,9 +90,11 @@
 }
 
 .errorMessage {
-  color: #f0f0f0;
+  display: flex;
+  align-items: center;
   margin-bottom: 5px;
-  font-size: 20px;
+  font-size: 12px;
+  color: #d80027;
 }
 
 .linkSingIn {
@@ -188,4 +190,11 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-start;
+}
+
+.ErrorIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  fill: #d80027;
 }
