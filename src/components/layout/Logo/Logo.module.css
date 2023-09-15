@@ -1,0 +1,8 @@
+.wrapLogo {
+    display: flex;
+    gap: 8px;
+}
+
+.titleLogo {
+color: #EFEDE8;
+}
