@@ -4,7 +4,7 @@ import ProductsFilters from "../../components/products/ProductsFilters/ProductsF
 
 function Products() {
   return (
-    <div className='container'>
+    <div className='container' style={{color: 'white'}}>
       <ProductsFilters />
     </div>
   );
