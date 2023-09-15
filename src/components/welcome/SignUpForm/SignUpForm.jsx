@@ -1,12 +1,14 @@
 import React from 'react';
 import { ErrorMessage, Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
+import { AiFillPlayCircle } from 'react-icons/ai';
+import { MdRunCircle } from 'react-icons/md';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import styles from './SignUpForm.module.css';
-import { useDispatch } from 'react-redux';
 import { register } from '../../../redux/auth/operations';
 import bg from '../../../images/side-view-people-training-gym 1.jpg';
-import { NavLink } from 'react-router-dom';
 
 function SignUpForm() {
   const name = '';
@@ -40,7 +42,24 @@ function SignUpForm() {
 
   return (
     <div className={styles.containerSingUp}>
-      <img src={bg} alt="bg" className={styles.bg} />
+      <div className={styles.imgContainer}>
+        <img src={bg} alt="bg" className={styles.bg} />
+        <div className={styles.video}>
+          <AiFillPlayCircle className={styles.iconPlay} />
+          <div className={styles.videoInfo}>
+            <p className={styles.videoQuantity}>350+</p>
+            <p className={styles.videoText}>Video tutorial</p>
+          </div>
+        </div>
+        <div className={styles.calories}>
+          <MdRunCircle className={styles.iconRun} />
+          <div className={styles.caloriesInfo}>
+            <p className={styles.caloriesQuantity}>500</p>
+            <p className={styles.caloriesText}>cal</p>
+          </div>
+        </div>
+      </div>
+
       <div className={styles.formContainer}>
         <h1 className={styles.title}>Sign Up</h1>
         <p className={styles.welcome}>
@@ -109,8 +128,11 @@ function SignUpForm() {
             <button className={styles.button} type="submit">
               Sign Up
             </button>
-            <p style={{ color: '#ffffff' }}>
-              Already have account? <NavLink to={'/singin'}>Sign In </NavLink>
+            <p className={styles.linkSingIn}>
+              Already have account?
+              <NavLink to={'/singin'} className={styles.link}>
+                Sign In
+              </NavLink>
             </p>
           </Form>
         </Formik>
