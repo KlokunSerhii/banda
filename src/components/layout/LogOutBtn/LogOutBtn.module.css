@@ -1,0 +1,16 @@
+.btnLogout {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btnText {
+  font-size: 16px;
+  color: #efede8;
+}
+
+.btnIcon {
+  width: 30px;
+  height: 30px;
+  fill: #e6533c;
+}
