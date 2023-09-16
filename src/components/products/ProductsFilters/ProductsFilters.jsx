@@ -1,6 +1,6 @@
 import React from 'react';
-import "./ProductsFilter.css";
-import { useState, useEffect } from 'react';
+import styles from "./ProductsFilter.module.css";
+import { useState } from 'react';
 import { BiSearch } from "react-icons/bi";
 import { IoClose, IoChevronDown } from "react-icons/io5";
 
@@ -85,53 +85,54 @@ function ProductsFilters() {
 
   
   return (
-    <div className="container">
-      <h2 className='text'>Products</h2>
-      <div className='search-wrapper'>
-        <input className='search-bar' type='text' placeholder='Search' onChange={handleInputChange}></input>
-        {focus && <button className='close-btn' type="button" onClick={handleClose}><IoClose style={{
+    <div className={styles.wrapper}>
+      <h2 className={styles.title}>Products</h2>
+      <p  className={styles.description}>Filters</p>
+      <div className={styles.searchWrapper}>
+        <input className={styles.searchBar} type='text' placeholder='Search' onChange={handleInputChange}></input>
+        {focus && <button className={styles.closeBtn} type="button" onClick={handleClose}><IoClose style={{
           fill: "#E6533C", width: "21px", height: "21px"
         }} /></button>}
-        <button className='search-btn' type='submit' onSubmit={handleSearch}><BiSearch style={{ fill: "#EFEDE8",
+        <button className={styles.searchBtn} type='submit' onSubmit={handleSearch}><BiSearch style={{ fill: "#EFEDE8",
           width: "18px", height: "18px"
         }} /></button>
       
     
       </div>
 
-       <div className='box'>
-         <div className='categories-wrapper'>
+       <div className={styles.box}>
+         <div className={styles.categoriesWrapper}>
         
-        <input className='categories-bar' type='text' placeholder='Categories' onChange={handleChange} />
-        <button className='chevron-btn' onClick={handleShowCategories}>
+        <input className={styles.categoriesBar} type='text' placeholder='Categories' onChange={handleChange} />
+        <button className={styles.chevronBtn} onClick={handleShowCategories}>
           <IoChevronDown style={{
             color:"#EFEDE8",
           width:"18px", height:"18px"}}/>
           </button> 
           
         </div>
-       {showCategories &&  <ul className='categories-list'>
+       {showCategories &&  <ul className={styles.categoriesList}>
           {categories.map(category => {
-            return <li className='categories-list-item' key={category} >{category}</li>
+            return <li className={styles.categoriesListItem} key={category} >{category}</li>
           })}
         </ul>}
       </div> 
      
     
 
-      <div className='box'>
-        <div className='filters-wrapper'>
-          <input className='filters-bar' type='text' placeholder='Filter' onChange={handleChange} />
-        <button className='chevron-btn' onClick={handleShowFilter}>
+      <div className={styles.box}>
+        <div className={styles.filtersWrapper}>
+          <input className={styles.filtersBar} type='text' placeholder='Filter' onChange={handleChange} />
+        <button className={styles.chevronBtn} onClick={handleShowFilter}>
           <IoChevronDown style={{
           color:"#EFEDE8",
           width:"18px", height:"18px"}}/>
           </button>
           
         </div>
-        {showFilters && <ul className='filters-list'>
+        {showFilters && <ul className={styles.filtersList}>
           {filters.map(filter => {
-            return <li className='filters-list-item' key={filter} >{filter}</li>
+            return <li className={styles.filtersListItem} key={filter} >{filter}</li>
           })}
         </ul>}
       </div>
@@ -143,3 +144,4 @@ function ProductsFilters() {
 }
 
 export default ProductsFilters;
+

@@ -1,10 +1,10 @@
 import React from 'react';
-import "./Products.css";
+import styles from "./Products.module.css"
 import ProductsFilters from "../../components/products/ProductsFilters/ProductsFilters"
 
 function Products() {
   return (
-    <div className='container' style={{color: 'white'}}>
+    <div className={styles.productsWrapper}>
       <ProductsFilters />
     </div>
   );
