@@ -45,7 +45,6 @@ export const App = () => {
           element={<PrivateRoute redirectto="/" component={Profile} />}
         />
         <Route path="*" element={<div>NotFound </div>} />
-      </Route>
     </Routes>
   );
 };
