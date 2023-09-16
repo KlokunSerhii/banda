@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/banda/static/css/main.7bc6e596.css",
-    "main.js": "/banda/static/js/main.c2d51b23.js",
+    "main.css": "/banda/static/css/main.9598c727.css",
+    "main.js": "/banda/static/js/main.1b7dec3e.js",
     "static/media/side-view-people-training-gym 1.jpg": "/banda/static/media/side-view-people-training-gym 1.50728ab26a419a72385a.jpg",
     "static/media/roboto-bold-webfont.woff": "/banda/static/media/roboto-bold-webfont.7e39524e3d8348ac8613.woff",
     "static/media/roboto-medium-webfont.woff": "/banda/static/media/roboto-medium-webfont.f95cce1702ac8e71a629.woff",
@@ -10,11 +10,11 @@
     "static/media/roboto-medium-webfont.woff2": "/banda/static/media/roboto-medium-webfont.1c4475ba93829d5694e3.woff2",
     "static/media/roboto-regular-webfont.woff2": "/banda/static/media/roboto-regular-webfont.94b3074c171dd10548ea.woff2",
     "index.html": "/banda/index.html",
-    "main.7bc6e596.css.map": "/banda/static/css/main.7bc6e596.css.map",
-    "main.c2d51b23.js.map": "/banda/static/js/main.c2d51b23.js.map"
+    "main.9598c727.css.map": "/banda/static/css/main.9598c727.css.map",
+    "main.1b7dec3e.js.map": "/banda/static/js/main.1b7dec3e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7bc6e596.css",
-    "static/js/main.c2d51b23.js"
+    "static/css/main.9598c727.css",
+    "static/js/main.1b7dec3e.js"
   ]
 }
