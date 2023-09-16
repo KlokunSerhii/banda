@@ -1,15 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom/dist';
-// import { useAuth } from 'hooks';
 import styles from './Logo.module.css';
 
 function Logo() {
-  // const { isLoggedIn } = useAuth();
-
   return (
     <NavLink to="/" className={styles.wrapLogo}>
       <span>
-        {' '}
         <svg
           width="44"
           height="17"
