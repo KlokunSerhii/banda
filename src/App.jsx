@@ -15,7 +15,6 @@ import PrivateRoute from 'routes/PrivateRoute';
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<SharedLayout />}>
         <Route index element={<Welcome />} />
         <Route
           path="/singin"
@@ -45,7 +44,6 @@ export const App = () => {
           path="/profile"
           element={<PrivateRoute redirectto="/" component={Profile} />}
         />
-
         <Route path="*" element={<div>NotFound </div>} />
       </Route>
     </Routes>
