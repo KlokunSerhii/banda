@@ -8,7 +8,6 @@ import Profile from 'pages/Profile';
 import SignIn from 'pages/SignIn';
 import SignUp from 'pages/SignUp';
 import Welcome from 'pages/Welcome';
-import SharedLayout from 'components/SharedLayout';
 import PublicRoute from 'routes/PublicRoute';
 import PrivateRoute from 'routes/PrivateRoute';
 
