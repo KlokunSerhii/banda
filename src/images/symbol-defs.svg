@@ -1,0 +1,8 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="close-icon" viewBox="0 0 18 18">
+<path d="M16.5 5.5L5.5 16.5" stroke="#EFEDE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.5 5.5L16.5 16.5" stroke="#EFEDE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+</defs>
+</svg>
