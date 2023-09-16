@@ -13,7 +13,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <Logo />
-      {!isLoggedIn && (
+      {isLoggedIn && (
         <div className={styles.wrapNav}>
           <UserNav />
           <UserBar />
