@@ -1,0 +1,226 @@
+.containerParams {
+  display: flex;
+  flex-direction: row-reverse;
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
+
+  padding-left: 96px;
+  background-color: #040404;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+.bg {
+  width: 670px;
+  /* background: linear-gradient(89deg, #040404 1.1%,
+   rgba(4, 4, 4, 0.00) 70.79%),
+   lightgray 50% / cover no-repeat; */
+
+}
+.title {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.37;
+  color: #efede8;
+}
+.description {
+  font-size: 16px;
+  color: #efede84d;
+}
+
+.nextBtn{
+display: flex;
+align-items: center;
+color: #EFEDE8;
+
+outline: none;
+border: none;
+background: transparent;
+
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+
+.descriptionWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 32px;
+
+}
+
+.formWrapper {
+  width:600px;
+
+  margin-bottom: 32px;
+}
+
+.formList{
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+
+}
+
+.formItemWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.formItemWrapper:not(:last-child){
+    margin-right: 14px;
+    margin-bottom: 14px;
+}
+
+
+.formLabel{
+margin-bottom: 8px;
+color: rgba(239, 237, 232, 0.50);
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px; /* 128.571% */
+}
+
+
+/* .label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+} */
+
+/* .input {
+  width: 364px;
+  height: 52px;
+  font-size: 14px;
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 12px;
+  color: #efede8;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #efede8;
+  &::placeholder {
+    color: #efede8;
+  }
+  &:focus {
+    border: 1px solid #efede8;
+  }
+} */
+
+/* .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  width: 182px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 64px;
+  background: #e6533c;
+  color: #efede8;
+  border-radius: 12px;
+  cursor: pointer;
+  :hover {
+    color: #efede8;
+  }
+} */
+
+/* .errorMessage {
+  color: #f0f0f0;
+  margin-bottom: 5px;
+  font-size: 20px;
+} */
+
+.formInput{
+color: #EFEDE8;
+outline: none;
+background: transparent;
+padding: 14px;
+
+align-items: center;
+border-radius: 12px;
+border: 1px solid rgba(239, 237, 232, 0.30);
+
+width: 153px;
+}
+
+.formInput:focus{
+    border: 1px solid #E6533C;
+}
+
+.formCurrentWeightInput{
+color: #EFEDE8;
+outline: none;
+background: transparent;
+padding: 14px;
+
+align-items: center;
+border-radius: 12px;
+border: 1px solid rgba(239, 237, 232, 0.30);
+
+width: 172px;
+}
+
+.formCurrentWeightInput:focus{
+    border: 1px solid #E6533C;
+}
+
+.formDesiredWeightInput{
+color: #EFEDE8;
+outline: none;
+background: transparent;
+padding: 14px;
+
+align-items: center;
+border-radius: 12px;
+border: 1px solid rgba(239, 237, 232, 0.30);
+
+width: 174px;
+
+
+}
+
+.formDesiredWeightInput:focus{
+    border: 1px solid #E6533C;
+}
+
+.formDatapickerInput{
+color: #EFEDE8;
+outline: none;
+background: transparent;
+
+
+padding: 14px;
+
+align-items: center;
+border-radius: 12px;
+border: 1px solid rgba(239, 237, 232, 0.30);
+
+width: 153px;
+
+}
+
+.formDatapickerInput:focus{  
+    border: 1px solid #E6533C;
+}
+
+input[type="date"] { 
+  background: transparent;
+  color: white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
+}
+
+.formDatapickerWrapper{
+    color: #E6533C;
+}
