@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom/dist';
-
+import SharedLayout from 'components/SharedLayout';
 import Diary from 'pages/Diary';
 import Exercices from 'pages/Exercices';
 import Params from 'pages/Params';
@@ -10,7 +10,8 @@ import SignUp from 'pages/SignUp';
 import Welcome from 'pages/Welcome';
 import PublicRoute from 'routes/PublicRoute';
 import PrivateRoute from 'routes/PrivateRoute';
-import { ChakraProvider, Container, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, Container } from '@chakra-ui/react';
+
 
 export const App = () => {
   return (
