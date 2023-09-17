@@ -181,7 +181,7 @@
   }
   .imgContainer {
     position: absolute;
-    top: 0;
+    top: 80px;
     left: 40px;
   }
 
@@ -287,8 +287,8 @@
 
   .imgContainer {
     position: absolute;
-    top: -70px;
-    left: 356px;
+    top: -100px;
+    left: 404px;
   }
   .line {
     top: 186px;
