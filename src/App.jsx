@@ -12,9 +12,21 @@ import Page404 from 'components/Page404';
 import PublicRoute from 'routes/PublicRoute';
 import PrivateRoute from 'routes/PrivateRoute';
 import { ChakraProvider, Container } from '@chakra-ui/react';
+import { useAuth } from 'hooks';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshUser } from 'redux/auth/operations';
 
 export const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+  return isRefreshing ? (
+    <div>LODING.....</div>
+  ) : (
     <Container bg="#040404">
       <ChakraProvider>
         <Routes>
