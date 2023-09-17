@@ -24,7 +24,9 @@ const validationSchema = Yup.object({
 function SignInForm() {
   const dispatch = useDispatch();
 
-  const handleSubmitLogin = ({ email, password }, { resetForm }) => {
+  const onSubmit = ({ email, password }, { resetForm }) => {
+    console.log(email, password);
+    console.log('clik');
     dispatch(login({ email, password }));
     resetForm();
   };
@@ -35,16 +37,16 @@ function SignInForm() {
       password: '',
     },
     validationSchema,
-    handleSubmitLogin,
+    onSubmit,
   });
 
   return (
-    <form className={styles.signin} onSubmit={formik.handleSubmit}>
+    <form className={styles.singin} onSubmit={formik.handleSubmit}>
       <input
         type="email"
         name="email"
-        placeholder="E-mail"
-        autoComplete="username"
+        placeholder="Email"
+        autoComplete="email"
         className={styles.signin__input}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
@@ -76,7 +78,6 @@ function SignInForm() {
           </div>
         )
       ) : null}
-
       <input
         type="password"
         name="password"
@@ -87,7 +88,6 @@ function SignInForm() {
         onBlur={formik.handleBlur}
         value={formik.values.password}
       />
-
       {formik.touched.password ? (
         formik.errors.password ? (
           <div className={styles.errorMessage}>
@@ -113,6 +113,7 @@ function SignInForm() {
           </div>
         )
       ) : null}
+
       <button className={styles.signInBtn} type="submit">
         Sign In
       </button>

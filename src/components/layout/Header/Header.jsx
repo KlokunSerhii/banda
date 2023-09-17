@@ -12,15 +12,13 @@ import { RiMenu2Line, RiCloseFill } from 'react-icons/ri';
 
 function Header() {
   const { isLoggedIn } = useAuth();
- const [nav, setNav] = useState(false);
-  
+  const [nav, setNav] = useState(false);
 
   return (
     <header className={styles.header}>
-
       <Logo />
-      
-      {!isLoggedIn && (
+
+      {isLoggedIn && (
         <>
           <div className={styles.wrapNavDesktop}>
             <UserNav />
@@ -29,27 +27,31 @@ function Header() {
           </div>
 
           <div className={styles.wrapNavMob}>
-            <UserBar/>
-            <div className={
-              nav ? [styles.mobMenu, styles.active].join(' ') : [styles.mobMenu]
-            }>
+            <UserBar />
+            <div
+              className={
+                nav
+                  ? [styles.mobMenu, styles.active].join(' ')
+                  : [styles.mobMenu]
+              }
+            >
               <UserNav />
               <LogOutBtn />
             </div>
-            <button
-              className={styles.headerCloseBtn}
-             
-            >
+            <button className={styles.headerCloseBtn}>
               <RiCloseFill />
             </button>
           </div>
         </>
       )}
-   
-   <div onClick={() => setNav(!nav)} className={styles.mobileBtn}>
-            {nav ? <RiCloseFill className={styles.closeIcon}/> : <RiMenu2Line className={styles.mobileIcon} />}
-          </div>
 
+      <div onClick={() => setNav(!nav)} className={styles.mobileBtn}>
+        {nav ? (
+          <RiCloseFill className={styles.closeIcon} />
+        ) : (
+          <RiMenu2Line className={styles.mobileIcon} />
+        )}
+      </div>
     </header>
   );
 }

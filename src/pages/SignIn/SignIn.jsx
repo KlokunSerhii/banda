@@ -37,7 +37,9 @@ function SignIn() {
             <p className={styles.enterText}>
               Please enter your credentials to login to the platform:
             </p>
+
             <SignInForm />
+
             <p className={styles.noaccount}>
               Don't have an account?
               <NavLink to="/singup" className={styles.link}>

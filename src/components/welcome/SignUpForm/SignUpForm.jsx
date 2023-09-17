@@ -24,7 +24,9 @@ const validationSchema = Yup.object({
 function SignUpForm() {
   const dispatch = useDispatch();
 
-  const handleSubmitLogin = ({ email, password, name }, { resetForm }) => {
+  const onSubmit = ({ email, password, name }, { resetForm }) => {
+    console.log(email, password, name);
+
     dispatch(register({ email, password, name }));
     resetForm();
   };
@@ -36,7 +38,7 @@ function SignUpForm() {
       password: '',
     },
     validationSchema,
-    handleSubmitLogin,
+    onSubmit,
   });
 
   return (
@@ -123,6 +125,7 @@ function SignUpForm() {
           </div>
         )
       ) : null}
+
       <button className={styles.signUpBtn} type="submit">
         Sign Up
       </button>
