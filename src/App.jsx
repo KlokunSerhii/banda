@@ -10,7 +10,6 @@ import SignUp from 'pages/SignUp';
 import Welcome from 'pages/Welcome';
 import PublicRoute from 'routes/PublicRoute';
 import PrivateRoute from 'routes/PrivateRoute';
-import { ChakraProvider, Container } from '@chakra-ui/react';
 
 
 export const App = () => {
