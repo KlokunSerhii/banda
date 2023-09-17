@@ -1,135 +1,78 @@
 .containerWelcome {
-  display: flex;
-  flex-direction: row-reverse;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
   background-color: #040404;
-}
-.bg {
-  width: 670px;
+  min-height: 132vh;
+  margin: 0;
+  padding: 0;
 }
 
-.infoWelcome {
-  padding-left: 96px;
-  padding-top: 200;
+.bg {
+  position: absolute;
+  top: 112px;
+  left: 17px;
+  width: 446px;
 }
 
 .line {
   position: absolute;
-  top: 300px;
-  left: 70px;
-  width: 185px;
-  height: 67px;
+  top: 148px;
+  left: 10px;
 }
 
 .title {
   margin-bottom: 16px;
   font-weight: 500;
-  font-size: 70px;
+  font-size: 38px;
   line-height: 1.1;
   text-align: left;
 
-  width: 598px;
-  height: 234px;
+  width: 335px;
+  height: 120px;
 
   color: #efede8;
 }
-
-.buttonContainer {
-  gap: 10px;
+.infoWelcome {
+  position: absolute;
+  z-index: 100;
+  padding-left: 20px;
+  padding-top: 100px;
 }
-.buttonUp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 56px;
-  width: 182px;
-  font-weight: 500;
-  font-size: 20px;
-  margin-top: 64px;
-  background: #e6533c;
-  color: #efede8;
-  border-radius: 12px;
-  cursor: pointer;
-  &:hover {
-    background-color: #ef8964;
-  }
-}
-.buttonIn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 56px;
-  width: 182px;
-  font-weight: 500;
-  font-size: 20px;
-  margin-top: 64px;
-  background: #040404;
-  color: #efede8;
-  border-radius: 12px;
-  border: 1px solid #efede8;
-  cursor: pointer;
-  &:hover {
-    border: 1px solid #e6533c;
-  }
-}
-
-.buttonContainer {
-  display: flex;
-}
-
 .containerVideo {
   position: absolute;
-  top: 384px;
-  left: 670px;
-
-  width: 206px;
-  height: 96px;
+  width: 146px;
+  height: 66px;
   background-color: #303030;
   border-radius: 12px;
+
+  top: 740px;
+  left: 170px;
 }
-.elips {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 28px;
-  left: 23px;
-  border-radius: 50px;
-  background-color: #ef8964;
-}
-.polygon {
-  position: absolute;
-  top: 10px;
-  left: 12px;
-  width: 20px;
-  height: 20px;
-}
+
 .videoNumber {
   position: absolute;
-  top: 20px;
+  top: 14px;
   left: 75px;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1;
   color: #efede8;
 }
 .videoText {
   position: absolute;
-  top: 52px;
-  left: 75px;
+  top: 36px;
+  left: 56px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.5;
   color: #efede8;
 }
 .containerCalorie {
   position: absolute;
-  top: 519px;
-  left: 1130px;
 
-  width: 180px;
-  height: 110px;
+  width: 119px;
+  height: 76px;
+
+  top: 880px;
+  left: 310px;
   background-color: #ef8964;
   border-radius: 12px;
 }
@@ -151,19 +94,236 @@
 .calNumber {
   position: absolute;
   top: 46px;
-  left: 28px;
+  left: 24px;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 24px;
   line-height: 1;
   color: #efede8;
 }
 
 .calText {
   position: absolute;
-  top: 68px;
-  left: 115px;
+  top: 50px;
+  left: 76px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.5;
   color: #efede8;
+}
+.buttonContainer {
+  gap: 10px;
+}
+.buttonUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 136px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 40px;
+  background: #e6533c;
+  color: #efede8;
+  border-radius: 12px;
+  cursor: pointer;
+
+  z-index: 100;
+  &:hover {
+    background-color: #ef8964;
+  }
+}
+.buttonIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 130px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 40px;
+  background: #040404;
+  color: #efede8;
+  border-radius: 12px;
+  border: 1px solid #efede8;
+  cursor: pointer;
+
+  z-index: 100;
+  &:hover {
+    border: 1px solid #e6533c;
+  }
+}
+
+.elips {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  left: 14px;
+  border-radius: 50px;
+  background-color: #ef8964;
+}
+.polygon {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  width: 12px;
+  height: 12px;
+}
+
+.imgContainer {
+  display: flex;
+}
+@media screen and (min-width: 768px) {
+  .containerWelcome {
+    min-height: 106vh;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .imgContainer {
+    position: absolute;
+    top: 0;
+    left: 40px;
+  }
+
+  .title {
+    font-size: 70px;
+    width: 590px;
+    height: 234px;
+  }
+
+  .infoWelcome {
+    padding-left: 20px;
+    padding-top: 100px;
+  }
+
+  .bg {
+    top: 0;
+    left: 140px;
+    width: 446px;
+  }
+
+  .line {
+    width: 185px;
+    height: 67px;
+    top: 184px;
+    left: 0;
+  }
+
+  .containerVideo {
+    width: 206px;
+    height: 96px;
+
+    top: 600px;
+    left: 260px;
+  }
+
+  .videoNumber {
+    top: 20px;
+    left: 75px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .videoText {
+    top: 52px;
+    left: 75px;
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  .containerCalorie {
+    width: 180px;
+    height: 110px;
+
+    top: 730px;
+    left: 510px;
+  }
+
+  .calText {
+    top: 68px;
+    left: 115px;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .calNumber {
+    top: 46px;
+    left: 28px;
+    font-weight: 700;
+    font-size: 48px;
+  }
+  .elipsRun {
+    width: 24px;
+    height: 24px;
+    top: 14px;
+    left: 28px;
+  }
+  .elips {
+    width: 40px;
+    height: 40px;
+    top: 28px;
+    left: 23px;
+  }
+
+  .polygon {
+    top: 10px;
+    left: 12px;
+    width: 20px;
+    height: 20px;
+  }
+  .buttonText {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .containerWelcome {
+    width: 1280px;
+  }
+  .bg {
+    width: 670px;
+    top: 54px;
+    left: 100px;
+  }
+
+  .imgContainer {
+    position: absolute;
+    top: -70px;
+    left: 356px;
+  }
+  .line {
+    top: 186px;
+    left: 0px;
+    width: 185px;
+    height: 67px;
+  }
+
+  .buttonUp {
+    width: 190px;
+    height: 56px;
+  }
+  .buttonIn {
+    width: 190px;
+    height: 56px;
+  }
+  .title {
+    font-weight: 500;
+    font-size: 70px;
+  }
+  .buttonText {
+    font-size: 20px;
+  }
+
+  .containerCalorie {
+    top: 640px;
+    left: 640px;
+  }
+
+  .containerVideo {
+    top: 480px;
+    left: 200px;
+  }
+}
+
+.buttonContainer {
+  display: flex;
 }
