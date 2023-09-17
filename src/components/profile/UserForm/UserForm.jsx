@@ -1,5 +1,5 @@
 import { Formik, Field, Form } from 'formik';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import style from './UserForm.module.css';
 import { object, string, number, date } from 'yup';
 import FormField from './FormField';
@@ -35,7 +35,7 @@ const defaultValues = {
 
 function UserForm() {
   const [submitDisabled, setSubmitDisabled] = useState(true);
-  const [initialValues, setInitialValues] = useState(defaultValues);
+  // const [initialValues, setInitialValues] = useState(defaultValues);
 
   const formik = useRef();
 
