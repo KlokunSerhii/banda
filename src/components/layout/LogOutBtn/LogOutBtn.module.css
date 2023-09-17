@@ -2,11 +2,12 @@
   display: flex;
   gap: 8px;
   align-items: center;
-}
 
-.btnText {
-  font-size: 16px;
+    font-size: 16px;
   color: #efede8;
+  :hover {
+    color: #e6533c;
+  }
 }
 
 .btnIcon {
