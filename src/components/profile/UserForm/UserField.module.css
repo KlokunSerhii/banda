@@ -1,0 +1,55 @@
+.errorMessage {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    color: red;
+    font-size: 12px;
+    font-weight: 500;
+    height: 12px;
+    padding-left: 5px;
+}
+
+.errorMessage span::first-letter {
+    display: block;
+    text-transform: uppercase;
+}
+
+
+.input {
+    width: 341px;
+    height: 52px;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    padding: 14px;
+    border-radius: 12px;
+    color: var(--transparent-light-1);
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #efede84d;
+
+    &::placeholder {
+        color: var(--transparent-light-2);
+    }
+
+    &:focus {
+        border: 1px solid #efede84d;
+    }
+
+    &[type="date"] {
+        font-family: inherit;
+    }
+
+    &[type="date"]::-webkit-calendar-picker-indicator {
+        background: url(../../../images/calendar.svg);
+        background-repeat: no-repeat;
+        color: rgba(239, 237, 232, 1);
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+}
+
+.inputInvalid {
+    border-color: red;
+}

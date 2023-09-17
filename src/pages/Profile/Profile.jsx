@@ -1,7 +1,8 @@
 import React from 'react';
+import UserForm from 'components/profile/UserForm/UserForm';
 
 function Profile() {
-  return <div style={{ color: 'red' }}>Profile</div>;
+  return <UserForm/>;
 }
 
 export default Profile;
