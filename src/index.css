@@ -31,6 +31,7 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: var(--main-bg-color);
 }
 html {
   box-sizing: border-box;
@@ -104,7 +105,7 @@ img {
   @media screen and (min-width: 480px) {
     width: 480px;
   }
-
+ 
   @media screen and (min-width: 768px) {
     width: 768px;
     padding-left: 32px;
@@ -115,3 +116,4 @@ img {
     width: 1280px;
   }
 }
+ 
