@@ -25,8 +25,6 @@ function SignUpForm() {
   const dispatch = useDispatch();
 
   const onSubmit = ({ email, password, name }, { resetForm }) => {
-    console.log(email, password, name);
-
     dispatch(register({ email, password, name }));
     resetForm();
   };
