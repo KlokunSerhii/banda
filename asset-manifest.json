@@ -1,21 +1,24 @@
 {
   "files": {
-    "main.css": "/banda/static/css/main.b233dd28.css",
-    "main.js": "/banda/static/js/main.e38dd601.js",
+    "main.css": "/banda/static/css/main.bcaae9f5.css",
+    "main.js": "/banda/static/js/main.a90240d0.js",
     "static/media/side-view-people-training-gym-phone.jpg": "/banda/static/media/side-view-people-training-gym-phone.a73913a667ac0cb617dc.jpg",
     "static/media/side-view-people-training-gym 1.jpg": "/banda/static/media/side-view-people-training-gym 1.50728ab26a419a72385a.jpg",
+    "static/media/symbol-defs.svg": "/banda/static/media/symbol-defs.a7cc0549c25a02b79c31a251a4ba0c9b.svg",
     "static/media/roboto-bold-webfont.woff": "/banda/static/media/roboto-bold-webfont.7e39524e3d8348ac8613.woff",
     "static/media/roboto-medium-webfont.woff": "/banda/static/media/roboto-medium-webfont.f95cce1702ac8e71a629.woff",
     "static/media/roboto-regular-webfont.woff": "/banda/static/media/roboto-regular-webfont.c11613e65a986e264c61.woff",
+    "static/media/side-view-people-training-gym 1-1.jpg": "/banda/static/media/side-view-people-training-gym 1-1.cc5a4a7d4e920c597b3b.jpg",
     "static/media/roboto-bold-webfont.woff2": "/banda/static/media/roboto-bold-webfont.6affc1eb1fc4222fdc6f.woff2",
     "static/media/roboto-medium-webfont.woff2": "/banda/static/media/roboto-medium-webfont.1c4475ba93829d5694e3.woff2",
     "static/media/roboto-regular-webfont.woff2": "/banda/static/media/roboto-regular-webfont.94b3074c171dd10548ea.woff2",
     "index.html": "/banda/index.html",
-    "main.b233dd28.css.map": "/banda/static/css/main.b233dd28.css.map",
-    "main.e38dd601.js.map": "/banda/static/js/main.e38dd601.js.map"
+    "static/media/calendar.svg": "/banda/static/media/calendar.bf3176bb1ea49b809c0b.svg",
+    "main.bcaae9f5.css.map": "/banda/static/css/main.bcaae9f5.css.map",
+    "main.a90240d0.js.map": "/banda/static/js/main.a90240d0.js.map"
   },
   "entrypoints": [
-    "static/css/main.b233dd28.css",
-    "static/js/main.e38dd601.js"
+    "static/css/main.bcaae9f5.css",
+    "static/js/main.a90240d0.js"
   ]
 }
