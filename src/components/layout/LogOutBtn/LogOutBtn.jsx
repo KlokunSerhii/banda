@@ -16,10 +16,13 @@ function LogOutBtn() {
   };
 
   return (
-    <button className={styles.btnLogout} type="button" onClick={onClick}>
-      <div className={styles.btnText}>Logout</div>
-      <MdLogout className={styles.btnLogout} />
-    </button>
+    <div >
+     
+      <button className={styles.btnLogout} type="button" onClick={onClick}>
+         <div className={styles.btnText}>Logout</div>
+        <MdLogout className={styles.btnIcon} />
+      </button>
+    </div>
   );
 }
 
