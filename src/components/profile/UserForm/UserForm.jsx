@@ -4,7 +4,7 @@ import style from './UserForm.module.css';
 import { object, string, number, date } from 'yup';
 import FormField from './FormField';
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, /* toast  */} from 'react-toastify';
+import { ToastContainer /* toast  */ } from 'react-toastify';
 
 const validationSchema = object({
   name: string().required(),
@@ -35,7 +35,10 @@ const defaultValues = {
 
 function UserForm() {
   const [submitDisabled, setSubmitDisabled] = useState(true);
-  // const [initialValues, setInitialValues] = useState(defaultValues);
+  const [
+    initialValues,
+    // setInitialValues
+  ] = useState(defaultValues);
 
   const formik = useRef();
 
@@ -62,7 +65,7 @@ function UserForm() {
     });
   };
 
- /* const handleSubmit = (values, actions) => {
+  /* const handleSubmit = (values, actions) => {
     const myPromise = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve();
@@ -72,33 +75,26 @@ function UserForm() {
     myPromise.then(
       () => {
         toast('Введите имя');
-        
+
         actions.resetForm();
       },
-      () => 
+      () =>
       toast('Введите имя')
     );
   };  */
- 
+
   return (
     <div className="container">
       <ToastContainer />
       <h1 className={style.title}>Profile Settings</h1>
-      
+
       <Formik
         innerRef={formik}
         initialValues={initialValues}
         validationSchema={validationSchema}
       >
-        {({
-          handleChange,
-          handleSubmit,
-          errors,
-        }) => (
-          <Form
-            className={style.form}
-            onChange={handleFormChange}
-          >
+        {({ handleChange, handleSubmit, errors }) => (
+          <Form className={style.form} onChange={handleFormChange}>
             <div id="basic-info" className={style.text}>
               Basic info
             </div>
