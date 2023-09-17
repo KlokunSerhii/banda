@@ -1,0 +1,217 @@
+.backGround {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../images/side-view-people-training-gym\ 1-1.jpg);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  padding-top: 127px;
+}
+
+.screen {
+  width: 335px;
+}
+@media screen and (min-width: 768px) {
+  .screen {
+    min-width: 496px;
+  }
+  .backGround {
+    padding-top: 141px;
+  }
+}
+
+.screen h2 {
+  color: var(--main-text-color);
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: calc(28 / 24);
+  margin-bottom: 14px;
+  text-transform: capitalize;
+}
+@media screen and (min-width: 768px) {
+  .screen h2 {
+    color: var(--main-text-color);
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: calc(44 / 32);
+    margin-bottom: 16px;
+  }
+}
+.enterText {
+  color: var(--transparent-medium-2);
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  margin-bottom: 28px;
+}
+@media screen and (min-width: 768px) {
+  .enterText {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+    margin-bottom: 32px;
+  }
+}
+.noaccount {
+  margin-top: 12px;
+  color: var(--transparent-light-2);
+  font-size: 12px;
+  line-height: calc(18 / 12);
+  margin-bottom: 121px;
+}
+
+.link {
+  margin-left: 5px;
+  color: var(--main-text-color);
+  text-decoration: underline;
+}
+
+.noAccBlock {
+  display: flex;
+  flex-direction: row;
+}
+.caloriesCountBox {
+  position: absolute;
+  right: 32px;
+  bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 8px;
+  border-radius: 12px;
+  background: var(--accent-medium-color);
+  width: 119px;
+  height: 76px;
+  padding-left: 18px;
+}
+@media screen and (min-width: 768px) {
+  .caloriesCountBox {
+    gap: 12px;
+    border-radius: 12px;
+    background: var(--accent-medium-color);
+    width: 180px;
+    height: 110px;
+    padding-left: 32px;
+  }
+}
+.caloriesCountBack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-light-color);
+  border-radius: 50%;
+}
+.runIcon {
+  fill: var(--main-text-color);
+}
+.caloriesCount {
+  color: var(--main-text-color);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: calc(18 / 16);
+}
+@media screen and (min-width: 768px) {
+  .caloriesCount {
+    font-size: 48px;
+    line-height: calc(50 / 48);
+  }
+}
+.caloriesTutorial {
+  color: var(--transparent-light-3);
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+}
+@media screen and (min-width: 768px) {
+  .caloriesTutorial {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+  }
+}
+.caloriesContent {
+  gap: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.videoCountBox {
+  position: absolute;
+  right: 385px;
+  bottom: 340px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  background: var(--transparent-dark-1);
+  width: 146px;
+  height: 66px;
+}
+@media screen and (min-width: 768px) {
+  .videoCountBox {
+    background: var(--transparent-dark-1);
+    width: 206px;
+    height: 96px;
+    gap: 12px;
+  }
+}
+.videoCountBack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-medium-transparent-color);
+  border-radius: 50%;
+}
+
+.videoPlayIcon {
+  width: 12px;
+  height: 12px;
+}
+@media screen and (min-width: 768px) {
+  .videoPlayIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .videoCountBack {
+    width: 40px;
+    height: 40px;
+  }
+}
+.videoCount {
+  color: var(--main-text-color);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: calc(18 / 16);
+}
+@media screen and (min-width: 768px) {
+  .videoCount {
+    font-size: 24px;
+    line-height: calc(24 / 24);
+  }
+}
+.videoTutorial {
+  color: var(--transparent-light-3);
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+}
+@media screen and (min-width: 768px) {
+  .videoTutorial {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+  }
+}

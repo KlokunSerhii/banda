@@ -1,126 +1,115 @@
 import React from 'react';
-import { ErrorMessage, Formik, Field, Form } from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { AiFillPlayCircle } from 'react-icons/ai';
-import { MdRunCircle } from 'react-icons/md';
-import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { AiFillCheckCircle } from 'react-icons/ai';
 
 import styles from './SignInForm.module.css';
 import { login } from '../../../redux/auth/operations';
-import bg from '../../../images/side-view-people-training-gym 1.jpg';
+import symbolDefs from '../../../images/symbol-defs.svg';
+
+const validationSchema = Yup.object({
+  email: Yup.string()
+    .email('Invalid email address')
+    .required('Please enter your email')
+    .matches(/^[\w.-]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}$/, 'Enter valid email'),
+  password: Yup.string()
+    .matches(
+      /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
+      'Should contain 6 symbols and at least 1 number'
+    )
+    .required('Please enter your password'),
+});
 
 function SignInForm() {
-  const email = '';
-  const password = '';
   const dispatch = useDispatch();
-
-  const handleSubmitLogin = ({ email, password }, { resetForm }) => {
+  const onSubmit = ({ email, password }, { resetForm }) => {
     dispatch(login({ email, password }));
     resetForm();
   };
-
-  // const validPassword =
-  //   /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
-  // const validEmail =
-  //   /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/;
-
-  const SignupSchemaLogin = Yup.object().shape({
-    password: Yup.string()
-      .min(2, 'Too Short!')
-      .max(50, 'Too Long!')
-      // .matches(validPassword)
-      .required('Please enter your password'),
-
-    email: Yup.string()
-      .email('invalid email')
-      // .matches(validEmail)
-      .required('Please enter your email'),
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema,
+    onSubmit,
   });
-
   return (
-    <div className={styles.containerSingIn}>
-      <div className={styles.imgContainer}>
-        <div className={styles.video}>
-          <AiFillPlayCircle className={styles.iconPlay} />
-          <div className={styles.videoInfo}>
-            <p className={styles.videoQuantity}>350+</p>
-            <p className={styles.videoText}>Video tutorial</p>
+    <form className={styles.singin} onSubmit={formik.handleSubmit}>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        autoComplete="email"
+        className={styles.signin__input}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.email}
+      />
+      {formik.touched.email ? (
+        formik.errors.email ? (
+          <div className={styles.errorMessage}>
+            <svg className={styles.errorIcon}>
+              <use
+                href={symbolDefs + '#checkbox-circle-fill-icon'}
+                width="16"
+                height="16"
+              ></use>
+            </svg>
+            {formik.errors.email}
           </div>
-        </div>
-        <div className={styles.calories}>
-          <MdRunCircle className={styles.iconRun} />
-          <div className={styles.caloriesInfo}>
-            <p className={styles.caloriesQuantity}>500</p>
-            <p className={styles.caloriesText}>cal</p>
+        ) : (
+          <div className={styles.successMessage}>
+            <svg className={styles.successIcon}>
+              <use
+                href={symbolDefs + '#checkbox-circle-fill-icon'}
+                width="16"
+                height="16"
+              ></use>
+            </svg>
+            Success email
           </div>
-        </div>
-        <img src={bg} alt="bg" className={styles.bg} />
-      </div>
-
-      <div className={styles.formContainer}>
-        <h1 className={styles.title}>Sign In</h1>
-        <p className={styles.welcome}>
-          Welcome! Please enter your credentials to login to the platform:
-        </p>
-
-        <Formik
-          initialValues={{ email, password }}
-          validationSchema={SignupSchemaLogin}
-          onSubmit={handleSubmitLogin}
-        >
-          <Form className={styles.form}>
-            <label className={styles.label}>
-              <Field
-                className={styles.input}
-                type="email"
-                name="email"
-                placeholder="Email"
-                autoComplete="off"
-              />
-            </label>
-            <ErrorMessage
-              name="email"
-              render={() => (
-                <div className={styles.errorMessage}>
-                  <AiFillCheckCircle className={styles.ErrorIcon} />
-                  {'Error email'}
-                </div>
-              )}
-            />
-
-            <label className={styles.label}>
-              <Field
-                className={styles.input}
-                type="password"
-                name="password"
-                placeholder="Password"
-                autoComplete="off"
-              />
-            </label>
-            <ErrorMessage
-              name="password"
-              render={() => (
-                <div className={styles.errorMessage}>
-                  <AiFillCheckCircle className={styles.ErrorIcon} />
-                  {'Error password'}
-                </div>
-              )}
-            />
-            <button className={styles.button} type="submit">
-              Sign In
-            </button>
-            <p className={styles.linkSingUp}>
-              Don’t have an account?
-              <NavLink to={'/singup'} className={styles.link}>
-                Sign Up
-              </NavLink>
-            </p>
-          </Form>
-        </Formik>
-      </div>
-    </div>
+        )
+      ) : null}
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        autoComplete="new-password"
+        className={styles.signin__input}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.password}
+      />
+      {formik.touched.password ? (
+        formik.errors.password ? (
+          <div className={styles.errorMessage}>
+            <svg className={styles.errorIcon}>
+              <use
+                href={symbolDefs + '#checkbox-circle-fill-icon'}
+                width="16"
+                height="16"
+              ></use>
+            </svg>
+            {formik.errors.password}
+          </div>
+        ) : (
+          <div className={styles.successMessage}>
+            <svg className={styles.successIcon}>
+              <use
+                href={symbolDefs + '#checkbox-circle-fill-icon'}
+                width="16"
+                height="16"
+              ></use>
+            </svg>
+            Success password
+          </div>
+        )
+      ) : null}
+      <button className={styles.signInBtn} type="submit">
+        Sign In
+      </button>
+    </form>
   );
 }
 

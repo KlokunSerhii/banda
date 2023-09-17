@@ -27,8 +27,8 @@ function Welcome() {
         {/* <img src={bg} alt="bg" className={styles.bg} /> */}
 
         <picture className={styles.bg}>
-          <source srcset={bgPhone} media="(max-width:1200px)" />
-          <source srcset={bg} media="(max-width:1200px)" />
+          <source srcSet={bgPhone} media="(max-width:1200px)" />
+          <source srcSet={bg} media="(max-width:1200px)" />
           <img className={styles.bg} src={bg} alt="Bowl with ice cream" />
         </picture>
 
