@@ -3,6 +3,8 @@ import { useState, useRef, useEffect } from 'react';
 import style from './UserForm.module.css';
 import { object, string, number, date } from 'yup';
 import FormField from './FormField';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, /* toast  */} from 'react-toastify';
 
 const validationSchema = object({
   name: string().required(),
@@ -37,7 +39,7 @@ function UserForm() {
 
   const formik = useRef();
 
-  useEffect(() => {
+  /* useEffect(() => {
     fetchUser().then(user => setInitialValues(user));
   }, []);
 
@@ -48,7 +50,7 @@ function UserForm() {
 
   const updateUser = user => {
     return fetch('/user/update', { method: 'POST', body: user });
-  };
+  }; */
 
   const handleFormChange = e => {
     setTimeout(() => {
@@ -60,7 +62,7 @@ function UserForm() {
     });
   };
 
-  const handleSubmit = (values, actions) => {
+ /* const handleSubmit = (values, actions) => {
     const myPromise = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve();
@@ -68,34 +70,33 @@ function UserForm() {
     });
 
     myPromise.then(
-      response => {
-        Notification.success();
+      () => {
+        toast('Введите имя');
+        
         actions.resetForm();
       },
-      reject => Notification.fail('SORRY U R HRUSHA')
+      () => 
+      toast('Введите имя')
     );
-  };
-
+  };  */
+ 
   return (
-    <div className={style.UserForm}>
+    <div className="container">
+      <ToastContainer />
       <h1 className={style.title}>Profile Settings</h1>
+      
       <Formik
         innerRef={formik}
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={handleSubmit}
       >
         {({
           handleChange,
           handleSubmit,
-          handleBlur,
-          values,
-          touched,
           errors,
         }) => (
           <Form
             className={style.form}
-            onSubmit={handleSubmit}
             onChange={handleFormChange}
           >
             <div id="basic-info" className={style.text}>
