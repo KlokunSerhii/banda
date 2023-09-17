@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast} from 'react-toastify';
 import { useAuth } from 'hooks';
 import axios from 'axios';
+import Container from 'components/Container/Container';
 
 
 const formSchema = {
@@ -139,7 +140,8 @@ function UserForm() {
   };
  
   return (
-    <div className={`${style.UserForm} container`}>
+    <Container>
+    <div className={`${style.UserForm} `}>
       <ToastContainer />
       <h1 className={style.title}>Profile Settings</h1>
 
@@ -337,6 +339,7 @@ function UserForm() {
         )}
       </Formik>
     </div>
+    </Container>
   );
 }
 
