@@ -8,10 +8,10 @@ import Profile from 'pages/Profile';
 import SignIn from 'pages/SignIn';
 import SignUp from 'pages/SignUp';
 import Welcome from 'pages/Welcome';
+import Page404 from 'components/Page404';
 import PublicRoute from 'routes/PublicRoute';
 import PrivateRoute from 'routes/PrivateRoute';
 import { ChakraProvider, Container } from '@chakra-ui/react';
-
 
 export const App = () => {
   return (
@@ -37,7 +37,10 @@ export const App = () => {
             <Route
               path="/exercises"
               element={
-                <PrivateRoute redirectto="/exercises" component={<Exercices />} />
+                <PrivateRoute
+                  redirectto="/exercises"
+                  component={<Exercices />}
+                />
               }
             />
             <Route
@@ -58,7 +61,7 @@ export const App = () => {
                 <PrivateRoute redirectto="/profile" component={<Profile />} />
               }
             />
-            <Route path="*" element={<div>NotFound </div>} />
+            <Route path="*" element={<Page404 />} />
           </Route>
         </Routes>
       </ChakraProvider>
