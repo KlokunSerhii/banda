@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom/dist';
 import SharedLayout from 'components/SharedLayout';
 import Diary from 'pages/Diary';
-import Exercices from 'pages/Exercices';
+import Exercises from 'pages/Exercises';
 import Params from 'pages/Params';
 import Products from 'pages/Products';
 import Profile from 'pages/Profile';
@@ -24,6 +24,7 @@ export const App = () => {
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
+
   return isRefreshing ? (
     <div>LODING.....</div>
   ) : (
@@ -46,7 +47,7 @@ export const App = () => {
             />
             <Route
               path="/exercises"
-              element={<PrivateRoute redirectto="/" component={Exercices} />}
+              element={<PrivateRoute redirectto="/" component={Exercises} />}
             />
             <Route
               path="/params"
@@ -58,7 +59,7 @@ export const App = () => {
             />
             <Route
               path="/profile"
-              element={<PublicRoute redirectto="/" component={Profile} />}
+              element={<PrivateRoute redirectto="/" component={Profile} />}
             />
 
             <Route path="*" element={<Page404 />} />

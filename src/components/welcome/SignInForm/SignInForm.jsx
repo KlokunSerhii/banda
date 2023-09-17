@@ -1,11 +1,11 @@
-import React from 'react';
-import { useFormik } from 'formik';
+import React, { useRef } from 'react';
+import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
+import FormField from './FormField';
 
 import styles from './SignInForm.module.css';
 import { login } from '../../../redux/auth/operations';
-import symbolDefs from '../../../images/symbol-defs.svg';
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -19,6 +19,10 @@ const validationSchema = Yup.object({
     )
     .required('Please enter your password'),
 });
+const initialValues = {
+  email: '',
+  password: '',
+};
 
 function SignInForm() {
   const dispatch = useDispatch();
@@ -26,90 +30,38 @@ function SignInForm() {
     dispatch(login({ email, password }));
     resetForm();
   };
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      password: '',
-    },
-    validationSchema,
-    onSubmit,
-  });
+
+  const formik = useRef();
+
   return (
-    <form className={styles.singin} onSubmit={formik.handleSubmit}>
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        autoComplete="email"
-        className={styles.signin__input}
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.email}
-      />
-      {formik.touched.email ? (
-        formik.errors.email ? (
-          <div className={styles.errorMessage}>
-            <svg className={styles.errorIcon}>
-              <use
-                href={symbolDefs + '#checkbox-circle-fill-icon'}
-                width="16"
-                height="16"
-              ></use>
-            </svg>
-            {formik.errors.email}
-          </div>
-        ) : (
-          <div className={styles.successMessage}>
-            <svg className={styles.successIcon}>
-              <use
-                href={symbolDefs + '#checkbox-circle-fill-icon'}
-                width="16"
-                height="16"
-              ></use>
-            </svg>
-            Success email
-          </div>
-        )
-      ) : null}
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        autoComplete="new-password"
-        className={styles.signin__input}
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.password}
-      />
-      {formik.touched.password ? (
-        formik.errors.password ? (
-          <div className={styles.errorMessage}>
-            <svg className={styles.errorIcon}>
-              <use
-                href={symbolDefs + '#checkbox-circle-fill-icon'}
-                width="16"
-                height="16"
-              ></use>
-            </svg>
-            {formik.errors.password}
-          </div>
-        ) : (
-          <div className={styles.successMessage}>
-            <svg className={styles.successIcon}>
-              <use
-                href={symbolDefs + '#checkbox-circle-fill-icon'}
-                width="16"
-                height="16"
-              ></use>
-            </svg>
-            Success password
-          </div>
-        )
-      ) : null}
-      <button className={styles.signInBtn} type="submit">
-        Sign In
-      </button>
-    </form>
+    <Formik
+      innerRef={formik}
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
+      {({ handleChange, handleSubmit, errors }) => (
+        <Form className={styles.singin}>
+          <FormField
+            type="email"
+            name="email"
+            placeholder="Email"
+            onChange={handleChange}
+            required
+          />
+          <FormField
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={handleChange}
+            required
+          />
+          <button className={styles.signInBtn} type="submit">
+            Sign In
+          </button>
+        </Form>
+      )}
+    </Formik>
   );
 }
 
