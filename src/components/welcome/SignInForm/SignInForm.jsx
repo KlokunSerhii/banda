@@ -8,7 +8,6 @@ import { login } from '../../../redux/auth/operations';
 import symbolDefs from '../../../images/symbol-defs.svg';
 
 const validationSchema = Yup.object({
-  name: Yup.string().required('Please enter your name'),
   email: Yup.string()
     .email('Invalid email address')
     .required('Please enter your email')
@@ -23,14 +22,10 @@ const validationSchema = Yup.object({
 
 function SignInForm() {
   const dispatch = useDispatch();
-
   const onSubmit = ({ email, password }, { resetForm }) => {
-    console.log(email, password);
-    console.log('clik');
     dispatch(login({ email, password }));
     resetForm();
   };
-
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -39,7 +34,6 @@ function SignInForm() {
     validationSchema,
     onSubmit,
   });
-
   return (
     <form className={styles.singin} onSubmit={formik.handleSubmit}>
       <input
@@ -52,7 +46,6 @@ function SignInForm() {
         onBlur={formik.handleBlur}
         value={formik.values.email}
       />
-
       {formik.touched.email ? (
         formik.errors.email ? (
           <div className={styles.errorMessage}>
@@ -113,7 +106,6 @@ function SignInForm() {
           </div>
         )
       ) : null}
-
       <button className={styles.signInBtn} type="submit">
         Sign In
       </button>
