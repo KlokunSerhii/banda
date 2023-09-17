@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/banda/static/css/main.01c579cf.css",
-    "main.js": "/banda/static/js/main.eb6fd1cc.js",
+    "main.css": "/banda/static/css/main.73a23ee0.css",
+    "main.js": "/banda/static/js/main.c035f51c.js",
     "static/media/side-view-people-training-gym-phone.jpg": "/banda/static/media/side-view-people-training-gym-phone.a73913a667ac0cb617dc.jpg",
     "static/media/side-view-people-training-gym 1.jpg": "/banda/static/media/side-view-people-training-gym 1.50728ab26a419a72385a.jpg",
     "static/media/symbol-defs.svg": "/banda/static/media/symbol-defs.a7cc0549c25a02b79c31a251a4ba0c9b.svg",
@@ -14,11 +14,11 @@
     "static/media/roboto-regular-webfont.woff2": "/banda/static/media/roboto-regular-webfont.94b3074c171dd10548ea.woff2",
     "index.html": "/banda/index.html",
     "static/media/calendar.svg": "/banda/static/media/calendar.bf3176bb1ea49b809c0b.svg",
-    "main.01c579cf.css.map": "/banda/static/css/main.01c579cf.css.map",
-    "main.eb6fd1cc.js.map": "/banda/static/js/main.eb6fd1cc.js.map"
+    "main.73a23ee0.css.map": "/banda/static/css/main.73a23ee0.css.map",
+    "main.c035f51c.js.map": "/banda/static/js/main.c035f51c.js.map"
   },
   "entrypoints": [
-    "static/css/main.01c579cf.css",
-    "static/js/main.eb6fd1cc.js"
+    "static/css/main.73a23ee0.css",
+    "static/js/main.c035f51c.js"
   ]
 }
