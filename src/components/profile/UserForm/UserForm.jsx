@@ -1,4 +1,6 @@
-import { Formik, Field, Form, setIn } from 'formik';
+import { Formik, Field, Form,
+        // setIn 
+       } from 'formik';
 import { useState, useRef, useEffect } from 'react';
 import style from './UserForm.module.css';
 import { object, string, number, date } from 'yup';
@@ -50,8 +52,8 @@ function UserForm() {
   const [submitDisabled, setSubmitDisabled] = useState(true);
   const { user } = useAuth();
   const [initialValues, setInitialValues] = useState({...defaultValues, ...user.name, ...user.email});
-  const [error, setError] = useState(false);
-  const [pending, setPending] = useState(false);
+  // const [error, setError] = useState(false);
+  // const [pending, setPending] = useState(false);
 
   const formik = useRef();
 
@@ -62,7 +64,7 @@ function UserForm() {
   // Обновляем состояние кнопки Submit
   useEffect(() => {
     checkIfDataChanged();
-  }, [initialValues])
+  }, [initialValues,checkIfDataChanged])
 
 
   // Получаем данные пользователя
