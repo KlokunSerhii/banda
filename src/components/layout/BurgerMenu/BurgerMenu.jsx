@@ -30,7 +30,7 @@ const BurgerMenu = ({ active, setActive }) => {
       return window.addEventListener('keydown', handleEscape);
     }
     return window.addEventListener('keydown', handleEscape);
-  }, [active]);
+  }, [active, closeMenu]);
 
   return (
     <>
