@@ -1,25 +1,38 @@
-import { Formik, Field, Form } from 'formik';
-import { useState, useRef } from 'react';
+import { Formik, Field, Form, setIn } from 'formik';
+import { useState, useRef, useEffect } from 'react';
 import style from './UserForm.module.css';
 import { object, string, number, date } from 'yup';
 import FormField from './FormField';
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer /* toast  */ } from 'react-toastify';
+import { ToastContainer, toast} from 'react-toastify';
+import { useAuth } from 'hooks';
+import axios from 'axios';
+import Container from 'components/Container/Container';
 
-const validationSchema = object({
+
+const formSchema = {
   name: string().required(),
-  height: number().min(150).required().integer(),
-  currentWeight: number().min(35).required().integer(),
-  desiredWeight: number().min(35).required().integer(),
-  blood: number().oneOf([1, 2, 3, 4]).required(),
+  height: number().min(150, 'Must be more than 150').required().integer(),
+  currentWeight: number().min(35, 'Must be more than 35').required().integer(),
+  desiredWeight: number().min(35, 'Must be more than 35').required().integer(),
+  blood: string().oneOf(["1", "2", "3", "4"]).required(),
   sex: string().oneOf(['male', 'female']).required(),
-  birthday: date().test('age', 'You must be 18 or older', function (birthdate) {
+  birthdate: date().test('age', 'You must be 18 or older', function (birthdate) {
     const cutoff = new Date();
     cutoff.setFullYear(cutoff.getFullYear() - 18);
     return birthdate <= cutoff;
   }),
+  levelActivity: string().oneOf(["1", "2", "3", "4"]).required(),
+};
+
+const validationSchema = object(formSchema);
+
+
+const backendSchema = object({
+  ...formSchema, 
+  blood: number().oneOf([1, 2, 3, 4]).required(),
   levelActivity: number().oneOf([1, 2, 3, 4]).required(),
-});
+})
 
 const defaultValues = {
   name: '',
@@ -27,35 +40,78 @@ const defaultValues = {
   height: '',
   currentWeight: '',
   desiredWeight: '',
-  birthday: '',
-  blood: '1',
-  sex: 'male',
-  levelActivity: '1',
+  birthdate: '',
+  blood: '',
+  sex: '',
+  levelActivity: '',
 };
 
 function UserForm() {
   const [submitDisabled, setSubmitDisabled] = useState(true);
-  const [
-    initialValues,
-    // setInitialValues
-  ] = useState(defaultValues);
+  const { user } = useAuth();
+  const [initialValues, setInitialValues] = useState({...defaultValues, ...user.name, ...user.email});
+  const [error, setError] = useState(false);
+  const [pending, setPending] = useState(false);
 
   const formik = useRef();
 
-  /* useEffect(() => {
-    fetchUser().then(user => setInitialValues(user));
+  useEffect(() => {
+    getCurrent();
   }, []);
 
-  const fetchUser = async () => {
-    const data = await fetch('/user/getInfo');
-    return await JSON.parse(data);
+  // Обновляем состояние кнопки Submit
+  useEffect(() => {
+    checkIfDataChanged();
+  }, [initialValues])
+
+
+  // Получаем данные пользователя
+  const getCurrent = async () => {
+    setPending(true);
+    try {
+      // Ожидаем данные пользователя с сервера
+      const { data } = await axios.get('/users/current');
+      const { user } = data;
+      const { name, email } = user;
+
+      // Обьединяем физические данные пользователя с именем и имейлом
+      const userData = {
+        name,
+        email,
+        ...user.bodyParams,
+      };
+      
+      validationSchema.validate(userData).then((formData) => {
+
+        // Конвертируем обьект даты в строку в нужном формате для элемента input
+        const newDate = new Intl.DateTimeFormat('en-GB').format(formData.birthdate).split('/').reverse().join('-');
+
+        // Заменяем значение даты на отформатированное
+        formData.birthdate = newDate;
+
+        // Обновляем изначальные данные формы для определения в будущем, изменились ли значения;
+        setInitialValues(formData);
+
+        // Устанавливаем новые значения формика
+        formik.current.initialValues = formData;
+        formik.current.setValues(formData);
+        setPending(false);
+      })
+    } catch (e) {
+      setError(e.message || 'Some error occured...');
+      setPending(false);
+    }
   };
 
-  const updateUser = user => {
-    return fetch('/user/update', { method: 'POST', body: user });
-  }; */
 
   const handleFormChange = e => {
+    console.log(formik.current)
+    checkIfDataChanged();
+  };
+
+
+  // Проверяем отличаются ли данные в форме от изначальных
+  const checkIfDataChanged = () => {
     setTimeout(() => {
       const { values, isValid } = formik.current;
       const isDataEqual = Object.keys(initialValues).every(
@@ -63,28 +119,29 @@ function UserForm() {
       );
       setSubmitDisabled(isDataEqual || !isValid);
     });
+  }
+
+ const handleSubmit = (values, actions) => {
+    const { name, email, ...bodyParams } = backendSchema.cast(values);
+    bodyParams.defaultParams = false;
+    values.defaultParams = false;
+    
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("bodyParams", JSON.stringify(bodyParams))
+
+    axios.patch('/users/current', formData).then((res) => {
+      setInitialValues(values);
+      formik.current.initialValues = values;
+      toast.success('Your profile has been successfully updated');
+    }, 
+      () => toast.error('Sorry, profile update failed...'));
   };
-
-  /* const handleSubmit = (values, actions) => {
-    const myPromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve();
-      }, 1000);
-    });
-
-    myPromise.then(
-      () => {
-        toast('Введите имя');
-
-        actions.resetForm();
-      },
-      () =>
-      toast('Введите имя')
-    );
-  };  */
-
+ 
   return (
-    <div className="container">
+    <Container>
+    <div className={`${style.UserForm} `}>
       <ToastContainer />
       <h1 className={style.title}>Profile Settings</h1>
 
@@ -92,6 +149,7 @@ function UserForm() {
         innerRef={formik}
         initialValues={initialValues}
         validationSchema={validationSchema}
+        onSubmit={handleSubmit}
       >
         {({ handleChange, handleSubmit, errors }) => (
           <Form className={style.form} onChange={handleFormChange}>
@@ -105,7 +163,6 @@ function UserForm() {
                 placeholder="Name"
                 aria-labelledby="basic-info"
                 required
-                onkeydown="return /[a-z]/i.test(event.key)"
               />
               <FormField
                 type="email"
@@ -146,7 +203,7 @@ function UserForm() {
               <FormField
                 className={style.input_4}
                 type="date"
-                name="birthday"
+                name="birthdate"
               />
             </div>
             <div
@@ -271,7 +328,6 @@ function UserForm() {
               </label>
             </div>
 
-            {errors.name && <div id="feedback">{errors.name}</div>}
             <button
               className={style.button}
               type="submit"
@@ -283,6 +339,7 @@ function UserForm() {
         )}
       </Formik>
     </div>
+    </Container>
   );
 }
 

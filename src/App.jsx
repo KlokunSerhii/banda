@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom/dist';
 import SharedLayout from 'components/SharedLayout';
 import Diary from 'pages/Diary';
-import Exercices from 'pages/Exercices';
+import Exercises from 'pages/Exercises';
 import Params from 'pages/Params';
 import Products from 'pages/Products';
 import Profile from 'pages/Profile';
@@ -11,12 +11,24 @@ import Welcome from 'pages/Welcome';
 import Page404 from 'components/Page404';
 import PublicRoute from 'routes/PublicRoute';
 import PrivateRoute from 'routes/PrivateRoute';
-import { ChakraProvider, Container } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { useAuth } from 'hooks';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshUser } from 'redux/auth/operations';
 
 export const App = () => {
-  return (
-    <Container bg="#040404">
-      <ChakraProvider>
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <div>LODING.....</div>
+  ) : (
+    <ChakraProvider>£
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Welcome />} />
@@ -33,8 +45,8 @@ export const App = () => {
               element={<PrivateRoute redirectto="/" component={Diary} />}
             />
             <Route
-              path="/exercices"
-              element={<PrivateRoute redirectto="/" component={Exercices} />}
+              path="/exercises"
+              element={<PrivateRoute redirectto="/" component={Exercises} />}
             />
             <Route
               path="/params"
@@ -46,13 +58,13 @@ export const App = () => {
             />
             <Route
               path="/profile"
-              element={<PublicRoute redirectto="/" component={Profile} />}
+              element={<PrivateRoute redirectto="/" component={Profile} />}
             />
 
             <Route path="*" element={<Page404 />} />
           </Route>
         </Routes>
       </ChakraProvider>
-    </Container>
+    
   );
 };
