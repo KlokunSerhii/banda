@@ -11,7 +11,7 @@ import Welcome from 'pages/Welcome';
 import Page404 from 'components/Page404';
 import PublicRoute from 'routes/PublicRoute';
 import PrivateRoute from 'routes/PrivateRoute';
-import { ChakraProvider, Container } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { useAuth } from 'hooks';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -28,8 +28,7 @@ export const App = () => {
   return isRefreshing ? (
     <div>LODING.....</div>
   ) : (
-    <Container bg="#040404">
-      <ChakraProvider>
+    <ChakraProvider>£
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Welcome />} />
@@ -66,6 +65,6 @@ export const App = () => {
           </Route>
         </Routes>
       </ChakraProvider>
-    </Container>
+    
   );
 };
