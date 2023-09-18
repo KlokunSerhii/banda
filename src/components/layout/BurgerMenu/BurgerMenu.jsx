@@ -1,13 +1,15 @@
 import { NavLink } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useCallback  } from 'react';
 // import PropTypes from 'prop-types';
 import LogOutBtn from '../LogOutBtn';
 import styles from './BurgerMenu.module.css';
 
 const BurgerMenu = ({ active, setActive }) => {
-  const closeMenu = () => {
-    setActive(false);
-  };
+  
+   const closeMenu = useCallback((setActive) => {
+     setActive(false)
+  },[])
+ 
 
   // const handleEscape = event => {
   //   if (event.key === 'Escape') {
