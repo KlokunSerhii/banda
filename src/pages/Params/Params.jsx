@@ -1,7 +1,10 @@
 import React from 'react';
+import ParamsForm from 'components/params/ParamsForm';
 
 function Params() {
-  return <div style={{ color: 'red' }}>Params</div>;
+  return <div>
+    <ParamsForm/>
+  </div>;
 }
 
 export default Params;
