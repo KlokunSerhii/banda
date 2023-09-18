@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import { Tabs, Tab, TabList, Box } from '@chakra-ui/react';
 import styles from './UseNav.module.css';
 
 function UserNav() {
   return (
     <nav className={styles.navList}>
-      <Link className={styles.navItem} to="/diary">
+      <NavLink className={styles.navItem} to="/diary">
         Diary
-      </Link>
-      <Link className={styles.navItem} to="/products">
+      </NavLink>
+      <NavLink className={styles.navItem} to="/products">
         Products
-      </Link>
+      </NavLink>
       <NavLink className={styles.navItem} to="/exercises">
         Exercises
       </NavLink>

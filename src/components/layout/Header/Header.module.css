@@ -1,80 +1,56 @@
-.header {
-  position: fixed;
-  height: 84px;
-  padding: 12px 18px;
- display: flex;
+header {
+  display: flex;
   justify-content: space-between;
-  gap: 96px;
-  align-items: center;
-  font-size: 24px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 18px 19px;
+  width: 100%;
 
   @media screen and (min-width: 375px) {
-    gap: 415px;
-    padding: 19px 26px;
+    height: 61px;
+    gap: 96px;
   }
 
   @media screen and (min-width: 768px) {
-        gap: 415px;
+    gap: 415px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 84px;
     padding: 20px 96px;
+    gap: 514px;
   }
 }
 
 .wrapNavDesktop {
   display: none;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
     display: flex;
+    justify-content: space-between;
+    gap: 32px;
     align-items: center;
-    gap: 27px;
+    font-size: 24px;
+    z-index: 999;
   }
 }
 
 .wrapNavMob {
   display: flex;
   align-items: center;
-  gap: 27px;
-  margin-left: 14px;
-
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-}
-
-.useBar {
-  margin-right: 16px;
-}
-.mobMenu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  bottom: 0;
- 
   
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 19px 20px;
-
-  width: 200px;
-  height: 100vh;
-  background-color: #e6533c;
-  z-index: 10;
-  transition: left 0.3s linear;
-
-
   @media screen and (min-width: 375px) {
-    width: 350px;
+   gap: 27px;
+  margin-left: 14px;
   }
 
   @media screen and (min-width: 768px) {
+   
+  }
+
+  @media screen and (min-width: 1440px) {
     display: none;
   }
-}
-
-.active {
-  right: 0;
 }
 
 .mobileBtn {
@@ -82,8 +58,8 @@
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 10;
- 
+  z-index: 999;
+
   border: none;
   width: 24px;
   height: 24px;
@@ -117,45 +93,4 @@
   @media screen and (min-width: 767px) {
     display: none;
   }
-
 }
-
-/* @media (max-width: 768px) {
-  .mobMenu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 19px 20px;
-    width: 200px;
-    height: 100%;
-    background-color: #e6533c;
-    transition: left 0.3s linear;
-  }
-
-  .mobMenu:active {
-    transform: translateX(100%);
-  }
-
-  .headerMenuBtn {
-    display: block;
-    margin-left: auto;
-    fill: #e6533c;
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    border: none;
-  }
-
-  .headerCloseBtn {
-    position: relative;
-    top: 0;
-    right: 0;
-    display: block;
-    fill: #efede8;
-    width: 24px;
-    height: 24px;
-  }
-} */

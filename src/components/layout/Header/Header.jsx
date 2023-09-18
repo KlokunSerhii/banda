@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
-
+import { RiMenu2Line, RiCloseFill } from 'react-icons/ri';
+import { useAuth } from 'hooks';
 import Logo from '../Logo';
-import styles from './Header.module.css';
 import UserNav from '../UserNav';
 import UserBar from '../UserBar';
 import LogOutBtn from '../LogOutBtn';
-import { useAuth } from 'hooks';
-import { RiMenu2Line, RiCloseFill } from 'react-icons/ri';
-
-// import './Header.css';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import styles from './Header.module.css';
 
 function Header() {
   const { isLoggedIn } = useAuth();
-  const [nav, setNav] = useState(false);
+  const [menuActive, setMenuActive] = useState(false);
 
   return (
     <header className={styles.header}>
       <Logo />
-
-      {isLoggedIn && (
+      {!isLoggedIn && (
         <>
           <div className={styles.wrapNavDesktop}>
             <UserNav />
@@ -28,30 +25,24 @@ function Header() {
 
           <div className={styles.wrapNavMob}>
             <UserBar />
-            <div
-              className={
-                nav
-                  ? [styles.mobMenu, styles.active].join(' ')
-                  : [styles.mobMenu]
-              }
-            >
-              <UserNav />
-              <LogOutBtn />
-            </div>
-            <button className={styles.headerCloseBtn}>
-              <RiCloseFill />
-            </button>
+            <BurgerMenu
+              active={menuActive}
+              setActive={setMenuActive}
+              className={styles.mobMenu}
+            />
           </div>
+          <button
+            className={styles.mobileBtn}
+            onClick={() => setMenuActive(!menuActive)}
+          >
+            {menuActive ? (
+              <RiCloseFill className={styles.closeIcon} />
+            ) : (
+              <RiMenu2Line className={styles.mobileIcon} />
+            )}
+          </button>
         </>
       )}
-
-      <div onClick={() => setNav(!nav)} className={styles.mobileBtn}>
-        {nav ? (
-          <RiCloseFill className={styles.closeIcon} />
-        ) : (
-          <RiMenu2Line className={styles.mobileIcon} />
-        )}
-      </div>
     </header>
   );
 }
