@@ -7,8 +7,6 @@ function Logo() {
     <NavLink to="/" className={styles.wrapLogo}>
       <span>
         <svg
-          width="44"
-          height="17"
           viewBox="0 0 44 17"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
