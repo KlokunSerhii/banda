@@ -1,4 +1,4 @@
-import SignUpForm from 'components/welcome/SignUpForm';
+import SignUpForm from 'components/SignUpForm';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import symbolDefs from '../../images/symbol-defs.svg';
