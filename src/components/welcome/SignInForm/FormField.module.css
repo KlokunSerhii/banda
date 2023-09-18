@@ -1,15 +1,15 @@
 .input {
-  width: 341px;
-  height: 52px;
-  font-size: 16px;
-  margin-top: 8px;
-  margin-bottom: 5px;
-  padding: 14px;
-  border-radius: 12px;
-  color: var(--transparent-light-1);
+  display: block;
   outline: none;
+  height: 46px;
+  min-width: 283px;
   background-color: transparent;
-  border: 1px solid #efede84d;
+  color: var(--transparent-medium-2);
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  border-radius: 12px;
+  border: 1px solid var(--transparent-light-2);
+  padding: 14px;
   &::placeholder {
     color: var(--transparent-light-2);
   }
@@ -18,6 +18,12 @@
   &:active {
     border: 1px solid var(--accent-bright-transparent-color);
   }
+  @media screen and (min-width: 768px) {
+    height: 52px;
+    max-width: 364px;
+    font-size: 16px;
+    line-height: calc(24 / 16);
+}
 }
 .message {
   display: none;
@@ -37,7 +43,6 @@
   letter-spacing: 0.12px;
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
   height: 18px;
 }
 .errorIcon {
@@ -52,7 +57,6 @@
   letter-spacing: 0.12px;
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
   height: 18px;
 }
 .successIcon {
