@@ -5,15 +5,15 @@ import LogOutBtn from '../LogOutBtn';
 import styles from './BurgerMenu.module.css';
 
 const BurgerMenu = ({ active, setActive }) => {
-  const closeMenu = () => {
-    setActive(false);
-  };
+  // const closeMenu = () => {
+  //   setActive(false);
+  // };
 
-  const handleEscape = event => {
-    if (event.key === 'Escape') {
-      closeMenu();
-    }
-  };
+  // const handleEscape = event => {
+  //   if (event.key === 'Escape') {
+  //     closeMenu();
+  //   }
+  // };
 
   // const handleBackdropClick = event => {
   //   if (event.target === event.currentTarget) {
@@ -22,11 +22,18 @@ const BurgerMenu = ({ active, setActive }) => {
   // };
 
   useEffect(() => {
+      const closeMenu = () => {
+    setActive(false);
+  };
+      const handleEscape = event => {
+    if (event.key === 'Escape')closeMenu();
+  };
+    
     if (active) {
       return window.addEventListener('keydown', handleEscape);
     }
     return window.addEventListener('keydown', handleEscape);
-  }, [active, handleEscape]);
+  }, [active]);
 
   return (
     <>
