@@ -1,0 +1,29 @@
+.signUpBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: calc(18 / 16);
+  margin-top: 28px;
+  margin-bottom: 12px;
+  padding: 12px 40px;
+  background-color: var(--accent-bright-transparent-color);
+  color: var(--main-text-color);
+  border-radius: 12px;
+  border: 1px solid var(--transparent-medium-2);
+
+  @media screen and (min-width: 768px) {
+    margin-top: 64px;
+  }
+}
+.signUpBtn:hover {
+  color: var(--main-text-color);
+  background: var(--accent-light-color);
+}
+
+.singup {
+  row-gap: 18px;
+}

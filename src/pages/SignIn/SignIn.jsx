@@ -1,5 +1,5 @@
 import Container from 'components/Container';
-import SignInForm from 'components/welcome/SignInForm';
+import SignInForm from 'components/SignInForm';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './SignIn.module.css';
@@ -32,19 +32,19 @@ function SignIn() {
               <p className={styles.caloriesTutorial}>cal</p>
             </div>
           </div>
-            <h2>Sign in</h2>
-            <p className={styles.enterText}>
-              Please enter your credentials to login to the platform:
-            </p>
+          <h2>Sign in</h2>
+          <p className={styles.enterText}>
+            Please enter your credentials to login to the platform:
+          </p>
 
-            <SignInForm />
+          <SignInForm />
 
-            <p className={styles.noaccount}>
-              Don't have an account?
-              <NavLink to="/singup" className={styles.link}>
-                Sign Up
-              </NavLink>
-            </p>
+          <p className={styles.noaccount}>
+            Don't have an account?
+            <NavLink to="/singup" className={styles.link}>
+              Sign Up
+            </NavLink>
+          </p>
         </div>
       </Container>
     </section>
