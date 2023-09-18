@@ -25,6 +25,7 @@ const BurgerMenu = ({ active, setActive }) => {
     if (active) {
       return window.addEventListener('keydown', handleEscape);
     }
+    return window.addEventListener('keydown', handleEscape);
   }, [active]);
 
   return (
