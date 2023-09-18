@@ -16,11 +16,14 @@
 }
 .bg {
   width: 670px;
+  
   /* background: linear-gradient(89deg, #040404 1.1%,
    rgba(4, 4, 4, 0.00) 70.79%),
    lightgray 50% / cover no-repeat; */
 
 }
+
+
 .title {
   margin-bottom: 16px;
   font-weight: 700;
@@ -38,6 +41,7 @@ display: flex;
 align-items: center;
 color: #EFEDE8;
 
+padding: 0;
 outline: none;
 border: none;
 background: transparent;
@@ -48,6 +52,35 @@ font-weight: 400;
 line-height: 24px; /* 150% */
 }
 
+.backBtn{
+display: flex;
+align-items: center;
+
+color: rgba(239, 237, 232, 0.60);
+
+margin-right: 16px;
+padding: 0;
+outline: none;
+border: none;
+background: transparent;
+
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+
+
+
+
+.errorMsg{
+  align-items: flex-end;
+  width:153px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #b4210a;
+}
+
 .descriptionWrapper{
   display: flex;
   flex-direction: column;
@@ -56,16 +89,19 @@ line-height: 24px; /* 150% */
 
 }
 
+/* Form-width 600px */
 .formWrapper {
   width:600px;
 
-  margin-bottom: 32px;
 }
 
 .formList{
 display: flex;
 flex-wrap: wrap;
-align-items: center;
+align-items: flex-end;
+
+  margin-bottom: 32px;
+
 
 }
 
@@ -192,7 +228,7 @@ width: 174px;
     border: 1px solid #E6533C;
 }
 
-.formDatapickerInput{
+.formDatepickerInput{
 color: #EFEDE8;
 outline: none;
 background: transparent;
@@ -208,10 +244,11 @@ width: 153px;
 
 }
 
-.formDatapickerInput:focus{  
+.formDatepickerInput:focus{  
     border: 1px solid #E6533C;
 }
 
+/* Calendar */
 input[type="date"] { 
   background: transparent;
   color: white;
@@ -221,6 +258,222 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(100%);
 }
 
-.formDatapickerWrapper{
-    color: #E6533C;
+.formDatepickerWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Img Container */
+
+.video {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 206px;
+  height: 96px;
+  padding: 20px 23px;
+  background-color: #303030;
+  border-radius: 12px;
+}
+
+.videoQuantity {
+  font-weight: 700;
+  font-size: 24px;
+  color: #efede8;
+}
+
+.videoText {
+  font-size: 16px;
+  color: #efede8a6;
+}
+
+.videoInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 12px;
+}
+
+.users {
+  position: absolute;
+  right: 32px;
+  bottom: 171px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 180px;
+  height: 110px;
+  padding: 14px 28px;
+  background-color: #ef8964;
+  border-radius: 12px;
+}
+
+.usersQuantity {
+  font-weight: 700;
+  font-size: 48px;
+  color: #efede8;
+}
+
+.usersText {
+  margin-left: 11px;
+  font-size: 16px;
+  color: #efede8a6;
+}
+
+.usersInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+
+.imgContainer {
+  position: relative;
+}
+
+.iconPlay {
+  width: 40px;
+  height: 40px;
+  fill: #ef8964;
+}
+
+.iconRun {
+  position: relative;
+  top: 10%;
+  left: 10%;
+
+  width: 20px;
+  height: 20px;
+
+  fill: #efede8;
+}
+
+.cyrcleRun{
+ 
+  width: 24px;
+  height: 24px;
+  background-color: #efa082;
+  border-radius: 54%;
+}
+
+.iconWatch{
+  position: relative;
+  top: 15%;
+  left: 16%;
+  outline: none;
+  border: none;
+  color: #EFEDE8;
+
+}
+
+
+.ErrorIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  fill: #d80027;
+}
+
+/* Params Second Step */
+.secondStepWrapper{
+  display: flex;
+  /* flex-direction: column; */
+}
+
+
+.radioWrapper{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.radioWrapper:not(:last-child){
+  margin-right: 64px;
+}
+
+
+
+.secondStepActivities{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+
+}
+
+
+.secondStepDescription{
+color: #EFEDE8;
+
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+
+margin-bottom: 16px;
+}
+
+.secondStepLabel{
+color: #EFEDE8;
+
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+}
+
+
+.secondStepNav{
+  display: flex;
+}
+
+
+
+/* Radio Btns */
+
+.radio {
+  margin-right: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  cursor: pointer;
+  transform: translateY(0.325em);
+}
+
+.radio::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 999999px;
+  border: 2px solid gray;
+  transition: border-color 0.25s;
+}
+
+.radio::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%) scale(0.75);
+  display: block;
+  opacity: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: 999999px;
+  background-color: #efa082;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.radio:checked::after {
+  opacity: 1;
+  transform: translate(-50%, 50%) scale(1);
+}
+
+.radio:checked::before {
+  border-color: #efa082;
 }
