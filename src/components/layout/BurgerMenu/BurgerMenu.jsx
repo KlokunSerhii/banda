@@ -5,9 +5,9 @@ import LogOutBtn from '../LogOutBtn';
 import styles from './BurgerMenu.module.css';
 
 const BurgerMenu = ({ active, setActive }) => {
-  // const closeMenu = () => {
-  //   setActive(false);
-  // };
+  const closeMenu = () => {
+    setActive(false);
+  };
 
   // const handleEscape = event => {
   //   if (event.key === 'Escape') {
@@ -22,9 +22,6 @@ const BurgerMenu = ({ active, setActive }) => {
   // };
 
   useEffect(() => {
-      const closeMenu = () => {
-    setActive(false);
-  };
       const handleEscape = event => {
     if (event.key === 'Escape')closeMenu();
   };
