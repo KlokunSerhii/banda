@@ -1,8 +1,7 @@
-import { Formik, Field, Form, 
-        // setIn 
-       } from 'formik';
+import { Formik, Field, Form } from 'formik';
 import { useState, useRef, 
-        // useEffect 
+        useEffect, 
+        useCallback
        } from 'react';
 import style from './UserForm.module.css';
 import { object, string, number, date } from 'yup';
@@ -54,94 +53,98 @@ function UserForm() {
   const [submitDisabled, setSubmitDisabled] = useState(true);
   const { user } = useAuth();
   const [initialValues, setInitialValues] = useState({...defaultValues, ...user.name, ...user.email});
-  // const [error, setError] = useState(false);
-  // const [pending, setPending] = useState(false);
+  const [, setError] = useState(false);
+  const [, setPending] = useState(false);
 
   const formik = useRef();
 
-  // useEffect(() => {
-  //   getCurrent();
-  // }, []);
-
-  // Обновляем состояние кнопки Submit
-  // useEffect(() => {
-  //   checkIfDataChanged();
-  // }, [initialValues])
-
-
-  // Получаем данные пользователя
-  // const getCurrent = async () => {
-  //   setPending(true);
-  //   try {
-  //     // Ожидаем данные пользователя с сервера
-  //     const { data } = await axios.get('/users/current');
-  //     const { user } = data;
-  //     const { name, email } = user;
-
-  //     // Обьединяем физические данные пользователя с именем и имейлом
-  //     const userData = {
-  //       name,
-  //       email,
-  //       ...user.bodyParams,
-  //     };
-      
-  //     validationSchema.validate(userData).then((formData) => {
-
-  //       // Конвертируем обьект даты в строку в нужном формате для элемента input
-  //       const newDate = new Intl.DateTimeFormat('en-GB').format(formData.birthdate).split('/').reverse().join('-');
-
-  //       // Заменяем значение даты на отформатированное
-  //       formData.birthdate = newDate;
-
-  //       // Обновляем изначальные данные формы для определения в будущем, изменились ли значения;
-  //       setInitialValues(formData);
-
-  //       // Устанавливаем новые значения формика
-  //       formik.current.initialValues = formData;
-  //       formik.current.setValues(formData);
-  //       setPending(false);
-  //     })
-  //   } catch (e) {
-  //     setError(e.message || 'Some error occured...');
-  //     setPending(false);
-  //   }
-  // };
-
-
-  const handleFormChange = e => {
-    console.log(formik.current)
-    checkIfDataChanged();
-  };
-
-
   // Проверяем отличаются ли данные в форме от изначальных
-  const checkIfDataChanged = () => {
+  const checkIfDataChanged = useCallback(() => {
     setTimeout(() => {
       const { values, isValid } = formik.current;
+      // Проходим по все ключам формы и сравниваем со значениями изначального состояния
       const isDataEqual = Object.keys(initialValues).every(
         key => initialValues[key] === values[key]
       );
       setSubmitDisabled(isDataEqual || !isValid);
     });
-  }
+  }, [initialValues]);
 
- const handleSubmit = (values, actions) => {
+  // Получаем данные пользователя
+  const getCurrent = async () => {
+    setPending(true);
+    try {
+      // Ожидаем данные пользователя с сервера
+      const { data } = await axios.get('/users/current');
+      const { user } = data;
+      const { name, email } = user;
+
+      // Обьединяем физические данные пользователя с именем и имейлом
+      const userData = {
+        name,
+        email,
+        ...user.bodyParams,
+      };
+      
+      validationSchema.validate(userData).then((formData) => {
+
+        // Конвертируем обьект даты в строку в нужном формате для элемента input
+        const newDate = new Intl.DateTimeFormat('en-GB').format(formData.birthdate).split('/').reverse().join('-');
+
+        // Заменяем значение даты на отформатированное
+        formData.birthdate = newDate;
+
+        // Обновляем изначальные данные формы для определения в будущем, изменились ли значения;
+        setInitialValues(formData);
+
+        // Устанавливаем новые значения формика
+        formik.current.initialValues = formData;
+        formik.current.setValues(formData);
+        setPending(false);
+      })
+    } catch (e) {
+      setError(e.message || 'Some error occured...');
+      setPending(false);
+    }
+  };
+
+  const handleFormChange = useCallback(() => {
+    checkIfDataChanged();
+  }, [checkIfDataChanged]);
+
+
+ const handleSubmit = (values) => {
     const { name, email, ...bodyParams } = backendSchema.cast(values);
     bodyParams.defaultParams = false;
     values.defaultParams = false;
     
+    // Создаем новую форму для отправки на сервер
     const formData = new FormData();
     formData.append("name", name);
     formData.append("email", email);
+    // Добавляем параметры тела пользователя в форму в виде строки (обычный обьект сервер не принимает)
     formData.append("bodyParams", JSON.stringify(bodyParams))
 
+    // Отправляем запрос на сервер
     axios.patch('/users/current', formData).then((res) => {
+      // При упешном обновлении данных пользователя перезаписываем изначальные данные пользователи (для отслеживания изменений)
       setInitialValues(values);
       formik.current.initialValues = values;
       toast.success('Your profile has been successfully updated');
     }, 
+      // Обрабатываем ошибку
       () => toast.error('Sorry, profile update failed...'));
   };
+
+  // Получаем изначальные данные пользователя при первой загрузке
+  useEffect(() => {
+    getCurrent();
+  }, []);
+
+  // Обновляем состояние кнопки Submit при изменений значений формы
+  useEffect(() => {
+    checkIfDataChanged();
+  }, [initialValues, checkIfDataChanged]);
  
   return (
     <Container>
@@ -155,7 +158,7 @@ function UserForm() {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ handleChange, handleSubmit, errors }) => (
+        {({ handleChange }) => (
           <Form className={style.form} onChange={handleFormChange}>
             <div id="basic-info" className={style.text}>
               Basic info
