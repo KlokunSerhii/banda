@@ -27,63 +27,9 @@
 .singin {
   row-gap: 18px;
 }
-.signin__input {
-  display: block;
-  outline: none;
-  height: 46px;
-  min-width: 283px;
-  background-color: transparent;
-  color: var(--transparent-medium-2);
-  font-size: 14px;
-  line-height: calc(18 / 14);
-  border-radius: 12px;
-  border: 1px solid var(--transparent-light-2);
-  margin-bottom: 18px;
-  padding: 14px;
-}
-.signin__input:hover,
-.signin__input:focus,
-.signin__input:active {
-  outline-offset: 0;
-  border: 1px solid var(--accent-bright-transparent-color);
-}
 
-@media screen and (min-width: 768px) {
-  .signin__input {
-    height: 52px;
-    max-width: 364px;
-    font-size: 16px;
-    line-height: calc(24 / 16);
-  }
-}
 
-.errorMessage {
-  color: var(--negative-color);
-  font-size: 12px;
-  line-height: calc(18 / 12);
-  letter-spacing: 0.12px;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 20px;
-  height: 18px;
-}
-.errorIcon {
-  width: 16px;
-  display: inline-block;
-  fill: var(--negative-color);
-}
-.successMessage {
-  color: var(--positive-color);
-  font-size: 12px;
-  line-height: calc(18 / 12);
-  letter-spacing: 0.12px;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 20px;
-  height: 18px;
-}
-.successIcon {
-  width: 16px;
-  display: inline-block;
-  fill: var(--positive-color);
-}
+
+
+
+

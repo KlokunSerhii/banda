@@ -32,7 +32,6 @@ function SignIn() {
               <p className={styles.caloriesTutorial}>cal</p>
             </div>
           </div>
-          <div className={styles.screen__content}>
             <h2>Sign in</h2>
             <p className={styles.enterText}>
               Please enter your credentials to login to the platform:
@@ -46,7 +45,6 @@ function SignIn() {
                 Sign Up
               </NavLink>
             </p>
-          </div>
         </div>
       </Container>
     </section>

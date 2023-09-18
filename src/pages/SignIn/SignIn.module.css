@@ -2,27 +2,26 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url(../../images/side-view-people-training-gym\ 1-1.jpg);
+  background-image: url(../../images/side-view-people-training-gym@1x.jpg);
   background-position: right bottom;
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0 auto;
   padding-top: 127px;
+  @media screen and (min-width: 768px) {
+    padding-top: 141px;
+  }
+  @media screen and (min-width: 1440px) {
+    background-image: url(../../images/side-view-people-training-gym\ 1-1.jpg);
+  }
 }
 .screen {
   width: 335px;
-}
-@media screen and (min-width: 768px) {
-  .screen {
-    min-width: 496px;
-  }
-  .backGround {
-    padding-top: 141px;
+  @media screen and (min-width: 768px) {
+      min-width: 496px;
   }
 }
-.screen__content {
-  padding: 28px 20px;
-}
+
 .screen h2 {
   color: var(--main-text-color);
   font-family: Roboto;
@@ -80,8 +79,8 @@
 
 .caloriesCountBox {
   position: absolute;
-  right: 32px;
-  bottom: 150px;
+  right: 20px;
+  bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,17 +91,28 @@
   width: 119px;
   height: 76px;
   padding-left: 18px;
-}
-@media screen and (min-width: 768px) {
-  .caloriesCountBox {
+  @media screen and (min-width: 768px) {
+      right: 32px;
+      bottom: 48px;
+      gap: 12px;
+      border-radius: 12px;
+      background: var(--accent-medium-color);
+      width: 180px;
+      height: 110px;
+      padding-left: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+    right: 32px;
+    bottom: 150px;
     gap: 12px;
     border-radius: 12px;
     background: var(--accent-medium-color);
     width: 180px;
     height: 110px;
     padding-left: 32px;
-  }
 }
+}
+
 .caloriesCountBack {
   display: flex;
   justify-content: center;
@@ -148,8 +158,8 @@
 
 .videoCountBox {
   position: absolute;
-  right: 385px;
-  bottom: 340px;
+  right: 108px;
+  bottom: 186px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -160,15 +170,22 @@
   background: var(--transparent-dark-1);
   width: 146px;
   height: 66px;
+  @media screen and (min-width: 768px) {
+    right: 231px;
+    bottom: 214px;
+    width: 206px;
+    height: 96px;
+    gap: 12px;
 }
-@media screen and (min-width: 768px) {
-  .videoCountBox {
-    background: var(--transparent-dark-1);
+  @media screen and (min-width: 1440px) {
+    right: 385px;
+    bottom: 340px;
     width: 206px;
     height: 96px;
     gap: 12px;
   }
 }
+
 .videoCountBack {
   display: flex;
   justify-content: center;
