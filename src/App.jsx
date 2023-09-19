@@ -1,4 +1,4 @@
-import { lazy, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom/dist';
 import { useDispatch } from 'react-redux';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -6,29 +6,29 @@ import { ChakraProvider } from '@chakra-ui/react';
 import PublicRoute from 'routes/PublicRoute';
 import PrivateRoute from 'routes/PrivateRoute';
 
-// import SharedLayout from 'components/SharedLayout';
-// import Diary from 'pages/Diary';
-// import Exercises from 'pages/Exercises';
-// import Params from 'pages/Params';
-// import Products from 'pages/Products';
-// import Profile from 'pages/Profile';
-// import SignIn from 'pages/SignIn';
-// import SignUp from 'pages/SignUp';
-// import Welcome from 'pages/Welcome';
-// import Page404 from 'components/Page404';
+import SharedLayout from 'components/SharedLayout';
+import Diary from 'pages/Diary';
+import Exercises from 'pages/Exercises';
+import Params from 'pages/Params';
+import Products from 'pages/Products';
+import Profile from 'pages/Profile';
+import SignIn from 'pages/SignIn';
+import SignUp from 'pages/SignUp';
+import Welcome from 'pages/Welcome';
+import Page404 from 'components/Page404';
 
 import { refreshUser } from 'redux/auth/operations';
 
-const Welcome = lazy(() => import('pages/Welcome'));
-const Diary = lazy(() => import('pages/Diary'));
-const SharedLayout = lazy(() => import('components/SharedLayout'));
-const SignUp = lazy(() => import('pages/SignUp'));
-const SignIn = lazy(() => import('pages/SignIn'));
-const Products = lazy(() => import('pages/Products'));
-const Exercises = lazy(() => import('pages/Exercises'));
-const Params = lazy(() => import('pages/Params'));
-const Profile = lazy(() => import('pages/Profile'));
-const Page404 = lazy(() => import('components/Page404'));
+// const Welcome = lazy(() => import('pages/Welcome'));
+// const Diary = lazy(() => import('pages/Diary'));
+// const SharedLayout = lazy(() => import('components/SharedLayout'));
+// const SignUp = lazy(() => import('pages/SignUp'));
+// const SignIn = lazy(() => import('pages/SignIn'));
+// const Products = lazy(() => import('pages/Products'));
+// const Exercises = lazy(() => import('pages/Exercises'));
+// const Params = lazy(() => import('pages/Params'));
+// const Profile = lazy(() => import('pages/Profile'));
+// const Page404 = lazy(() => import('components/Page404'));
 
 export const App = () => {
   const dispatch = useDispatch();
