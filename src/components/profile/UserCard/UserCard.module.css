@@ -1,0 +1,146 @@
+.UserCard {
+  align-items: center;
+  justify-content: center;
+  margin-top: 143px;
+  margin-left: 113px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin-left: 144px;
+}
+
+.avatar_container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 9999px;
+  border: 1px solid #e6533c;
+}
+
+.avatar img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar_name {
+  color: #efede8;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.17;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.text {
+  color: rgba(239, 237, 232, 0.5);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.avatar_icon {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-image: url(../../../images/check\ mark.svg);
+}
+
+.info_container {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.info_card {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: calc((100% - 16px) / 2);
+  flex-shrink: 0;
+  font-weight: 500;
+  font-size: 20px;
+  user-select: none;
+  background: #e6533c;
+  color: #efede8;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  padding: 18px;
+}
+
+.info_icon,
+.info_icon2 {
+  width: 20px;
+  height: 20px;
+}
+
+.info_icon {
+  background-image: url(../../../images/fluent_food-24-filled.svg);
+}
+.info_icon2 {
+  background-image: url(../../../images/dumbbell.svg);
+
+}
+.info_text {
+  color: rgba(239, 237, 232, 0.8);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.info_text_container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file_input {
+  position: absolute;
+  display: block;
+  inset: 0;
+  color: transparent;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file_input::-webkit-file-upload-button {
+  appearance: none;
+  opacity: 0;
+}
+.text_container {
+  display: flex;
+  gap: 8px;
+}
+
+.text_icon {
+  background-image: url(../../../images/tabler_exclamation-mark.svg);
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: #EFA082;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.text_info {
+  color: rgba(239, 237, 232, 0.30);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5; 
+}
+
+.logout_container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
