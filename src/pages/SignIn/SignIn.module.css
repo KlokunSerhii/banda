@@ -1,19 +1,29 @@
 .backGround {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-image: url(../../images/side-view-people-training-gym@1x.jpg);
-  background-position: right bottom;
+  min-width: 375px;
+  height: 812px;
+  background-image: url(../../images/side-view-people-training-gym-mob-1.jpg);
+  background-position: right bottom -80px;
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0 auto;
   padding-top: 127px;
 
   @media screen and (min-width: 768px) {
+    min-width: 768px;
+    height: 1024px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
     padding-top: 141px;
   }
   @media screen and (min-width: 1440px) {
+    min-width: 1440px;
+    height: 100vh;
     background-image: url(../../images/side-view-people-training-gym\ 1-1.jpg);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }
 .screen {
