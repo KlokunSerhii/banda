@@ -28,43 +28,43 @@ export const App = () => {
   return isRefreshing ? (
     <div>LODING.....</div>
   ) : (
-    <ChakraProvider>£
-        <Routes>
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={<Welcome />} />
-            <Route
-              path="/singin"
-              element={<PublicRoute redirectto="/diary" component={SignIn} />}
-            />
-            <Route
-              path="/singup"
-              element={<PublicRoute redirectto="/params" component={SignUp} />}
-            />
-            <Route
-              path="/diary"
-              element={<PrivateRoute redirectto="/" component={Diary} />}
-            />
-            <Route
-              path="/exercises"
-              element={<PrivateRoute redirectto="/" component={Exercises} />}
-            />
-            <Route
-              path="/params"
-              element={<PrivateRoute redirectto="/" component={Params} />}
-            />
-            <Route
-              path="/products"
-              element={<PrivateRoute redirectto="/" component={Products} />}
-            />
-            <Route
-              path="/profile"
-              element={<PrivateRoute redirectto="/" component={Profile} />}
-            />
+    <ChakraProvider>
+      £
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Welcome />} />
+          <Route
+            path="/singin"
+            element={<PublicRoute redirectto="/diary" component={SignIn} />}
+          />
+          <Route
+            path="/singup"
+            element={<PublicRoute redirectto="/params" component={SignUp} />}
+          />
+          <Route
+            path="/diary"
+            element={<PrivateRoute redirectto="/" component={Diary} />}
+          />
+          <Route
+            path="/exercises"
+            element={<PrivateRoute redirectto="/" component={Exercises} />}
+          />
+          <Route
+            path="/params"
+            element={<PrivateRoute redirectto="/" component={Params} />}
+          />
+          <Route
+            path="/products"
+            element={<PrivateRoute redirectto="/" component={Products} />}
+          />
+          <Route
+            path="/profile"
+            element={<PrivateRoute redirectto="/" component={Profile} />}
+          />
 
-            <Route path="*" element={<Page404 />} />
-          </Route>
-        </Routes>
-      </ChakraProvider>
-    
+          <Route path="*" element={<Page404 />} />
+        </Route>
+      </Routes>
+    </ChakraProvider>
   );
 };

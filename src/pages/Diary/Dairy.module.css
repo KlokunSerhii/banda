@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 32px;
+  margin-top: 50px;
+}
+
+.titleCont {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: flex-end;
+}
+
+.itemsCont {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    flex-direction: row;
+  }
+}
