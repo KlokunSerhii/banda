@@ -1,5 +1,7 @@
 .header {
-width: 100%;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
   margin-left: 0;
   margin-right: 0;
 
@@ -8,18 +10,18 @@ width: 100%;
   gap: 96px;
 
   padding-top: 12px;
- padding-bottom: 12px;
- padding-right: 58px;
+  padding-bottom: 12px;
+  padding-right: 58px;
 
   @media screen and (min-width: 375px) {
     gap: 96px;
   }
 
   @media screen and (min-width: 768px) {
- padding-top: 19px;
- padding-bottom: 19px;
- padding-right: 80px;
- gap: 415px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    padding-right: 80px;
+    gap: 415px;
   }
 
   @media screen and (min-width: 1440px) {
