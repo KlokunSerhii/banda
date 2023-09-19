@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { MdLogout } from 'react-icons/md';
-import { logout } from 'redux/auth/operations';
 import styles from './LogOutBtn.module.css';
 
 
