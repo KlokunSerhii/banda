@@ -18,7 +18,6 @@ import PrivateRoute from 'routes/PrivateRoute';
 // import Page404 from 'components/Page404';
 
 import { refreshUser } from 'redux/auth/operations';
-import Loader from 'components/Loader';
 
 const Welcome = lazy(() => import('pages/Welcome'));
 const Diary = lazy(() => import('pages/Diary'));
