@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/banda/static/css/main.83e117f7.css",
+    "main.css": "/banda/static/css/main.f1c98d1e.css",
     "main.js": "/banda/static/js/main.42aab4df.js",
     "static/media/params-primary-form-desktop-img1@3x.jpg": "/banda/static/media/params-primary-form-desktop-img1@3x.c40764975cbd3be1cc68.jpg",
     "static/media/params-second-form-desktop-img2@3x.jpg": "/banda/static/media/params-second-form-desktop-img2@3x.16a738912d0e4bcb2a0d.jpg",
@@ -14,11 +14,11 @@
     "static/media/roboto-regular-webfont.woff2": "/banda/static/media/roboto-regular-webfont.94b3074c171dd10548ea.woff2",
     "index.html": "/banda/index.html",
     "static/media/calendar.svg": "/banda/static/media/calendar.bf3176bb1ea49b809c0b.svg",
-    "main.83e117f7.css.map": "/banda/static/css/main.83e117f7.css.map",
+    "main.f1c98d1e.css.map": "/banda/static/css/main.f1c98d1e.css.map",
     "main.42aab4df.js.map": "/banda/static/js/main.42aab4df.js.map"
   },
   "entrypoints": [
-    "static/css/main.83e117f7.css",
+    "static/css/main.f1c98d1e.css",
     "static/js/main.42aab4df.js"
   ]
 }
