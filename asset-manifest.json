@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/banda/static/css/main.f1c98d1e.css",
-    "main.js": "/banda/static/js/main.42aab4df.js",
+    "main.css": "/banda/static/css/main.7b54d484.css",
+    "main.js": "/banda/static/js/main.8db1f771.js",
     "static/media/params-primary-form-desktop-img1@3x.jpg": "/banda/static/media/params-primary-form-desktop-img1@3x.c40764975cbd3be1cc68.jpg",
     "static/media/params-second-form-desktop-img2@3x.jpg": "/banda/static/media/params-second-form-desktop-img2@3x.16a738912d0e4bcb2a0d.jpg",
     "static/media/symbol-defs.svg": "/banda/static/media/symbol-defs.a7cc0549c25a02b79c31a251a4ba0c9b.svg",
@@ -12,13 +12,17 @@
     "static/media/roboto-bold-webfont.woff2": "/banda/static/media/roboto-bold-webfont.6affc1eb1fc4222fdc6f.woff2",
     "static/media/roboto-medium-webfont.woff2": "/banda/static/media/roboto-medium-webfont.1c4475ba93829d5694e3.woff2",
     "static/media/roboto-regular-webfont.woff2": "/banda/static/media/roboto-regular-webfont.94b3074c171dd10548ea.woff2",
+    "static/media/fluent_food-24-filled.svg": "/banda/static/media/fluent_food-24-filled.031847bbb3a1b1f4dcb4.svg",
+    "static/media/check mark.svg": "/banda/static/media/check mark.038cc4a681bcd1873006.svg",
     "index.html": "/banda/index.html",
+    "static/media/dumbbell.svg": "/banda/static/media/dumbbell.d57c2087988463664bc4.svg",
     "static/media/calendar.svg": "/banda/static/media/calendar.bf3176bb1ea49b809c0b.svg",
-    "main.f1c98d1e.css.map": "/banda/static/css/main.f1c98d1e.css.map",
-    "main.42aab4df.js.map": "/banda/static/js/main.42aab4df.js.map"
+    "static/media/tabler_exclamation-mark.svg": "/banda/static/media/tabler_exclamation-mark.df8de3225481908e77e6.svg",
+    "main.7b54d484.css.map": "/banda/static/css/main.7b54d484.css.map",
+    "main.8db1f771.js.map": "/banda/static/js/main.8db1f771.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1c98d1e.css",
-    "static/js/main.42aab4df.js"
+    "static/css/main.7b54d484.css",
+    "static/js/main.8db1f771.js"
   ]
 }
