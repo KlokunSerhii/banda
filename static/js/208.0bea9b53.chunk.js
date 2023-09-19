@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkbanda=self.webpackChunkbanda||[]).push([[208],{2208:function(e,n,r){r.r(n),r.d(n,{default:function(){return u}});r(2791);var c=r(184);var u=function(){return(0,c.jsx)("div",{style:{color:"red"},children:"Exercices"})}}}]);
-//# sourceMappingURL=208.0bea9b53.chunk.js.map
