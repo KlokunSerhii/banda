@@ -1,5 +1,4 @@
 .titleContainer {
-  margin-top: 40px;
   font-size: 24px;
   font-weight: bold;
   color: #efede8;
@@ -7,7 +6,6 @@
 
 @media screen and (min-width: 768px) {
   .titleContainer {
-    margin-top: 156px;
     font-size: 32px;
   }
 }

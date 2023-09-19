@@ -1,3 +1,20 @@
+.backGround {
+  position: relative;
+  min-width: 375px;
+  height: 812px;
+  margin: 0 auto;
+  padding-top: 127px;
+
+  @media screen and (min-width: 768px) {
+    min-width: 768px;
+    height: 1024px;
+    padding-top: 141px;
+  }
+  @media screen and (min-width: 1440px) {
+    min-width: 1440px;
+    height: 100vh;
+  }
+}
 .container {
   display: flex;
   flex-direction: column-reverse;
