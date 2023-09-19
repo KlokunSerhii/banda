@@ -1,0 +1,49 @@
+.container {
+  min-width: 335px;
+  height: 335px;
+  background-color: rgba(48, 48, 48, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.3);
+  color: rgba(239, 237, 232, 0.3);
+  font-size: 14px;
+  padding: 16px;
+}
+
+.headerContainer {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.addBtn {
+  display: flex;
+  position: absolute;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  color: #e6533c;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 125px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    min-width: 704px;
+    height: 234px;
+  }
+  .content {
+    padding-top: 65px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 826px;
+    height: 234px;
+  }
+}
