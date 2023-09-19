@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect } from 'react';
+import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom/dist';
 import { useDispatch } from 'react-redux';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -39,7 +39,6 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <Suspense fallback={<Loader />}>
       <ChakraProvider>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
@@ -77,6 +76,6 @@ export const App = () => {
           </Route>
         </Routes>
       </ChakraProvider>
-    </Suspense>
+
   );
 };
