@@ -1,8 +1,9 @@
 .UserCard {
   align-items: center;
   justify-content: center;
-  margin-top: 143px;
-  margin-left: 113px;
+  padding-left: 50px;
+  margin-top: 27px;
+  border-left: 1px solid rgba(239, 237, 232, 0.2);
 }
 
 .avatar {

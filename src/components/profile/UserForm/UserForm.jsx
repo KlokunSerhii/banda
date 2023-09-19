@@ -11,6 +11,7 @@ import Container from 'components/Container/Container';
 import UserCard from '../UserCard/UserCard';
 import { refreshUser } from 'redux/auth/operations';
 import { useDispatch } from 'react-redux';
+import TitlePage from 'components/diary/TitlePage/TitlePage';
 
 const reqmsg = 'Field is required';
 
@@ -182,8 +183,9 @@ function UserForm() {
   }, [initialValues, checkIfDataChanged]);
 
   return (
-    <Container>
+    <Container className={style.container}>
       <div className={`${style.UserForm} ${pending ? style.UserForm_disabled : ''}`}>
+        <TitlePage title='Profile Settings'/>
         <ToastContainer />
           <Formik
             innerRef={formik}
@@ -195,8 +197,7 @@ function UserForm() {
               <div class={style.FormContainer}>
 
                 {/* Body Params */}
-                <div>
-                  <h1 className={style.title}>Profile Settings</h1>
+                <div class={style.form_box}>
                   <Form className={style.form} onChange={handleFormChange}>
                     <div id="basic-info" className={style.text}>
                       Basic info
