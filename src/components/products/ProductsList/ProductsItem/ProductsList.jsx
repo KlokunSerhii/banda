@@ -1,52 +1,55 @@
 import React from 'react';
 import products from '../../../../JSON/products.json';
+import styles from './ProductsList.module.css';
+import symbolDefs from '../../../../images/symbol-defs.svg';
+
 function ProductsList() {
   return (
-    <ul
-      style={{
-        height: '487px',
-        width: '842px',
-        overflow: 'scroll',
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '8px',
-        marginTop: '28px',
-      }}
-    >
-      {products.slice(0, 20).map(({ weight, calories, category, title }) => {
-        return (
-          <li
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '16px',
-              alignitems: 'center',
-              justifyContent: 'center',
+    <ul className={styles.productsList}>
+      {products
+        .slice(0, 20)
+        .map(({ _id, weight, calories, category, title }) => {
+          return (
+            <li key={_id} className={styles.productsItem}>
+              <div className={styles.productBox}>
+                <p className={styles.productsDiet}>DIET</p>
+                <div className={styles.productRecommended}>
+                  <svg className={styles.runIcon} width="14" height="14">
+                    <use href={symbolDefs + '#bubble-icon'}></use>
+                  </svg>
+                  <p>Recommended</p>
+                  <button type="button" className={styles.btnAdd}>
+                    Add
+                    <svg className={styles.runIcon} width="24" height="24">
+                      <use href={symbolDefs + '#icon-next'}></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div className={styles.titleBox}>
+                <div className={styles.caloriesCountBack}>
+                  <svg className={styles.runIcon} width="24" height="24">
+                    <use href={symbolDefs + '#run-icon'}></use>
+                  </svg>
+                </div>
 
-              padding: '16px',
-              color: `var(--main-text-color)`,
-              width: '405px',
-              height: '141px',
-              backgroundColor: `var(--transparent-medium-3)`,
-              border: '1px',
-              borderRadius: '12px ',
-            }}
-          >
-            <p>DIET</p>
-            <p>Recommended</p>
-            <p>{title}</p>
-            <p>
-              Calories: <span>{calories}</span>
-            </p>
-            <p>
-              Category: <span>{category}</span>
-            </p>
-            <p>
-              Weight: <span>{weight}</span>
-            </p>
-          </li>
-        );
-      })}
+                <h2 className={styles.title}>{title}</h2>
+              </div>
+
+              <div className={styles.productInfo}>
+                <p className={styles.productInfoItem}>
+                  Calories: <span>{calories}</span>
+                </p>
+                <p className={styles.productInfoItem}>
+                  Category: <span>{category}</span>
+                </p>
+                <p className={styles.productInfoItem}>
+                  Weight: <span>{weight}</span>
+                </p>
+              </div>
+            </li>
+          );
+        })}
     </ul>
   );
 }
