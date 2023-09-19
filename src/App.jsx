@@ -56,7 +56,7 @@ export const App = () => {
             />
             <Route
               path="/exercises"
-              element={<PrivateRoute redirectto="/" component={Exercises} />}
+              element={<PrivateRoute redirectto="/exercises" component={<Exercises/>} />}
             />
             <Route
               path="/params"
@@ -68,7 +68,7 @@ export const App = () => {
             />
             <Route
               path="/profile"
-              element={<PrivateRoute redirectto="/" component={Profile} />}
+              element={<PrivateRoute redirectto="/profile" component={Profile} />}
             />
 
             <Route path="*" element={<Page404 />} />

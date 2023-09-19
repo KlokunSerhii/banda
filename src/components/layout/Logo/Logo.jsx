@@ -5,8 +5,8 @@ import styles from './Logo.module.css';
 function Logo() {
   return (
     <NavLink to="/" className={styles.wrapLogo}>
-      <span>
-        <svg
+      <span className={styles.logoIcon}>
+        <svg 
           viewBox="0 0 44 17"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

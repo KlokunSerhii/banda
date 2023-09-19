@@ -1,28 +1,21 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { MdLogout } from 'react-icons/md';
-
 import { logout } from 'redux/auth/operations';
 import styles from './LogOutBtn.module.css';
 
+
 function LogOutBtn() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const onClick = () => {
-    dispatch(logout());
-    navigate(`/`);
-  };
 
   return (
-    <div >
-     
-      <button className={styles.btnLogout} type="button" onClick={onClick}>
+      <button className={styles.btnLogout} type="button" onClick={async event => {
+        navigate(`/`);
+      }}>
          <div className={styles.btnText}>Logout</div>
         <MdLogout className={styles.btnIcon} />
       </button>
-    </div>
+
   );
 }
 
