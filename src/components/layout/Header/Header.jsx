@@ -17,7 +17,7 @@ function Header() {
     <Container>
 <header className={styles.header}>
   <Logo />
-      {!isLoggedIn && (
+      {isLoggedIn && (
         <>
           <div className={styles.wrapNavDesktop}>
             <UserNav />
