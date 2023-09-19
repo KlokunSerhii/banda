@@ -1,22 +1,17 @@
-import Loader from 'components/Loader';
+import { Suspense } from 'react';
 import Header from 'components/layout/Header';
-import { useAuth } from 'hooks';
 import { Outlet } from 'react-router-dom/dist';
 
 function SharedLayout() {
-  const { isLoggedIn } = useAuth();
+
 
   return (
-    <>
+    <div>
       <Header />
-      {isLoggedIn ? (
-        <Loader />
-      ) : (
-        <>
+      <Suspense fallback={<b>LODIND....</b>}>
           <Outlet />
-        </>
-      )}
-    </>
+      </Suspense>
+    </div>
   );
 }
 
