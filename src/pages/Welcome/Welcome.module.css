@@ -1,21 +1,200 @@
-.containerWelcome {
-  background-color: #040404;
-  min-height: 132vh;
-  margin: 0;
-  padding: 0;
+.backGround {
+  position: relative;
+  width: 100vw;
+  height: 130vh;
+  background-image: url(../../images/side-view-people-training-gym@1x.jpg);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  padding-top: 127px;
+  @media screen and (min-width: 768px) {
+    padding-top: 141px;
+    height: 100vh;
+  }
+  @media screen and (min-width: 1440px) {
+    background-image: url(../../images/side-view-people-training-gym\ 1-1.jpg);
+  }
+}
+.screen {
+  width: 335px;
+  @media screen and (min-width: 768px) {
+    min-width: 496px;
+  }
+}
+.videoCountBox {
+  position: absolute;
+  right: 108px;
+  bottom: 186px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  background: var(--transparent-dark-1);
+  width: 146px;
+  height: 66px;
+}
+@media screen and (min-width: 768px) {
+  .videoCountBox {
+    right: 231px;
+    bottom: 214px;
+    width: 206px;
+    height: 96px;
+    gap: 12px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .videoCountBox {
+    right: 385px;
+    bottom: 340px;
+    width: 206px;
+    height: 96px;
+    gap: 12px;
+  }
 }
 
-.bg {
+.caloriesCountBox {
   position: absolute;
-  top: 112px;
-  left: 17px;
-  width: 446px;
+  right: 20px;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 8px;
+  border-radius: 12px;
+  background: var(--accent-medium-color);
+  width: 119px;
+  height: 76px;
+  padding-left: 18px;
+}
+@media screen and (min-width: 768px) {
+  .caloriesCountBox {
+    right: 32px;
+    bottom: 48px;
+    gap: 12px;
+    border-radius: 12px;
+    background: var(--accent-medium-color);
+    width: 180px;
+    height: 110px;
+    padding-left: 32px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .caloriesCountBox {
+    right: 32px;
+    bottom: 150px;
+    gap: 12px;
+    border-radius: 12px;
+    background: var(--accent-medium-color);
+    width: 180px;
+    height: 110px;
+    padding-left: 32px;
+  }
+}
+
+.caloriesCountBack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-light-color);
+  border-radius: 50%;
+}
+.runIcon {
+  fill: var(--main-text-color);
+}
+.caloriesCount {
+  color: var(--main-text-color);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: calc(18 / 16);
+}
+@media screen and (min-width: 768px) {
+  .caloriesCount {
+    font-size: 48px;
+    line-height: calc(50 / 48);
+  }
+}
+.caloriesTutorial {
+  color: var(--transparent-light-3);
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+}
+@media screen and (min-width: 768px) {
+  .caloriesTutorial {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+  }
+}
+.caloriesContent {
+  gap: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.videoCountBack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-medium-transparent-color);
+  border-radius: 50%;
+}
+
+.videoPlayIcon {
+  width: 12px;
+  height: 12px;
+}
+@media screen and (min-width: 768px) {
+  .videoPlayIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .videoCountBack {
+    width: 40px;
+    height: 40px;
+  }
+}
+.videoCount {
+  color: var(--main-text-color);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: calc(18 / 16);
+}
+@media screen and (min-width: 768px) {
+  .videoCount {
+    font-size: 24px;
+    line-height: calc(24 / 24);
+  }
+}
+.videoTutorial {
+  color: var(--transparent-light-3);
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+}
+@media screen and (min-width: 768px) {
+  .videoTutorial {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+  }
 }
 
 .line {
   position: absolute;
-  top: 148px;
-  left: 10px;
+  top: 48px;
+  left: -10px;
 }
 
 .title {
@@ -33,84 +212,10 @@
 .infoWelcome {
   position: absolute;
   z-index: 100;
-  padding-left: 20px;
-  padding-top: 100px;
-}
-.containerVideo {
-  position: absolute;
-  width: 146px;
-  height: 66px;
-  background-color: #303030;
-  border-radius: 12px;
-
-  top: 740px;
-  left: 170px;
 }
 
-.videoNumber {
-  position: absolute;
-  top: 14px;
-  left: 75px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1;
-  color: #efede8;
-}
-.videoText {
-  position: absolute;
-  top: 36px;
-  left: 56px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5;
-  color: #efede8;
-}
-.containerCalorie {
-  position: absolute;
-
-  width: 119px;
-  height: 76px;
-
-  top: 880px;
-  left: 310px;
-  background-color: #ef8964;
-  border-radius: 12px;
-}
-.elipsRun {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 14px;
-  left: 28px;
-  border-radius: 50px;
-  background-color: #efa082;
-}
-
-.man {
-  position: absolute;
-  top: 4px;
-  left: 3px;
-}
-.calNumber {
-  position: absolute;
-  top: 46px;
-  left: 24px;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1;
-  color: #efede8;
-}
-
-.calText {
-  position: absolute;
-  top: 50px;
-  left: 76px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5;
-  color: #efede8;
-}
 .buttonContainer {
+  display: flex;
   gap: 10px;
 }
 .buttonUp {
@@ -153,146 +258,27 @@
   }
 }
 
-.elips {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 20px;
-  left: 14px;
-  border-radius: 50px;
-  background-color: #ef8964;
-}
-.polygon {
-  position: absolute;
-  top: 8px;
-  left: 10px;
-  width: 12px;
-  height: 12px;
-}
-
-.imgContainer {
-  display: flex;
-}
 @media screen and (min-width: 768px) {
-  .containerWelcome {
-    min-height: 106vh;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-  .imgContainer {
-    position: absolute;
-    top: 80px;
-    left: 40px;
-  }
-
   .title {
     font-size: 70px;
     width: 590px;
     height: 234px;
   }
 
-  .infoWelcome {
-    padding-left: 20px;
-    padding-top: 100px;
-  }
-
-  .bg {
-    top: 0;
-    left: 140px;
-    width: 446px;
-  }
-
   .line {
     width: 185px;
     height: 67px;
-    top: 184px;
-    left: 0;
+    top: 84px;
+    left: -10px;
   }
 
-  .containerVideo {
-    width: 206px;
-    height: 96px;
-
-    top: 600px;
-    left: 260px;
-  }
-
-  .videoNumber {
-    top: 20px;
-    left: 75px;
-    font-weight: 700;
-    font-size: 24px;
-  }
-
-  .videoText {
-    top: 52px;
-    left: 75px;
-    font-weight: 400;
-    font-size: 16px;
-  }
-
-  .containerCalorie {
-    width: 180px;
-    height: 110px;
-
-    top: 730px;
-    left: 510px;
-  }
-
-  .calText {
-    top: 68px;
-    left: 115px;
-    font-weight: 400;
-    font-size: 16px;
-  }
-  .calNumber {
-    top: 46px;
-    left: 28px;
-    font-weight: 700;
-    font-size: 48px;
-  }
-  .elipsRun {
-    width: 24px;
-    height: 24px;
-    top: 14px;
-    left: 28px;
-  }
-  .elips {
-    width: 40px;
-    height: 40px;
-    top: 28px;
-    left: 23px;
-  }
-
-  .polygon {
-    top: 10px;
-    left: 12px;
-    width: 20px;
-    height: 20px;
-  }
   .buttonText {
     font-size: 16px;
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .containerWelcome {
-    width: 1280px;
-  }
-  .bg {
-    width: 670px;
-    top: 54px;
-    left: 100px;
-  }
-
-  .imgContainer {
-    position: absolute;
-    top: -100px;
-    left: 404px;
-  }
+@media screen and (min-width: 1440px) {
   .line {
-    top: 186px;
-    left: 0px;
     width: 185px;
     height: 67px;
   }
@@ -313,17 +299,7 @@
     font-size: 20px;
   }
 
-  .containerCalorie {
-    top: 640px;
-    left: 640px;
+  .buttonContainer {
+    display: flex;
   }
-
-  .containerVideo {
-    top: 480px;
-    left: 200px;
-  }
-}
-
-.buttonContainer {
-  display: flex;
 }

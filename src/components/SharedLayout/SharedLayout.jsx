@@ -1,13 +1,15 @@
+import { Suspense } from 'react';
 import Header from 'components/layout/Header';
-import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom/dist';
 
 function SharedLayout() {
+
+
   return (
     <div>
-      <Header/>
-      <Suspense fallback={<b>LOAD...</b>}>
-        <Outlet />
+      <Header />
+      <Suspense fallback={<b>LODIND....</b>}>
+          <Outlet />
       </Suspense>
     </div>
   );

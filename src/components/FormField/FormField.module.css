@@ -23,10 +23,7 @@
     max-width: 364px;
     font-size: 16px;
     line-height: calc(24 / 16);
-}
-}
-.message {
-  display: none;
+  }
 }
 
 .inputInvalid {
@@ -43,7 +40,7 @@
   letter-spacing: 0.12px;
   display: flex;
   flex-direction: row;
-  height: 18px;
+  height: 20px;
 }
 .errorIcon {
   width: 16px;
@@ -57,10 +54,19 @@
   letter-spacing: 0.12px;
   display: flex;
   flex-direction: row;
-  height: 18px;
+  height: 20px;
 }
 .successIcon {
   width: 16px;
   display: inline-block;
   fill: var(--positive-color);
+}
+.static {
+  color: var(--main-bg-colorr);
+  font-size: 12px;
+  line-height: calc(18 / 12);
+  letter-spacing: 0.12px;
+  display: flex;
+  flex-direction: row;
+  height: 20px;
 }

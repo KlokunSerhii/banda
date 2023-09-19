@@ -2,10 +2,10 @@ import React, { useRef } from 'react';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import FormField from './FormField';
+import FormField from '../FormField';
 
 import styles from './SignInForm.module.css';
-import { login } from '../../../redux/auth/operations';
+import { login } from '../../redux/auth/operations';
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -14,8 +14,8 @@ const validationSchema = Yup.object({
     .matches(/^[\w.-]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}$/, 'Enter valid email'),
   password: Yup.string()
     .matches(
-      /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
-      'Should contain 6 symbols and at least 1 number'
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{4,}$/,
+      'Min: 6 symbols, one uppercase letter, one lowercase letter, one number, one special symbol'
     )
     .required('Please enter your password'),
 });
