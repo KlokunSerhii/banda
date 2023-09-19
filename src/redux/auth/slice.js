@@ -10,7 +10,23 @@ import {
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: { email: '', name: '', avatarURL: '' },
+    user: { 
+      email: '', 
+      name: '', 
+      avatarURL: '' ,
+      bodyParams: {
+        height:'',
+        currentWeight:'',
+        desiredWeight:'',
+        birthdate:'',
+        blood:'',
+        sex:'',
+        levelActivity:'',
+        dailySportTime:'',
+        bmr:'',
+        defaultParams:''
+      }
+    },
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
