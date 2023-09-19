@@ -42,6 +42,8 @@ html {
 html,
 body {
   min-height: 100vh;
+  scrollbar-color: #458245 #714826;
+  scrollbar-width: auto;
 }
 
 * {
@@ -107,7 +109,7 @@ img {
   @media screen and (min-width: 375px) {
     width: 375px;
   }
- 
+
   @media screen and (min-width: 768px) {
     width: 768px;
     padding-left: 32px;
@@ -120,4 +122,3 @@ img {
     padding-right: 96px;
   }
 }
- 
