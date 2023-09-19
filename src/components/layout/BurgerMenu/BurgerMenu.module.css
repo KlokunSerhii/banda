@@ -1,31 +1,33 @@
-.blur {
-  width: 100vw;
-  height: 100vh;
-  backdrop-filter: (2px);
-  position: absolute;
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1;
 }
 
 .menu {
   position: fixed;
-  height: 100vh;
   top: 0;
   right: 0;
-  left: 0;
 
-  gap: 96px;
-
-  display: flex;
+ display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 19px 20px;
+  gap: 381px;
+
+ 
+  padding: 19px 20px 21px 20px;
   width: 200px;
   height: 100vh;
   background-color: #e6533c;
 
-  z-index: 200;
+  z-index: 999;
 
-  transform: translateX(-100%);
+  transform: translateX(100%);
   transition: transform 0.3s ease;
 
   &.active {
@@ -33,13 +35,23 @@
   }
 
   @media screen and (min-width: 375px) {
-    width: 350px;
-    gap: 200px;
+    width: 200px;
+    
   }
 
   @media screen and (min-width: 768px) {
-    display: none;
+    padding: 26px 32px 32px 32px;
   }
+}
+
+.wrapNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 245px;
+  margin-bottom: 382px;
 }
 
 .mobileBtn {
@@ -60,6 +72,29 @@
 
   @media screen and (min-width: 767px) {
     display: none;
+  }
+}
+
+.navItem {
+  padding: 10px 27px;
+
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(239, 237, 232, 1);
+
+  border: 1px solid rgba(239, 237, 232, 0.2);
+  border-radius: 12px;
+
+
+ &:hover,
+  :focus {
+    border: 1px solid #EFEDE8;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
   }
 }
 

@@ -7,15 +7,17 @@ import UserBar from '../UserBar';
 import LogOutBtn from '../LogOutBtn';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import styles from './Header.module.css';
+import Container from 'components/Container';
 
 function Header() {
   const { isLoggedIn } = useAuth();
   const [menuActive, setMenuActive] = useState(false);
 
   return (
-    <header className={styles.header}>
-      <Logo />
-      {isLoggedIn && (
+    <Container>
+<header className={styles.header}>
+  <Logo />
+      {!isLoggedIn && (
         <>
           <div className={styles.wrapNavDesktop}>
             <UserNav />
@@ -24,7 +26,7 @@ function Header() {
           </div>
 
           <div className={styles.wrapNavMob}>
-            <UserBar />
+            <UserBar/>
             <BurgerMenu
               active={menuActive}
               setActive={setMenuActive}
@@ -44,6 +46,8 @@ function Header() {
         </>
       )}
     </header>
+    </Container>
+    
   );
 }
 

@@ -1,24 +1,29 @@
 .header {
-  padding: 12px 18px;
- display: flex;
-  justify-content: space-between;
+width: 100%;
   margin-left: 0;
   margin-right: 0;
-  padding: 18px 19px;
-  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 96px;
+
+  padding-top: 12px;
+ padding-bottom: 12px;
+ padding-right: 58px;
 
   @media screen and (min-width: 375px) {
-    height: 61px;
     gap: 96px;
   }
 
   @media screen and (min-width: 768px) {
-    gap: 415px;
+ padding-top: 19px;
+ padding-bottom: 19px;
+ padding-right: 80px;
+ gap: 415px;
   }
 
   @media screen and (min-width: 1440px) {
     height: 84px;
-    padding: 20px 96px;
     gap: 514px;
   }
 }
@@ -39,14 +44,14 @@
 .wrapNavMob {
   display: flex;
   align-items: center;
-  
+  /* gap: 14px; */
+
   @media screen and (min-width: 375px) {
-   gap: 27px;
-  margin-left: 14px;
+    gap: 27px;
+    margin-left: 14px;
   }
 
   @media screen and (min-width: 768px) {
-   
   }
 
   @media screen and (min-width: 1440px) {
@@ -57,8 +62,8 @@
 .mobileBtn {
   display: block;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 18px;
+  top: 19px;
   z-index: 999;
 
   border: none;
@@ -66,11 +71,16 @@
   height: 24px;
 
   @media screen and (min-width: 375px) {
-    width: 32px;
-    height: 32px;
+    right: 18px;
+    top: 16px;
   }
 
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
+    right: 26px;
+    top: 26px;
+  }
+
+  @media screen and (min-width: 1440px) {
     display: none;
   }
 }
@@ -91,7 +101,7 @@
   width: 24px;
   height: 24px;
 
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 1140px) {
     display: none;
   }
 }

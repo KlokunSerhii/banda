@@ -2,14 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import { AiOutlineSetting } from 'react-icons/ai';
 import { BiSolidUser } from 'react-icons/bi';
-import { Avatar } from '@chakra-ui/react';
-
-import { useAuth } from 'hooks';
 import styles from './UserBar.module.css';
 
 const UserBar = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
 
   return (
     <div className={styles.wrapUseBar}>
@@ -21,13 +17,10 @@ const UserBar = () => {
       >
         <AiOutlineSetting className={styles.iconSettings} />
       </button>
-      <Avatar
-        name={user.name}
+      <div className={styles.avatar}
         src="https://bit.ly/broken-link"
-        bg="transparent"
-        border="2px solid #E6533C"
-        icon={<BiSolidUser fontSize="1.5rem" className={styles.avatar} />}
-      />
+      ><BiSolidUser className={styles.avatarIcon} />
+</div>
     </div>
   );
 };
