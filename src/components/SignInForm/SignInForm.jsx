@@ -3,6 +3,7 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import FormField from '../FormField';
+import { ToastContainer, toast } from 'react-toastify';
 
 import styles from './SignInForm.module.css';
 import { login } from '../../redux/auth/operations';
@@ -29,11 +30,14 @@ function SignInForm() {
   const onSubmit = ({ email, password }, { resetForm }) => {
     dispatch(login({ email, password }));
     resetForm();
+    toast.error('Sorry, something went wrong. Check Email or Password')
   };
 
   const formik = useRef();
 
   return (
+    <> 
+    <ToastContainer />
     <Formik
       innerRef={formik}
       initialValues={initialValues}
@@ -47,6 +51,7 @@ function SignInForm() {
             name="email"
             placeholder="Email"
             onChange={handleChange}
+            autoComplete="email"
             required
           />
           <FormField
@@ -54,6 +59,7 @@ function SignInForm() {
             name="password"
             placeholder="Password"
             onChange={handleChange}
+            autoComplete="current-password"
             required
           />
           <button className={styles.signInBtn} type="submit">
@@ -62,6 +68,8 @@ function SignInForm() {
         </Form>
       )}
     </Formik>
+    </>
+   
   );
 }
 
