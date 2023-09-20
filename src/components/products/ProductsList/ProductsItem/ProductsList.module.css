@@ -101,6 +101,12 @@
 .runIcon {
   fill: var(--main-text-color);
 }
+.bubbleIconPositive {
+  fill: var(--positive-color);
+}
+.bubbleIconNegative {
+  fill: var(--negative-color);
+}
 .productInfoItem {
   font-family: Roboto;
   font-weight: 400;

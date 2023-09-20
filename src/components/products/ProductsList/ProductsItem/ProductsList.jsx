@@ -1,20 +1,23 @@
-import React from 'react';
 import products from '../../../../JSON/products.json';
 import styles from './ProductsList.module.css';
 import symbolDefs from '../../../../images/symbol-defs.svg';
 
 function ProductsList() {
+  const positive = true;
+
+  const className = positive ? (styles.bubbleIconPositive) : (styles.bubbleIconNegative);
+
   return (
     <ul className={styles.productsList}>
       {products
         .slice(0, 20)
         .map(({ _id, weight, calories, category, title }) => {
           return (
-            <li key={_id} className={styles.productsItem}>
+            <li key={_id.$oid} className={styles.productsItem}>
               <div className={styles.productBox}>
                 <p className={styles.productsDiet}>DIET</p>
                 <div className={styles.productRecommended}>
-                  <svg className={styles.runIcon} width="14" height="14">
+                  <svg className={className} width="17" height="17">
                     <use href={symbolDefs + '#bubble-icon'}></use>
                   </svg>
                   <p>Recommended</p>
