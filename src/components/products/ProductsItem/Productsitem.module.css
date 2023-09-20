@@ -1,0 +1,174 @@
+.productsCardDiet {
+  display: inline-flex;
+  padding: 5px 7.5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: var(--transparent-medium-5);
+}
+
+.productsCardDietText {
+  color: var(--main-text-color);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.productsCardStatus {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 27px;
+  justify-content: space-between;
+}
+
+.productsCardInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.productsCardInfoItem {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  color: var(--transparent-medium-1);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.productsCardInfoValue {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--main-text-color);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.productsCardTitle {
+  position: relative;
+  font-size: 24px;
+  line-height: 1.333;
+  color: var(--main-text-color);
+
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 40px;
+  max-width: 100%;
+}
+
+.productsCardTitle::before {
+  content: url(../../../images/run-icon.svg);
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 0;
+  top: calc(50% - 12px);
+}
+
+.productsCardBtnAdd:hover,
+.productsCardBtnAdd:focus {
+  color: var(--main-text-color);
+  transition: var(--main-text-color) var(--transition-duration)
+    var(--transition-cubic);
+}
+
+.productsCardBtnAdd {
+  background: transparent;
+  border: none;
+  color: var(--accent-bright-color);
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.productsCardBtnAdd::after {
+  content: url(../../../images/arrow-products-icon.svg);
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  margin-top: -3px;
+}
+
+.productsStatusRecommendedTextTrue {
+  color: var(--main-text-color);
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  margin-right: 16px;
+  align-items: center;
+}
+
+.productsStatusRecommendedTextTrue::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 10px;
+  background: var(--positive-color);
+  margin-right: 8px;
+}
+
+.productsStatusRecommendedTextFalse {
+  color: var(--main-text-color);
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  margin-right: 16px;
+  align-items: center;
+}
+
+.productsStatusRecommendedTextFalse::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 10px;
+  background: var(--negative-color);
+  margin-right: 8px;
+}
+
+.productsCardStatusCont {
+  display: flex;
+  align-items: center;
+}
+
+.productsCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 141px;
+  padding: 16px;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 12px;
+  border: 1px solid var(--transparent-medium-3);
+  background: var(--transparent-medium-5);
+}
+
+@media screen and (min-width: 768px) {
+  .productsCard {
+    width: calc((100% - 16px) / 2);
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .productsCard {
+    max-width: 405px;
+  }
+}
+
+.productsCard {
+  box-sizing: border-box;
+}

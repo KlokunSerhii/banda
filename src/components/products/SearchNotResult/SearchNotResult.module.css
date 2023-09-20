@@ -1,0 +1,40 @@
+@media screen and (min-width: 375px) {
+  .products_SearchNotResult {
+    display: inline-block;
+    margin-top: 24px;
+  }
+
+  .products_SearchNotResult_text {
+    color: rgba(239, 237, 232, 0.3);
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    font-style: normal;
+    display: inline-block;
+    width: 335px;
+    margin-bottom: 16px;
+  }
+
+  .products_SearchNotResult_orangeText {
+    color: var(--orange, #e6533c);
+    font-size: 14px;
+    line-height: 18px;
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .products_SearchNotResult {
+    margin-top: 92px;
+  }
+
+  .products_SearchNotResult_text {
+    width: 580px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .products_SearchNotResult_orangeText_block {
+    display: block;
+  }
+}
+@media screen and (min-width: 1440px) {
+}
