@@ -168,23 +168,24 @@ padding-top: 245px;
   }
 }
 
-/* .mobileBtn {
-  display: block;
+.btnLogout {
   position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 999;
+  bottom: 26px;
+  left: 32px;
 
-  border: none;
-  width: 24px;
-  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #efede8;
 
-  @media screen and (min-width: 375px) {
-    width: 32px;
-    height: 32px;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
   }
+}
 
-  @media screen and (min-width: 767px) {
-    display: none;
-  }
-} */
+.btnIcon {
+  width: 30px;
+  height: 30px;
+  fill: #efede8;
+}

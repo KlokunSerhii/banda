@@ -4,9 +4,17 @@ import PropTypes from 'prop-types';
 import { MdLogout } from 'react-icons/md';
 import styles from './BurgerMenu.module.css';
 import { RiCloseFill } from 'react-icons/ri';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../../redux/auth/operations';
 
 const BurgerMenu = ({ active }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(active);
+  const dispatch = useDispatch();
+
+  const LogOutBtn = () => {
+    dispatch(logout());
+    setMenuIsOpen(false);
+  };
 
   const closeMenu = () => {
     setMenuIsOpen(false);
@@ -82,7 +90,7 @@ const BurgerMenu = ({ active }) => {
           </NavLink>
              <button
             className={styles.closeBtn}
-            onClick={closeMenu}
+            onClick={LogOutBtn}
           >
             <RiCloseFill className={styles.closeIcon} />
           </button>
