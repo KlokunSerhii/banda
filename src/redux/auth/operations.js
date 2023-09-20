@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+
 axios.defaults.baseURL = 'https://node-server-team-proj.onrender.com/api/';
 
 const setAuthHeader = token => {
@@ -9,6 +10,7 @@ const setAuthHeader = token => {
 const clearAuthHeader = token => {
   axios.defaults.headers.common.Authorization = '';
 };
+
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
@@ -30,7 +32,7 @@ export const login = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+      return thunkAPI.rejectWithValue(e.message)
     }
   }
 );

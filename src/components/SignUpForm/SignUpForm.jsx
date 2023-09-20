@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { Form, Formik } from 'formik';
+import { ToastContainer, toast } from 'react-toastify';
 
 import styles from './SignUpForm.module.css';
 import { register } from '../../redux/auth/operations';
@@ -32,50 +33,54 @@ function SignUpForm() {
 
   const onSubmit = ({ email, password, name }, { resetForm }) => {
     dispatch(register({ email, password, name }));
+    toast.error('Sorry, something went wrong. This user may not exist. Please try again');
     resetForm();
   };
 
   const formik = useRef();
 
   return (
+    <>
+    <ToastContainer />
     <Formik
-      innerRef={formik}
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={onSubmit}
-    >
-      {({ handleChange, handleSubmit, errors }) => (
-        <Form className={styles.singin}>
-          <FormField
-            type="text"
-            name="name"
-            placeholder="Name"
-            onChange={handleChange}
-            required
-          />
-          <FormField
-            type="email"
-            name="email"
-            placeholder="Email"
-            onChange={handleChange}
-            autocomplete="email"
-            required
-          />
-          <FormField
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={handleChange}
-            autocomplete="new-password"
-            required
-          />
+    innerRef={formik}
+    initialValues={initialValues}
+    validationSchema={validationSchema}
+    onSubmit={onSubmit}
+  >
+    {({ handleChange, handleSubmit, errors }) => (
+      <Form className={styles.singin}>
+        <FormField
+          type="text"
+          name="name"
+          placeholder="Name"
+          onChange={handleChange}
+          required
+        />
+        <FormField
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+          autoComplete="email"
+          required
+        />
+        <FormField
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+          autoComplete="new-password"
+          required
+        />
 
-          <button className={styles.signUpBtn} type="submit">
-            Sign Up
-          </button>
-        </Form>
-      )}
-    </Formik>
+        <button className={styles.signUpBtn} type="submit">
+          Sign Up
+        </button>
+      </Form>
+    )}
+  </Formik></>
+    
   );
 }
 
