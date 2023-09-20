@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { MdLogout } from 'react-icons/md';
 import styles from './BurgerMenu.module.css';
+import { RiCloseFill } from 'react-icons/ri';
 
 const BurgerMenu = ({ active }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(active);
@@ -48,8 +49,7 @@ const BurgerMenu = ({ active }) => {
         }
         onClick={handleBackdrop}
       >
-        {/* <div onClick={e => e.stopPropagation()}> */}
-          <div className={styles.wrapNav}>
+          <div className={styles.wrapNav} onClick={e => e.stopPropagation()}>
             <NavLink
               className={styles.navItem}
               to="/diary"
@@ -80,8 +80,13 @@ const BurgerMenu = ({ active }) => {
             <div className={styles.btnText}>Logout</div>
             <MdLogout className={styles.btnIcon} />
           </NavLink>
+             <button
+            className={styles.closeBtn}
+            onClick={closeMenu}
+          >
+            <RiCloseFill className={styles.closeIcon} />
+          </button>
         </div>
-      {/* </div> */}
     </>
   );
 };

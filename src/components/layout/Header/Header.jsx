@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RiMenu2Line, RiCloseFill } from 'react-icons/ri';
+import { RiMenu2Line} from 'react-icons/ri';
 import { useAuth } from 'hooks';
 import Logo from '../Logo';
 import UserNav from '../UserNav';
@@ -10,7 +10,7 @@ import styles from './Header.module.css';
 import Container from 'components/Container';
 
 function Header() {
-  const { isLoggedIn } = useAuth();
+  const {isLoggedIn } = useAuth();
   const [menuActive, setMenuActive] = useState(false);
 
   return (
@@ -32,17 +32,11 @@ function Header() {
               setActive={setMenuActive}
               className={styles.mobMenu}
             />
-          </div>
-          <button
-            className={styles.mobileBtn}
-            onClick={() => setMenuActive(!menuActive)}
-          >
-            {menuActive ? (
-              <RiCloseFill className={styles.closeIcon} />
-            ) : (
-              <RiMenu2Line className={styles.mobileIcon} />
-            )}
+            <button className={styles.mobileBtn}
+            onClick={() => setMenuActive(!menuActive)}>
+            <RiMenu2Line className={styles.mobileIcon} />
           </button>
+          </div>
         </>
       )}
     </header>
