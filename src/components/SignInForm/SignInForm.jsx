@@ -47,6 +47,7 @@ function SignInForm() {
             name="email"
             placeholder="Email"
             onChange={handleChange}
+            autocomplete="email"
             required
           />
           <FormField
@@ -54,6 +55,7 @@ function SignInForm() {
             name="password"
             placeholder="Password"
             onChange={handleChange}
+            autocomplete="current-password"
             required
           />
           <button className={styles.signInBtn} type="submit">

@@ -58,6 +58,7 @@ function SignUpForm() {
             name="email"
             placeholder="Email"
             onChange={handleChange}
+            autocomplete="email"
             required
           />
           <FormField
@@ -65,6 +66,7 @@ function SignUpForm() {
             name="password"
             placeholder="Password"
             onChange={handleChange}
+            autocomplete="new-password"
             required
           />
 
