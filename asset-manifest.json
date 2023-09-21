@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/banda/static/css/main.a4c9ec84.css",
-    "main.js": "/banda/static/js/main.141096e0.js",
+    "main.css": "/banda/static/css/main.c721d9b6.css",
+    "main.js": "/banda/static/js/main.e5b02d10.js",
     "static/media/params-third-form-desktop-img3@3x.jpg": "/banda/static/media/params-third-form-desktop-img3@3x.8f9df4ca742370f389cd.jpg",
     "static/media/params-primary-form-desktop-img1@3x.jpg": "/banda/static/media/params-primary-form-desktop-img1@3x.c40764975cbd3be1cc68.jpg",
     "static/media/params-second-form-desktop-img2@3x.jpg": "/banda/static/media/params-second-form-desktop-img2@3x.16a738912d0e4bcb2a0d.jpg",
@@ -22,17 +22,17 @@
     "static/media/side-view-people-training-gym-products.jpg": "/banda/static/media/side-view-people-training-gym-products.f29b68568ae50f5fc395.jpg",
     "static/media/fluent_food-24-filled.svg": "/banda/static/media/fluent_food-24-filled.031847bbb3a1b1f4dcb4.svg",
     "static/media/run-icon.svg": "/banda/static/media/run-icon.ee1887524c2974641f82.svg",
-    "static/media/check mark.svg": "/banda/static/media/check mark.69f1e14a00a38035b662.svg",
+    "static/media/check mark.svg": "/banda/static/media/check mark.038cc4a681bcd1873006.svg",
     "index.html": "/banda/index.html",
     "static/media/dumbbell.svg": "/banda/static/media/dumbbell.d57c2087988463664bc4.svg",
     "static/media/calendar.svg": "/banda/static/media/calendar.bf3176bb1ea49b809c0b.svg",
     "static/media/arrow-products-icon.svg": "/banda/static/media/arrow-products-icon.e37de4157aa14fbf0903.svg",
     "static/media/tabler_exclamation-mark.svg": "/banda/static/media/tabler_exclamation-mark.df8de3225481908e77e6.svg",
-    "main.a4c9ec84.css.map": "/banda/static/css/main.a4c9ec84.css.map",
-    "main.141096e0.js.map": "/banda/static/js/main.141096e0.js.map"
+    "main.c721d9b6.css.map": "/banda/static/css/main.c721d9b6.css.map",
+    "main.e5b02d10.js.map": "/banda/static/js/main.e5b02d10.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4c9ec84.css",
-    "static/js/main.141096e0.js"
+    "static/css/main.c721d9b6.css",
+    "static/js/main.e5b02d10.js"
   ]
 }
