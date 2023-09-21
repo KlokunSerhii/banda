@@ -20,14 +20,14 @@
   justify-content: space-around;
   height: 812px;
 
-  padding-top: 127px;
+  padding-top: var(--padding-top-bg-mob);
 
   padding-left: 20px;
-    padding-right: 20px;
+  padding-right: 20px;
 
   @media screen and (min-width: 768px) {
     height: 100vh;
-    padding-top: 187px;
+    padding-top: var(--padding-top-bg-desktop);
 
     padding-left: 32px;
     padding-right: 32px;
@@ -36,7 +36,7 @@
   @media screen and (min-width: 1440px) {
     height: 100vh;
 
-    padding-top: 147px;
+    padding-top: var(--padding-top-bg-desktop);
     flex-direction: row-reverse;
     padding-left: 96px;
     padding-right: 32px;
@@ -413,7 +413,6 @@
   margin-bottom: 32px;
 }
 
-
 .formList {
   display: flex;
   flex-wrap: wrap;
@@ -539,7 +538,6 @@
   border: 1px solid #e6533c;
 }
 
-
 /* Params Second Step */
 .secondStepWrapper {
   display: flex;
@@ -561,14 +559,10 @@
   flex-direction: column;
 
   margin-bottom: 32px;
- 
 
-@media screen and (max-width: 767px) {
-   max-width: 340px;
-}
-
-
-
+  @media screen and (max-width: 767px) {
+    max-width: 340px;
+  }
 }
 
 .secondStepDescription {
@@ -580,18 +574,15 @@
   line-height: 18px;
   margin-bottom: 29px;
 
-
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 24px;
-  margin-bottom: 16px;
-
+    margin-bottom: 16px;
   }
 }
 
 .secondStepLabel {
-
-   color: #efede8;
+  color: #efede8;
 
   font-size: 14px;
   font-style: normal;
@@ -599,26 +590,20 @@
   line-height: 18px;
   /* margin-bottom: 29px; */
 
-
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 24px;
-  /* margin-bottom: 16px; */
-
+    /* margin-bottom: 16px; */
   }
 }
 
-
-.activitiesLabel{
-    display: flex;
+.activitiesLabel {
+  display: flex;
   align-items: center;
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     display: block;
-
   }
-
 }
-
 
 /* Params Navigation */
 
@@ -629,7 +614,6 @@
 .secondStepNav {
   display: flex;
 }
-
 
 /* Radio Btns */
 
@@ -691,4 +675,3 @@
 .input[type='date']::-webkit-calendar-picker-indicator:hover {
   background-color: #e6533c;
 }
-

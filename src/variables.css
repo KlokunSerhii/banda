@@ -30,4 +30,6 @@
 
   --transition-cubic: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-duration: 250ms;
+  --padding-top-bg-desktop: 72px;
+  --padding-top-bg-mob: 40px;
 }

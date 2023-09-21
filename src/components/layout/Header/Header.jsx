@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { RiMenu2Line} from 'react-icons/ri';
+import React, { useEffect, useState } from 'react';
+import { RiMenu2Line } from 'react-icons/ri';
 import { useAuth } from 'hooks';
 import Logo from '../Logo';
 import UserNav from '../UserNav';
@@ -10,38 +10,44 @@ import styles from './Header.module.css';
 import Container from 'components/Container';
 
 function Header() {
-  const {isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuth();
   const [menuActive, setMenuActive] = useState(false);
+  const [className, setClassName] = useState(false);
+
+  useEffect(() => {
+    setClassName(!isLoggedIn ? styles.headerPosition : styles.headerNoPosition);
+  }, [isLoggedIn]);
 
   return (
-    <Container>
-<header className={styles.header}>
-  <Logo />
-      {isLoggedIn && (
-        <>
-          <div className={styles.wrapNavDesktop}>
-            <UserNav />
-            <UserBar />
-            <LogOutBtn />
-          </div>
+    <Container className={styles.container}>
+      <header className={className}>
+        <Logo />
+        {isLoggedIn && (
+          <>
+            <div className={styles.wrapNavDesktop}>
+              <UserNav />
+              <UserBar />
+              <LogOutBtn />
+            </div>
 
-          <div className={styles.wrapNavMob}>
-            <UserBar/>
-            <BurgerMenu
-              active={menuActive}
-              setActive={setMenuActive}
-              className={styles.mobMenu}
-            />
-            <button className={styles.mobileBtn}
-            onClick={() => setMenuActive(!menuActive)}>
-            <RiMenu2Line className={styles.mobileIcon} />
-          </button>
-          </div>
-        </>
-      )}
-    </header>
+            <div className={styles.wrapNavMob}>
+              <UserBar />
+              <BurgerMenu
+                active={menuActive}
+                setActive={setMenuActive}
+                className={styles.mobMenu}
+              />
+              <button
+                className={styles.mobileBtn}
+                onClick={() => setMenuActive(!menuActive)}
+              >
+                <RiMenu2Line className={styles.mobileIcon} />
+              </button>
+            </div>
+          </>
+        )}
+      </header>
     </Container>
-    
   );
 }
 
