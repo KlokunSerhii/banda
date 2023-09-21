@@ -7,8 +7,8 @@ const FormField = (props) => {
   const invalid = errors[name] && touched[name];
 
   return (
-    <div>
-      <Field className={`${styles.input} ${invalid ? styles.inputInvalid : ''.trim()} ${className || ''}`}
+    <div className={`${styles.FormField } ${className || ''}`}>
+      <Field className={`${styles.input} ${invalid ? styles.inputInvalid : ''.trim()}`}
         onChange={handleChange}
         onBlur={handleBlur}
         value={values[name]}

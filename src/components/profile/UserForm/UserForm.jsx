@@ -204,6 +204,7 @@ function UserForm() {
                     </div>
                     <div className={style.input_container}>
                       <FormField
+                        className={style.basic_input}
                         type="text"
                         name="name"
                         placeholder="Name"
@@ -211,6 +212,7 @@ function UserForm() {
                         required
                       />
                       <FormField
+                        className={style.basic_input}
                         type="email"
                         name="email"
                         placeholder="Email"
@@ -258,8 +260,8 @@ function UserForm() {
                     >
                       Blood
                     </div>
-                    <div role="group" aria-labelledby="my-radio-group">
-                      <label className={style.label}>
+                    <div className={style.label_container}role="group" aria-labelledby="my-radio-group">
+                      <label className={`${style.label} ${style.labelUpper}`}>
                         <Field
                           className={style.radio}
                           type="radio"
@@ -269,7 +271,7 @@ function UserForm() {
                         />
                         1
                       </label>
-                      <label className={style.label}>
+                      <label className={`${style.label} ${style.labelUpper}`}>
                         <Field
                           className={style.radio}
                           type="radio"
@@ -279,7 +281,7 @@ function UserForm() {
                         />
                         2
                       </label>
-                      <label className={style.label}>
+                      <label className={`${style.label} ${style.labelUpper}`}>
                         <Field
                           className={style.radio}
                           type="radio"
@@ -289,7 +291,7 @@ function UserForm() {
                         />
                         3
                       </label>
-                      <label className={`${style.label} ${style.label_4}`}>
+                      <label className={`${style.label} ${style.labelUpper} ${style.label_4}`}>
                         <Field
                           className={style.radio}
                           type="radio"
@@ -299,7 +301,7 @@ function UserForm() {
                         />
                         4
                       </label>
-                      <label className={style.label}>
+                      <label className={`${style.label} ${style.labelUpper}`}>
                         <Field
                           className={style.radio}
                           type="radio"
@@ -309,7 +311,7 @@ function UserForm() {
                         />
                         Male
                       </label>
-                      <label className={style.label}>
+                      <label className={`${style.label} ${style.labelUpper}`}>
                         <Field
                           className={style.radio}
                           type="radio"
