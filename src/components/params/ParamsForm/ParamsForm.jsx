@@ -171,7 +171,6 @@ function ParamsForm() {
         toast.error('Please enter all required fields!')
 
 
-        // toast.error('Please enter all required fields!')
     };
     
 
@@ -281,6 +280,7 @@ function ParamsForm() {
                             
                    
                         </div>
+                        
                     </div>   
                     :
                     currentStepIndex === 1 ?
@@ -490,7 +490,7 @@ function ParamsForm() {
                                 </div>
                                 
                             </div>
-
+                           
                         </div>                     
                         :
                         <div className={`${styles.bg} ${styles.thirdBg}`}>
@@ -551,6 +551,7 @@ function ParamsForm() {
                                 </div>
 
                             </div>
+                          
                             
                         </div>
                         
