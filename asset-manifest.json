@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/banda/static/css/main.8c2c3125.css",
-    "main.js": "/banda/static/js/main.4cafdaf8.js",
+    "main.js": "/banda/static/js/main.4e322e4f.js",
     "static/media/params-third-form-desktop-img3@3x.jpg": "/banda/static/media/params-third-form-desktop-img3@3x.8f9df4ca742370f389cd.jpg",
     "static/media/params-primary-form-desktop-img1@3x.jpg": "/banda/static/media/params-primary-form-desktop-img1@3x.c40764975cbd3be1cc68.jpg",
     "static/media/params-second-form-desktop-img2@3x.jpg": "/banda/static/media/params-second-form-desktop-img2@3x.16a738912d0e4bcb2a0d.jpg",
@@ -29,10 +29,10 @@
     "static/media/arrow-products-icon.svg": "/banda/static/media/arrow-products-icon.e37de4157aa14fbf0903.svg",
     "static/media/tabler_exclamation-mark.svg": "/banda/static/media/tabler_exclamation-mark.df8de3225481908e77e6.svg",
     "main.8c2c3125.css.map": "/banda/static/css/main.8c2c3125.css.map",
-    "main.4cafdaf8.js.map": "/banda/static/js/main.4cafdaf8.js.map"
+    "main.4e322e4f.js.map": "/banda/static/js/main.4e322e4f.js.map"
   },
   "entrypoints": [
     "static/css/main.8c2c3125.css",
-    "static/js/main.4cafdaf8.js"
+    "static/js/main.4e322e4f.js"
   ]
 }
