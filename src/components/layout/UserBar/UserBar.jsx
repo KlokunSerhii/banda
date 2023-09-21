@@ -1,11 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { AiOutlineSetting } from 'react-icons/ai';
-import { BiSolidUser } from 'react-icons/bi';
+import { useAuth } from 'hooks';
 import styles from './UserBar.module.css';
 
 const UserBar = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
+  console.log(user)
+
+
 
   return (
     <div className={styles.wrapUseBar}>
@@ -17,10 +21,13 @@ const UserBar = () => {
       >
         <AiOutlineSetting className={styles.iconSettings} />
       </button>
-      <div className={styles.avatar}
-        src="https://bit.ly/broken-link"
-      ><BiSolidUser className={styles.avatarIcon} />
-</div>
+      <div className={styles.avatar}>
+        <img
+          className={styles.avatar}
+          src={user.avatarURL}
+          alt="avatar"
+        />
+      </div>
     </div>
   );
 };

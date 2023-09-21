@@ -22,7 +22,7 @@
 .avatar {
   width: 37px;
   height: 37px;
-  border: 2px solid #E6533C;
+  border: 1px solid #E6533C;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -34,12 +34,12 @@
   }
 }
 
-.avatarIcon {
-  fill: rgba(239, 237, 232, 0.3);
+avatar {
   width: 21px;
   height: 21px;
-
-  @media screen and (min-width: 768px) {
+  margin-left: 5px;
+  border-radius: 50px;
+  @media (min-width: 768px) {
     width: 24px;
     height: 24px;
   }
