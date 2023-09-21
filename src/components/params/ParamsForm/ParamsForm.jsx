@@ -550,7 +550,8 @@ function ParamsForm() {
                                 </div>
 
                             </div>
-                             <StepBar currentStep={currentStepIndex}/>  
+                            <StepBar currentStep={currentStepIndex} />
+                            
                         </div>
                         
                 }
