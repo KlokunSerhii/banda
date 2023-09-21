@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom';
 
 import { refreshUser } from 'redux/auth/operations';
 
+import StepBar from '../StepBar';
+
 import styles from './ParamsForm.module.css';
 
 import { useFormik } from 'formik';
@@ -271,12 +273,16 @@ function ParamsForm() {
                                 </ul>
                                 <button type='button' className={`${styles.nextBtn}  ${styles.btn}`} onClick={handleNextClick}>
                                     Next <FiArrowRight style={{ width: "18px", height: "18px", marginLeft: "4px", color: "#e6533c" }} />
-                                </button>
+                                </button>         
 
                             </div>
-                            
+
                    
+
                         </div>
+                             <StepBar currentStep={currentStepIndex}/>  
+
+
                     </div>   
                     :
                     currentStepIndex === 1 ?
@@ -482,10 +488,17 @@ function ParamsForm() {
                                                 Next <FiArrowRight style={{ width: "18px", height: "18px", marginLeft: "4px", color: "#e6533c" }} />
                                             </button>
                                         </div>
+                                        
                                     </div>
+
                                 </div>
-                                
+
+
+
+   
                             </div>
+                             <StepBar currentStep={currentStepIndex}/>  
+
                         </div>                     
                         :
                         <div className={`${styles.bg} ${styles.thirdBg}`}>
@@ -541,12 +554,16 @@ function ParamsForm() {
                                             Back
                                         </button>
                                     </div>
-                                
+                                 
 
                                 </div>
                             </div>
+
+
+                             <StepBar currentStep={currentStepIndex}/>  
+
                         </div>
-                        
+                    
                 }
 
             </form>

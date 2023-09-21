@@ -41,7 +41,7 @@ export const App = () => {
     <ChakraProvider>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Welcome />} />
+          <Route index element={<Params />} />
           <Route
             path="/singin"
             element={<PublicRoute redirectto="/diary" component={SignIn} />}
