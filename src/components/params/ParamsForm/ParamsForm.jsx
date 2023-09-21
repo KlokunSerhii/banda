@@ -19,7 +19,7 @@ import { AiFillPlayCircle } from 'react-icons/ai';
 import { MdDirectionsRun } from 'react-icons/md';
 // import { Container } from '@chakra-ui/react';
 
-
+import StepBar from '../StepBar/StepBar';
 const formSchema = {
 
     height: number()
@@ -177,7 +177,6 @@ function ParamsForm() {
         toast.error('Please enter all required fields!')
 
 
-        // toast.error('Please enter all required fields!')
     };
     
 
@@ -287,6 +286,9 @@ function ParamsForm() {
                             
                    
                         </div>
+
+                        <StepBar currentStep={currentStepIndex}/>
+
                     </div>   
                     :
                     currentStepIndex === 1 ?
@@ -496,6 +498,9 @@ function ParamsForm() {
                                 </div>
                                 
                             </div>
+
+                            <StepBar currentStep={currentStepIndex}/>
+
                         </div>                     
                         :
                         <div className={`${styles.bg} ${styles.thirdBg}`}>
@@ -554,7 +559,11 @@ function ParamsForm() {
                                 
 
                                 </div>
+
                             </div>
+
+                            <StepBar currentStep={currentStepIndex}/>
+
                         </div>
                         
                 }
