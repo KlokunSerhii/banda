@@ -7,9 +7,6 @@ import styles from './UserBar.module.css';
 const UserBar = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  console.log(user)
-
-
 
   return (
     <div className={styles.wrapUseBar}>
@@ -23,7 +20,6 @@ const UserBar = () => {
       </button>
       <div className={styles.avatar}>
         <img
-          className={styles.avatar}
           src={user.avatarURL}
           alt="avatar"
         />

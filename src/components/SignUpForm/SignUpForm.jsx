@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { Form, Formik } from 'formik';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 import styles from './SignUpForm.module.css';
 import { register } from '../../redux/auth/operations';
@@ -33,7 +33,6 @@ function SignUpForm() {
 
   const onSubmit = ({ email, password, name }, { resetForm }) => {
     dispatch(register({ email, password, name }));
-    toast.error('Sorry, something went wrong. This user may not exist. Please try again');
     resetForm();
   };
 

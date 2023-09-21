@@ -70,3 +70,10 @@
   flex-direction: row;
   height: 20px;
 }
+.ErrorInfo{
+  min-width: 283px;
+  @media screen and (min-width: 768px) {
+    max-width: 364px;
+  }
+
+}
