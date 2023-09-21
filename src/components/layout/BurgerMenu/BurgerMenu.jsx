@@ -48,7 +48,7 @@ const BurgerMenu = ({ active }) => {
 
   return (
     <>
-      {active && (
+      {menuIsOpen && (
         <div className={styles.backdrop} onClick={closeMenu}></div>
       )}
       <div
@@ -82,15 +82,17 @@ const BurgerMenu = ({ active }) => {
           </div>
           <NavLink
             className={styles.btnLogout}
-            to="/"
-            onClick={closeMenu}
+            onClick={LogOutBtn}
+            
           >
             <div className={styles.btnText}>Logout</div>
             <MdLogout className={styles.btnIcon} />
           </NavLink>
+
+
              <button
             className={styles.closeBtn}
-            onClick={LogOutBtn}
+            onClick={closeMenu}
           >
             <RiCloseFill className={styles.closeIcon} />
           </button>

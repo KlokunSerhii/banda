@@ -11,13 +11,12 @@ const FormField = props => {
   return (
     <div>
       <Field
-        className={`${styles.input} ${
-          values[name] !== ''
+        className={`${styles.input} ${values[name] !== ''
             ? invalid
               ? styles.inputInvalid
               : styles.inputValid
             : styles.input
-        } ${className || ''}`}
+          } ${className || ''}`}
         onChange={handleChange}
         onBlur={handleBlur}
         value={values[name]}
@@ -34,7 +33,12 @@ const FormField = props => {
                 height="16"
               ></use>
             </svg>
-            Error {name}
+            {name === "email" ? 
+            (<p>Error {name}</p>) : 
+            (<p className={styles.ErrorInfo}>
+              Min: 6 symbols, one uppercase letter, one lowercase letter, one number, one special symbol
+              </p>) 
+              }
           </div>
         ) : (
           <div className={styles.successMessage}>
