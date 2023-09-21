@@ -4,7 +4,7 @@ import ParamsForm from 'components/params/ParamsForm';
 function Params() {
   return <div>
     <ParamsForm/>
-  </div>;
+  </div>
 }
 
 export default Params;

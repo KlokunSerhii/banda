@@ -1,16 +1,34 @@
 .UserCard {
   align-items: center;
   justify-content: center;
-  padding-left: 50px;
-  margin-top: 27px;
-  border-left: 1px solid rgba(239, 237, 232, 0.2);
+  max-width: 439px;
+  border-left: none;
+  margin: 40px auto 0 auto;
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: 60px;
+    margin-top: 27px;
+    margin-right: 0;
+  }
 }
 
 .avatar {
-  width: 150px;
-  height: 150px;
+  width: 90px;
+  height: 90px;
   position: relative;
-  margin-left: 144px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 150px;
+    height: 150px;
+    margin-left: 144px;
+  }
 }
 
 .avatar_container {
@@ -35,6 +53,12 @@
   margin-top: 32px;
   margin-bottom: 8px;
   text-align: center;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 4px;
+    margin-top: 31px;
+    font-size: 18px;
+    line-height: 1.1;
+  }
 }
 
 .text {
@@ -44,6 +68,9 @@
   line-height: 1.28;
   margin-bottom: 32px;
   text-align: center;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
 }
 .avatar_icon {
   width: 32px;
@@ -54,35 +81,63 @@
   right: 0;
   margin: 0 auto;
   background-image: url(../../../images/check\ mark.svg);
+  @media screen and (max-width: 767px) {
+    width: 24px;
+    height: 24px;
+    bottom: -12px;
+  }
 }
 
 .info_container {
   display: flex;
   align-items: flex-start;
+  flex-wrap: nowrap;
   gap: 16px;
   overflow: hidden;
+  @media screen and (max-width: 374px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media screen and (max-width: 767px) {
+    gap: 13px;
+  }
+}
+
+.info_card1 {
+  width: 157px;
+}
+
+.info_card2 {
+  width: 165px;
 }
 
 .info_card {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  width: calc((100% - 16px) / 2);
-  flex-shrink: 0;
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 14px;
   user-select: none;
   background: #e6533c;
   color: #efede8;
   border-radius: 12px;
-  margin-bottom: 32px;
-  padding: 18px;
+  margin-bottom: 40px;
+  padding: 14px;
+  white-space: nowrap;
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 16px) / 2);
+    padding: 18px;
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+ 
 }
 
 .info_icon,
 .info_icon2 {
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
 }
 
 .info_icon {
@@ -90,7 +145,6 @@
 }
 .info_icon2 {
   background-image: url(../../../images/dumbbell.svg);
-
 }
 .info_text {
   color: rgba(239, 237, 232, 0.8);
@@ -128,20 +182,28 @@
   width: 24px;
   height: 24px;
   border-radius: 9999px;
-  background-color: #EFA082;
+  background-color: #efa082;
   flex-shrink: 0;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .text_info {
-  color: rgba(239, 237, 232, 0.30);
+  color: rgba(239, 237, 232, 0.3);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5; 
+  line-height: 1.5;
+  text-align: justify;
+  @media screen and (max-width:767px) {
+    font-size: 14px;
+    line-height: 1.28;
+  }
 }
 
 .logout_container {
   display: flex;
   justify-content: flex-end;
   margin-top: 32px;
+  @media screen and (max-width: 767px) {
+   margin-top: 41px;
+  }
 }

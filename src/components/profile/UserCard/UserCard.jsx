@@ -43,14 +43,14 @@ function UserCard({ user, onAvatarChange }) {
       <p className={style.avatar_name}>{user.name}</p>
       <p className={style.text}>User</p>
       <div className={style.info_container}>
-        <div className={style.info_card}>
+        <div className={`${style.info_card} ${style.info_card1}`}>
           <div className={style.info_text_container}>
             <div className={style.info_icon}></div>
             <div className={style.info_text}>Daily calorie intake</div>
           </div>
           {values.bmr}
         </div>
-        <div className={style.info_card}>
+        <div className={`${style.info_card} ${style.info_card2}`}>
           <div className={style.info_text_container}>
             <div className={style.info_icon2}></div>
             <div className={style.info_text}>Daily norm of sports</div>
