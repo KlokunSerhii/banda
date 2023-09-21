@@ -20,6 +20,8 @@ import { MdDirectionsRun } from 'react-icons/md';
 // import { Container } from '@chakra-ui/react';
 
 import StepBar from '../StepBar/StepBar';
+
+
 const formSchema = {
 
     height: number()
