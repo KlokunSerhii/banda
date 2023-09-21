@@ -1,7 +1,9 @@
 import React from 'react';
-import { useState, useRef, useEffect } from 'react';
+import { useState, 
+        // useRef, useEffect
+       } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 import { refreshUser } from 'redux/auth/operations';
 
@@ -15,7 +17,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import {FiArrowLeft, FiArrowRight, FiWatch } from "react-icons/fi";
 import { AiFillPlayCircle } from 'react-icons/ai';
 import { MdDirectionsRun } from 'react-icons/md';
-import { Container } from '@chakra-ui/react';
+// import { Container } from '@chakra-ui/react';
+
 
 
 const validationSchema = Yup.object().shape({
@@ -70,7 +73,8 @@ function ParamsForm() {
     const [pending, setPending] = useState(false);
     const dispatch = useDispatch();
     const [paramsData, setParamsData] = useState(initialValues);
-
+     console.log(paramsData);
+  
     const formik = useFormik({
         initialValues: initialValues,
         validationSchema: validationSchema,
