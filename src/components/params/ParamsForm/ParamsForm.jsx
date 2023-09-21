@@ -20,8 +20,6 @@ import { MdDirectionsRun } from 'react-icons/md';
 // import { Container } from '@chakra-ui/react';
 
 
-import StepBar from '../StepBar';
-
 
 const validationSchema = Yup.object().shape({
     height: Yup.number()
@@ -283,7 +281,6 @@ function ParamsForm() {
                             
                    
                         </div>
-                         <StepBar currentStep={currentStepIndex}/>  
                     </div>   
                     :
                     currentStepIndex === 1 ?
@@ -493,7 +490,7 @@ function ParamsForm() {
                                 </div>
                                 
                             </div>
-                             <StepBar currentStep={currentStepIndex}/>  
+
                         </div>                     
                         :
                         <div className={`${styles.bg} ${styles.thirdBg}`}>
@@ -554,7 +551,7 @@ function ParamsForm() {
                                 </div>
 
                             </div>
-                             <StepBar currentStep={currentStepIndex}/>  
+                            
                         </div>
                         
                 }
