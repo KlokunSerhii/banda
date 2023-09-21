@@ -10,7 +10,7 @@ import { refreshUser } from 'redux/auth/operations';
 import styles from './ParamsForm.module.css';
 
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { object, string, number, date } from 'yup';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -21,41 +21,55 @@ import { MdDirectionsRun } from 'react-icons/md';
 
 import StepBar from '../StepBar/StepBar';
 
-const validationSchema = Yup.object().shape({
-    height: Yup.number()
+
+const formSchema = {
+
+    height: number()
         .min(150, 'Height must be at least 150 cm!')
         .required('Height input is rquired!')
         .integer(),
-    currentWeight: Yup.number()
+
+    currentWeight: number()
+
         .min(35, 'Current Weight must be at least 35 kg!')
         .required('Current Weight input is rquired!')
         .integer(),
-    desiredWeight: Yup.number()
+
+    desiredWeight: number()
         .min(35, 'Desired Weight must be at least 35 kg!')
         .required('Desired Weight input is rquired!')
         .integer(),
-    birthdate: Yup.date().test('age', 'You must be 18 or older', function (birthdate) {
+
+    birthdate: date().test('age', 'You must be 18 or older', function (birthdate) {
         const cutoff = new Date();
         cutoff.setFullYear(cutoff.getFullYear() - 18);
         return birthdate <= cutoff;
     }),
-    blood: Yup.string()
+
+    blood: string()
         .oneOf(["1", "2", "3", "4"])
         .required('Blood input is rquired!'),
-    sex: Yup.string()
+
+    sex: string()
         .oneOf(['male', 'female'])
         .required('Sex input is rquired!'),
-    levelActivity: Yup.string()
+
+    levelActivity: string()
         .oneOf(["1", "2", "3", "4", "5"])
         .required('Level Activity input is rquired!'),
     
+};
+
+const validationSchema = object(formSchema);
+
+const backendSchema = object({
+  ...formSchema,
+  blood: number().oneOf([1, 2, 3, 4]).required(),
+  levelActivity: number().oneOf([1, 2, 3, 4]).required(),
 });
 
-const backendSchema = Yup.object().shape({
-  ...validationSchema,
-    blood: Yup.number().oneOf([1, 2, 3, 4]).required(),
-   levelActivity: Yup.number().oneOf([1, 2, 3, 4, 5]).required(),
-});
+
+console.log(backendSchema)
 
 
 const initialValues = {
@@ -72,8 +86,7 @@ function ParamsForm() {
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
     const [pending, setPending] = useState(false);
     const dispatch = useDispatch();
-    const [paramsData, setParamsData] = useState(initialValues);
-     console.log(paramsData);
+    const [, setParamsData] = useState(initialValues);
   
     const formik = useFormik({
         initialValues: initialValues,
@@ -81,7 +94,6 @@ function ParamsForm() {
         validateOnBlur:true,
         onSubmit: (values) => {
             const formData = new FormData();
-
             //? ====================================================
             const { ...bodyParams } = backendSchema.cast(values);
             setPending(!pending);
@@ -97,8 +109,6 @@ function ParamsForm() {
                     
                     toast.success('Your profile has been successfully updated');
                     
-
-                    
                     dispatch(refreshUser());
                     setPending(false);
                 },
@@ -107,8 +117,6 @@ function ParamsForm() {
                     toast.error('Oops, something went wrong! Profile update failed...');
                     setPending(false);
                 }
-
-
             );
 
             //? ====================================================
@@ -226,7 +234,7 @@ function ParamsForm() {
                                         <label htmlFor="height" className={styles.formLabel}>Height</label>
                                         <input
                                             className={styles.formHeightInput}
-                                            type="text"
+                                            type="number"
                                             id='height'
                                             name='height'
                                             placeholder='157'
@@ -238,7 +246,7 @@ function ParamsForm() {
                                     <li className={styles.formItemWrapper}>
                                         <input
                                             className={styles.formCurrentWeightInput}
-                                            type="text"
+                                            type="number"
                                             id='currentWeight'
                                             name='currentWeight'
                                             placeholder='Current Weight'
@@ -250,7 +258,7 @@ function ParamsForm() {
                                     <li className={styles.formItemWrapper}>
                                         <input
                                             className={styles.formDesiredWeightInput}
-                                            type="text"
+                                            type="number"
                                             id='desiredWeight'
                                             name='desiredWeight'
                                             placeholder='Desired Weight'
