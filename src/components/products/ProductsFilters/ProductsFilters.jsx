@@ -1,183 +1,164 @@
-import React from 'react';
+import symbolDefs from '../../../images/symbol-defs.svg';
+import Select from 'react-select';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { productCategories } from '../../../redux/products/operation';
+import { capitalizeFirstLeter } from '../../../helpers/capitalize';
+import { useProduct } from '../../../hooks/products';
+import { filterReducer } from '../../../redux/products/slice';
 import styles from './ProductsFilter.module.css';
-import { useState } from 'react';
-import { BiSearch } from 'react-icons/bi';
-import { IoClose, IoChevronDown } from 'react-icons/io5';
+import { customStyles } from '../../../helpers/customStyles';
 
-const categories = [
-  'alcoholic drinks',
-  'berries',
-  'cereals',
-  'dairy',
-  'dried fruits',
-  'eggs',
-  'fish',
-  'flour',
-  'fruits',
-  'meat',
-  'mushrooms',
-  'nuts',
-  'oils and fats',
-  'poppy',
-  'sausage',
-  'seeds',
-  'sesame',
-  'soft drinks',
-  'vegetables and herbs',
+const optionsRec = [
+  { value: 'all', label: 'All' },
+  { value: 'recommended', label: 'Recommended ' },
+  { value: 'notRecommended', label: 'Not recommended' },
 ];
 
-const filters = ['All', 'Reommended', 'Not Recommended'];
-
 function ProductsFilters() {
-  const [focus, setFocus] = useState(false);
-  // const [query, setQuery] = useState('');
-  const [inputValue, setInputValue] = useState('');
-  const [showCategories, setShowCategories] = useState(false);
-  const [showFilters, setShowFilters] = useState(false);
+  const dispatch = useDispatch();
+  const { categoriesProducts } = useProduct();
+  const categories = categoriesProducts.categories;
+  const categoriesList = categories?.map(el => ({
+    value: el,
+    label: capitalizeFirstLeter(el),
+  }));
+  useEffect(() => {
+    dispatch(productCategories());
+  }, [dispatch]);
 
-  const handleChange = e => {
-    setInputValue(e.target.value);
+  const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
+  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState('');
+  const [recommended, setRecommended] = useState(optionsRec[0]);
+
+  const onChangeSearch = event => {
+    const text = event.target.value;
+    setHiddenBtnClose(text.length > 0);
+    setSearch(text);
+    dispatch(
+      filterReducer({
+        search: text,
+        category: category.value,
+        recommended: recommended.value,
+      })
+    );
   };
 
-  const handleInputChange = e => {
-    setInputValue(e.target.value);
-
-    if (e.target.value !== '') {
-      setFocus(true);
-
-      console.log(inputValue);
-      return;
-    }
-
-    return setFocus(false);
+  const onCategoriesChange = event => {
+    setCategory(event);
+    dispatch(
+      filterReducer({
+        category: event.value,
+        search,
+        recommended: recommended.value,
+      })
+    );
   };
 
-  const handleClose = () => {
-    // setQuery('');
-    setInputValue('');
-    console.log(inputValue);
+  const onRecomendedChange = event => {
+    setRecommended(event);
+    dispatch(
+      filterReducer({
+        recommended: event.value,
+        search,
+        category: category.value,
+      })
+    );
   };
 
-  const handleSearch = e => {
-    // setQuery('');
-    setInputValue('');
-    console.log('search');
-  };
-
-  const handleShowCategories = () => {
-    setShowCategories(!showCategories);
-    console.log('show modal categories');
-  };
-
-  const handleShowFilter = () => {
-    setShowFilters(!showFilters);
-    console.log('show modal filter');
+  const delTextInput = () => {
+    setSearch('');
+    dispatch(
+      filterReducer({
+        search: '',
+        category: category.value,
+        recommended: recommended.value,
+      })
+    );
+    setHiddenBtnClose(false);
   };
 
   return (
-    <div className={styles.containetFilter}>
-      <p className={styles.description}>Filters</p>
-
-      <div className={styles.wrapper}>
-        <div className={styles.searchWrapper}>
+    <ul className={styles.products_filter}>
+      <li>
+        <label className={styles.products_filter_label}>
           <input
-            className={styles.searchBar}
+            value={search}
+            onChange={onChangeSearch}
+            name="productSearch"
             type="text"
+            className={styles.products_filter_search}
             placeholder="Search"
-            onChange={handleInputChange}
-          ></input>
-          {focus && (
-            <button
-              className={styles.closeBtn}
-              type="button"
-              onClick={handleClose}
-            >
-              <IoClose
-                style={{
-                  fill: '#E6533C',
-                  width: '21px',
-                  height: '21px',
-                }}
-              />
-            </button>
-          )}
+          />
+
           <button
-            className={styles.searchBtn}
-            type="submit"
-            onSubmit={handleSearch}
+            onClick={delTextInput}
+            style={{ display: hiddenBtnClose ? 'block' : 'none' }}
+            className={`${styles.products_filter_btn_close} ${styles.products_filter_btn}`}
+            type="button"
           >
-            <BiSearch
-              style={{ fill: '#EFEDE8', width: '18px', height: '18px' }}
-            />
+            <svg className={styles.products_filter_btn_close_icon}>
+              <use href={symbolDefs + '#close-icon'}></use>
+            </svg>
           </button>
-        </div>
-
-        <div className={styles.box}>
-          <div className={styles.categoriesWrapper}>
-            <input
-              className={styles.categoriesBar}
-              type="text"
-              placeholder="Categories"
-              onChange={handleChange}
-            />
-            <button
-              className={styles.chevronBtn}
-              onClick={handleShowCategories}
-            >
-              <IoChevronDown
-                style={{
-                  color: '#EFEDE8',
-                  width: '18px',
-                  height: '18px',
-                }}
-              />
-            </button>
-          </div>
-          {showCategories && (
-            <ul className={styles.categoriesList}>
-              {categories.map(category => {
-                return (
-                  <li className={styles.categoriesListItem} key={category}>
-                    {category}
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-        </div>
-
-        <div className={styles.box}>
-          <div className={styles.filtersWrapper}>
-            <input
-              className={styles.filtersBar}
-              type="text"
-              placeholder="Filter"
-              onChange={handleChange}
-            />
-            <button className={styles.chevronBtn} onClick={handleShowFilter}>
-              <IoChevronDown
-                style={{
-                  color: '#EFEDE8',
-                  width: '18px',
-                  height: '18px',
-                }}
-              />
-            </button>
-          </div>
-          {showFilters && (
-            <ul className={styles.filtersList}>
-              {filters.map(filter => {
-                return (
-                  <li className={styles.filtersListItem} key={filter}>
-                    {filter}
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-        </div>
-      </div>
-    </div>
+          <button
+            className={`${styles.products_filter_btn_search} ${styles.products_filter_btn}`}
+            type="button"
+          >
+            <svg className={styles.products_filter_btn_search_icon}>
+              <use href={symbolDefs + '#search-icon'}></use>
+            </svg>
+          </button>
+        </label>
+      </li>
+      <li>
+        <Select
+          value={category}
+          onChange={onCategoriesChange}
+          styles={customStyles}
+          className={`
+          ${styles.products_filter_select}
+          ${styles.products_filter_select_categories}
+          `}
+          theme={theme => ({
+            ...theme,
+            colors: {
+              ...theme.colors,
+              primary50: `var(--transparent-medium-4)`,
+              primary: 'transparent',
+              neutral40: `var(--main-text-color)`,
+              neutral20: 'transparent',
+              neutral30: 'transparent',
+              neutral50: `var(--main-text-color)`,
+            },
+          })}
+          options={categoriesList || []}
+        />
+      </li>
+      <li>
+        <Select
+          onChange={onRecomendedChange}
+          value={recommended}
+          styles={customStyles}
+          className={`${styles.products_filter_select} ${styles.products_filter_select_type}`}
+          theme={theme => ({
+            ...theme,
+            colors: {
+              ...theme.colors,
+              primary50: 'rgba(255, 255, 255, 0.10)',
+              primary: 'transparent',
+              neutral40: `var(--main-text-color)`,
+              neutral20: 'transparent',
+              neutral30: 'transparent',
+              neutral50: `var(--main-text-color)`,
+              neutral80: `var(--main-text-color)`,
+            },
+          })}
+          options={optionsRec}
+        />
+      </li>
+    </ul>
   );
 }
 

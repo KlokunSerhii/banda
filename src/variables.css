@@ -27,4 +27,7 @@
   --transparent-dark-2: rgba(48, 48, 48, 0.3);
   --transparent-dark-3: rgba(4, 4, 4, 0);
   --transparent-dark-4: rgba(4, 4, 4, 0.5);
+
+  --transition-cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 250ms;
 }

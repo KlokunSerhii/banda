@@ -42,8 +42,6 @@ html {
 html,
 body {
   min-height: 100vh;
-  scrollbar-color: #458245 #714826;
-  scrollbar-width: auto;
 }
 
 * {
@@ -121,4 +119,18 @@ img {
     padding-left: 96px;
     padding-right: 96px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--transparent-medium-4);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-medium-color);
+  border-radius: 12px;
 }
