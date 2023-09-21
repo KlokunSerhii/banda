@@ -1,10 +1,10 @@
 .container {
-  padding-top: 101px;
+  padding-top: var(--padding-top-bg-mob);
   @media screen and (min-width: 768px) {
-    padding-top: 156px;
+    padding-top: var(--padding-top-bg-desktop);
   }
   @media screen and (min-width: 1440px) {
-    padding-top: 152px;
+    padding-top: var(--padding-top-bg-desktop);
   }
 }
 .UserForm {
@@ -46,8 +46,6 @@
   /* @media screen and (max-width: 767px) {
     width: calc(50% - 14px);
   } */
-
-  
 }
 
 .text_blood {
@@ -65,10 +63,10 @@
   align-items: flex-end;
   margin-bottom: 5px;
   @media screen and (max-width: 767px) {
-   flex-wrap: wrap;
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   gap:0px;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
   }
 }
 
@@ -135,17 +133,18 @@
   width: 187px;
 }
 
-.input_1, .input_2, .input_3, .input_4 {
+.input_1,
+.input_2,
+.input_3,
+.input_4 {
   @media screen and (max-width: 767px) {
     width: 100%;
   }
 }
 
-
 .basic_input {
   grid-column: 1 / 3;
 }
-
 
 .label {
   color: var(--main-text-color);
@@ -160,21 +159,19 @@
     font-size: 14px;
     line-height: 1.28;
     margin-right: 0;
-    
   }
 }
 .label_container {
   @media screen and (max-width: 767px) {
     display: flex;
     margin-right: 8px;
-    }
-    }
-    .labelUpper {
-      @media screen and (max-width: 767px) {
-       margin-right: 8px;
-        }
-
-    }
+  }
+}
+.labelUpper {
+  @media screen and (max-width: 767px) {
+    margin-right: 8px;
+  }
+}
 .radio {
   margin-right: 8px;
   -webkit-appearance: none;
@@ -199,7 +196,6 @@
     width: 18px;
     height: 18px;
   }
-  
 }
 
 .radio::after {
@@ -218,7 +214,7 @@
   @media screen and (max-width: 767px) {
     width: 8px;
     height: 8px;
-    }
+  }
 }
 
 .radio:checked::after {
@@ -233,7 +229,7 @@
 .label_4 {
   margin-right: 24px;
   @media screen and (max-width: 767px) {
-   margin-right: 21px;
+    margin-right: 21px;
   }
 }
 
@@ -245,7 +241,7 @@
   margin-bottom: 48px;
   @media screen and (max-width: 767px) {
     margin-bottom: 40px;
-    }
+  }
 }
 
 .button {
@@ -266,7 +262,7 @@
     width: 115px;
     height: 42px;
     font-size: 16px;
-    }
+  }
 }
 
 .button:disabled {

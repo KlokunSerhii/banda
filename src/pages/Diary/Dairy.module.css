@@ -3,23 +3,24 @@
   min-width: 375px;
   height: 812px;
   margin: 0 auto;
-  padding-top: 127px;
+  padding-top: var(--padding-top-bg-mob);
 
   @media screen and (min-width: 768px) {
     min-width: 768px;
     height: 1024px;
-    padding-top: 141px;
+    padding-top: var(--padding-top-bg-desktop);
   }
   @media screen and (min-width: 1440px) {
     min-width: 1440px;
-    height: 100vh;
+    height: 100%;
+    padding-top: var(--padding-top-bg-desktop);
   }
 }
 .container {
   display: flex;
   flex-direction: column-reverse;
   gap: 32px;
-  margin-top: 50px;
+  margin-top: 32px;
 }
 
 .titleCont {

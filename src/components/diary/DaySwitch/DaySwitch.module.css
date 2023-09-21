@@ -10,9 +10,9 @@
 
 .text {
   font-size: 18px;
-  font-weight: bold;
-  color: #efede8;
-  margin-right: 5px;
+  font-weight: 700;
+  color: var(--main-text-color);
+  margin-right: 8px;
 }
 
 .btnCont {
@@ -23,4 +23,22 @@
   .text {
     font-size: 24px;
   }
+}
+.arrowRight {
+  width: 16px;
+  height: 16px;
+}
+.btnArrowRight {
+  fill: var(--transparent-medium-3);
+}
+.btnArrowLeft {
+  fill: var(--transparent-medium-3);
+}
+.arrowLeft {
+  width: 16px;
+  height: 16px;
+}
+.btnArrowRight:hover,
+.btnArrowLeft:hover {
+  fill: var(--main-text-color);
 }
