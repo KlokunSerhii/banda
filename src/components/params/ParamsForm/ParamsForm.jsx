@@ -84,7 +84,7 @@ function ParamsForm() {
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
     const [pending, setPending] = useState(false);
     const dispatch = useDispatch();
-    const [paramsData, setParamsData] = useState(initialValues);
+    const [, setParamsData] = useState(initialValues);
   
     const formik = useFormik({
         initialValues: initialValues,
