@@ -1,9 +1,16 @@
 {
   "files": {
-    "main.css": "/banda/static/css/main.0aef704d.css",
-    "main.js": "/banda/static/js/main.019af632.js",
+    "main.css": "/banda/static/css/main.a802abda.css",
+    "main.js": "/banda/static/js/main.c2faedd9.js",
+    "static/media/params-third-form-desktop-img3@3x.jpg": "/banda/static/media/params-third-form-desktop-img3@3x.8f9df4ca742370f389cd.jpg",
     "static/media/params-primary-form-desktop-img1@3x.jpg": "/banda/static/media/params-primary-form-desktop-img1@3x.c40764975cbd3be1cc68.jpg",
     "static/media/params-second-form-desktop-img2@3x.jpg": "/banda/static/media/params-second-form-desktop-img2@3x.16a738912d0e4bcb2a0d.jpg",
+    "static/media/params-third-form-tab.jpg": "/banda/static/media/params-third-form-tab.8ff17800629870e5fd5f.jpg",
+    "static/media/params-second-form-tab.jpg": "/banda/static/media/params-second-form-tab.e2a80ae1ef98a4fdf4fe.jpg",
+    "static/media/params-primary-form-tab.jpg": "/banda/static/media/params-primary-form-tab.dab0426c24717a1d5055.jpg",
+    "static/media/params-third-form-mob.jpg": "/banda/static/media/params-third-form-mob.4b471e27d691c92d30c8.jpg",
+    "static/media/params-second-form-mob.jpg": "/banda/static/media/params-second-form-mob.1f4a1acb4b6d29dcb165.jpg",
+    "static/media/params-primary-form-mob.jpg": "/banda/static/media/params-primary-form-mob.380082168c37e9c9cc0c.jpg",
     "static/media/symbol-defs.svg": "/banda/static/media/symbol-defs.a7cc0549c25a02b79c31a251a4ba0c9b.svg",
     "static/media/roboto-bold-webfont.woff": "/banda/static/media/roboto-bold-webfont.7e39524e3d8348ac8613.woff",
     "static/media/roboto-medium-webfont.woff": "/banda/static/media/roboto-medium-webfont.f95cce1702ac8e71a629.woff",
@@ -21,11 +28,11 @@
     "static/media/calendar.svg": "/banda/static/media/calendar.bf3176bb1ea49b809c0b.svg",
     "static/media/arrow-products-icon.svg": "/banda/static/media/arrow-products-icon.e37de4157aa14fbf0903.svg",
     "static/media/tabler_exclamation-mark.svg": "/banda/static/media/tabler_exclamation-mark.df8de3225481908e77e6.svg",
-    "main.0aef704d.css.map": "/banda/static/css/main.0aef704d.css.map",
-    "main.019af632.js.map": "/banda/static/js/main.019af632.js.map"
+    "main.a802abda.css.map": "/banda/static/css/main.a802abda.css.map",
+    "main.c2faedd9.js.map": "/banda/static/js/main.c2faedd9.js.map"
   },
   "entrypoints": [
-    "static/css/main.0aef704d.css",
-    "static/js/main.019af632.js"
+    "static/css/main.a802abda.css",
+    "static/js/main.c2faedd9.js"
   ]
 }
