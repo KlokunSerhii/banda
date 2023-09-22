@@ -34,8 +34,8 @@ const Exercises = lazy(() => import('pages/Exercises'));
 const Params = lazy(() => import('pages/Params'));
 const Profile = lazy(() => import('pages/Profile'));
 const ExercisesSubcategoriesList = lazy(() => import('components/exercises/ExercisesSubcategoriesList'));
-const ExercisesList = lazy(() => import('pages/Profile'));
-const Page404 = lazy(() => import('components/exercises/ExercisesList'));
+const ExercisesList = lazy(() => import('components/exercises/ExercisesList'));
+const Page404 = lazy(() => import('components/Page404'));
 
 export const App = () => {
   const dispatch = useDispatch();
