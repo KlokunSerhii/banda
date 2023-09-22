@@ -1,0 +1,61 @@
+.exercisesBtnBack {
+  background: transparent;
+  border: none;
+  color: var(--transparent-medium-1);
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.exercisesBtnBack::before {
+  content: url(../../../images/arrow.svg);
+  fill: var(----transparent-medium-1);
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  margin-top: -3px;
+}
+
+.exercisesSubTitle {
+  color: var(--main-text-color);
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.17;
+  margin-top: 8px;
+}
+.exercisesList {
+  display: flex;
+  margin-top: 8px;
+}
+
+.exercisesItem {
+  color: var(--transparent-medium-1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+}
+
+.exercisesItem:not(:last-child) {
+  margin-right: 28px;
+}
+.exercisesLinkActive {
+  position: relative;
+  color: var(--main-text-color);
+}
+.exercisesLinkActive::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 2;
+  right: 0;
+
+  width: 100%;
+  height: 4px;
+  background: var(--accent-medium-color);
+  border-radius: 2px;
+}
