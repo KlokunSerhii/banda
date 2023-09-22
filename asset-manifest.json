@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/banda/static/css/main.283f1154.css",
-    "main.js": "/banda/static/js/main.657009bd.js",
+    "main.js": "/banda/static/js/main.e3979e01.js",
     "static/css/349.014a8e68.chunk.css": "/banda/static/css/349.014a8e68.chunk.css",
     "static/js/349.36ee8651.chunk.js": "/banda/static/js/349.36ee8651.chunk.js",
     "static/css/124.c21941db.chunk.css": "/banda/static/css/124.c21941db.chunk.css",
@@ -22,6 +22,8 @@
     "static/js/56.04a089e9.chunk.js": "/banda/static/js/56.04a089e9.chunk.js",
     "static/js/479.32d09fe9.chunk.js": "/banda/static/js/479.32d09fe9.chunk.js",
     "static/js/606.617163b0.chunk.js": "/banda/static/js/606.617163b0.chunk.js",
+    "static/css/555.d02053ed.chunk.css": "/banda/static/css/555.d02053ed.chunk.css",
+    "static/js/555.19c0e035.chunk.js": "/banda/static/js/555.19c0e035.chunk.js",
     "static/js/856.2262c7f4.chunk.js": "/banda/static/js/856.2262c7f4.chunk.js",
     "static/js/306.82b391af.chunk.js": "/banda/static/js/306.82b391af.chunk.js",
     "static/js/820.b29c087c.chunk.js": "/banda/static/js/820.b29c087c.chunk.js",
@@ -57,7 +59,7 @@
     "static/media/arrow-products-icon.svg": "/banda/static/media/arrow-products-icon.e37de4157aa14fbf0903.svg",
     "static/media/tabler_exclamation-mark.svg": "/banda/static/media/tabler_exclamation-mark.df8de3225481908e77e6.svg",
     "main.283f1154.css.map": "/banda/static/css/main.283f1154.css.map",
-    "main.657009bd.js.map": "/banda/static/js/main.657009bd.js.map",
+    "main.e3979e01.js.map": "/banda/static/js/main.e3979e01.js.map",
     "349.014a8e68.chunk.css.map": "/banda/static/css/349.014a8e68.chunk.css.map",
     "349.36ee8651.chunk.js.map": "/banda/static/js/349.36ee8651.chunk.js.map",
     "124.c21941db.chunk.css.map": "/banda/static/css/124.c21941db.chunk.css.map",
@@ -78,6 +80,8 @@
     "56.04a089e9.chunk.js.map": "/banda/static/js/56.04a089e9.chunk.js.map",
     "479.32d09fe9.chunk.js.map": "/banda/static/js/479.32d09fe9.chunk.js.map",
     "606.617163b0.chunk.js.map": "/banda/static/js/606.617163b0.chunk.js.map",
+    "555.d02053ed.chunk.css.map": "/banda/static/css/555.d02053ed.chunk.css.map",
+    "555.19c0e035.chunk.js.map": "/banda/static/js/555.19c0e035.chunk.js.map",
     "856.2262c7f4.chunk.js.map": "/banda/static/js/856.2262c7f4.chunk.js.map",
     "306.82b391af.chunk.js.map": "/banda/static/js/306.82b391af.chunk.js.map",
     "820.b29c087c.chunk.js.map": "/banda/static/js/820.b29c087c.chunk.js.map",
@@ -89,6 +93,6 @@
   },
   "entrypoints": [
     "static/css/main.283f1154.css",
-    "static/js/main.657009bd.js"
+    "static/js/main.e3979e01.js"
   ]
 }
