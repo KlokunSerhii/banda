@@ -4,7 +4,7 @@ import style from './UserForm.module.css';
 import { object, string, number, date } from 'yup';
 import FormField from './FormField';
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useAuth } from 'hooks';
 import axios from 'axios';
 import Container from 'components/Container/Container';
@@ -76,12 +76,11 @@ function UserForm() {
 
   const formik = useRef();
 
-  console.log(user);
   // Проверяем отличаются ли данные в форме от изначальных
   const checkIfDataChanged = useCallback(() => {
     setTimeout(() => {
       const { values, isValid } = formik.current;
-      console.log(isValid);
+
       // Проходим по все ключам формы и сравниваем со значениями изначального состояния
       const isDataEqual = Object.keys(initialValues).every(
         key => initialValues[key] === values[key]
@@ -193,12 +192,11 @@ function UserForm() {
   return (
     <Container className={style.container}>
       <div
-        className={`${style.UserForm} ${
-          pending ? style.UserForm_disabled : ''
-        }`}
+        className={`${style.UserForm} ${pending ? style.UserForm_disabled : ''
+          }`}
       >
         <TitlePage title="Profile Settings" />
-        <ToastContainer />
+
         <Formik
           innerRef={formik}
           initialValues={initialValues}

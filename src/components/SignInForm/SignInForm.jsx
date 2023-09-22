@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import FormField from '../FormField';
-import { ToastContainer } from 'react-toastify';
+
 
 import styles from './SignInForm.module.css';
 import { login } from '../../redux/auth/operations';
@@ -36,7 +36,7 @@ function SignInForm() {
 
   return (
     <>
-      <ToastContainer />
+
       <Formik
         innerRef={formik}
         initialValues={initialValues}

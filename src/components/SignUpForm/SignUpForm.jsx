@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { Form, Formik } from 'formik';
-import { ToastContainer } from 'react-toastify';
+
 
 import styles from './SignUpForm.module.css';
 import { register } from '../../redux/auth/operations';
@@ -40,7 +40,7 @@ function SignUpForm() {
 
   return (
     <>
-    <ToastContainer />
+
     <Formik
     innerRef={formik}
     initialValues={initialValues}

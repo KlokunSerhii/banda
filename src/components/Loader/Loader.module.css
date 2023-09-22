@@ -17,7 +17,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--primary-accent);
+    background: var(--accent-bright-color);
     margin: -4px 0 0 -4px;
   }
   .loader div:nth-child(1) {
