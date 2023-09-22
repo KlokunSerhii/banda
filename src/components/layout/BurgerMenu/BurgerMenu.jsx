@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { MdLogout } from 'react-icons/md';
 import styles from './BurgerMenu.module.css';
@@ -7,17 +7,16 @@ import { RiCloseFill } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../../redux/auth/operations';
 
-const BurgerMenu = ({ active }) => {
-  const [menuIsOpen, setMenuIsOpen] = useState(active);
+const BurgerMenu = ({ active, setActive }) => {
   const dispatch = useDispatch();
 
   const LogOutBtn = () => {
     dispatch(logout());
-    setMenuIsOpen(false);
+    setActive(false);
   };
 
   const closeMenu = () => {
-    setMenuIsOpen(false);
+    setActive(false);
   };
 
   const handleEscape = event => {
@@ -29,12 +28,11 @@ const BurgerMenu = ({ active }) => {
   const handleBackdrop = e => {
     if (e.target === e.currentTarget) {
       closeMenu();
-      console.log('handleBackdrop');
     }
   };
 
   useEffect(() => {
-    if (menuIsOpen) {
+    if (active) {
       return window.addEventListener('keydown', handleEscape);
     }
     return () => {
@@ -42,61 +40,55 @@ const BurgerMenu = ({ active }) => {
     };
   });
 
-    useEffect(() => {
-    setMenuIsOpen(active);
-  }, [active]);
 
   return (
     <>
-      {menuIsOpen && (
+      {active && (
         <div className={styles.backdrop} onClick={closeMenu}></div>
       )}
       <div
         className={
-          menuIsOpen ? [styles.menu, styles.active].join(' ') : [styles.menu]
+          active ? [styles.menu, styles.active].join(' ') : [styles.menu]
         }
         onClick={handleBackdrop}
       >
-          <div className={styles.wrapNav} onClick={e => e.stopPropagation()}>
-            <NavLink
-              className={styles.navItem}
-              to="/diary"
-              onClick={closeMenu}
-            >
-              Diary
-            </NavLink>
-            <NavLink
-              className={styles.navItem}
-              to="/products"
-              onClick={closeMenu}
-            >
-              Products
-            </NavLink>
-            <NavLink
-              className={styles.navItem}
-              to="/exercises"
-              onClick={closeMenu}
-            >
-              Exercises
-            </NavLink>
-          </div>
+        <div className={styles.wrapNav} onClick={e => e.stopPropagation()}>
           <NavLink
-            className={styles.btnLogout}
-            onClick={LogOutBtn}
-            
-          >
-            <div className={styles.btnText}>Logout</div>
-            <MdLogout className={styles.btnIcon} />
-          </NavLink>
-
-
-             <button
-            className={styles.closeBtn}
+            className={styles.navItem}
+            to="/diary"
             onClick={closeMenu}
           >
-            <RiCloseFill className={styles.closeIcon} />
-          </button>
+            Diary
+          </NavLink>
+          <NavLink
+            className={styles.navItem}
+            to="/products"
+            onClick={closeMenu}
+          >
+            Products
+          </NavLink>
+          <NavLink
+            className={styles.navItem}
+            to="/exercises"
+            onClick={closeMenu}
+          >
+            Exercises
+          </NavLink>
         </div>
+        <NavLink
+          className={styles.btnLogout}
+          onClick={LogOutBtn}
+        >
+          <div className={styles.btnText}>Logout</div>
+          <MdLogout className={styles.btnIcon} />
+        </NavLink>
+        <button
+          className={styles.closeBtn}
+          onClick={closeMenu}
+        >
+          <RiCloseFill className={styles.closeIcon} />
+        </button>
+      </div>
     </>
   );
 };
