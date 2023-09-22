@@ -18,6 +18,7 @@ function Header() {
     setClassName(!isLoggedIn ? styles.headerPosition : styles.headerNoPosition);
   }, [isLoggedIn]);
 
+
   return (
     <Container className={styles.container}>
       <header className={className}>

@@ -43,7 +43,6 @@
 
   display: flex;
   justify-content: space-between;
-  gap: 96px;
   border-bottom: 1px solid var(--transparent-medium-3);
   padding-top: 12px;
   padding-bottom: 12px;
@@ -56,15 +55,12 @@
   @media screen and (min-width: 768px) {
     padding-top: 19px;
     padding-bottom: 19px;
-    padding-left: 32px;
     padding-right: 32px;
     gap: 415px;
   }
 
   @media screen and (min-width: 1440px) {
     height: 84px;
-    padding-left: 96px;
-    padding-right: 96px;
     gap: 514px;
   }
 }
