@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkbanda=self.webpackChunkbanda||[]).push([[479],{6479:function(n,r,u){u.r(r),u.d(r,{default:function(){return t}});u(2791);var a=u(184);var e=function(){return(0,a.jsx)("div",{})};var t=function(){return(0,a.jsx)("div",{children:(0,a.jsx)(e,{})})}}}]);
-//# sourceMappingURL=479.662fa5d9.chunk.js.map
