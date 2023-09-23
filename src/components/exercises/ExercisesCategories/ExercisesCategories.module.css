@@ -33,6 +33,17 @@
   margin-top: 8px;
 }
 
+@media screen and (min-width: 768px) {
+  .exercisesList {
+    justify-content: flex-end;
+  }
+
+  .exercisesTitleLocation {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .exercisesItem {
   color: var(--transparent-medium-1);
   font-size: 14px;
