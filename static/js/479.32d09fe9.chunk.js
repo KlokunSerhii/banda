@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkbanda=self.webpackChunkbanda||[]).push([[479],{6479:function(n,e,r){r.r(e),r.d(e,{default:function(){return a}});r(2791);var u=r(184);var t=function(){return(0,u.jsx)("div",{children:"ExercisesSubcategoriesItem"})};var a=function(){return(0,u.jsx)("div",{children:(0,u.jsx)(t,{})})}}}]);
-//# sourceMappingURL=479.32d09fe9.chunk.js.map

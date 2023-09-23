@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/banda/static/css/main.283f1154.css",
-    "main.js": "/banda/static/js/main.dac8eb64.js",
+    "main.js": "/banda/static/js/main.ec21976a.js",
     "static/css/349.014a8e68.chunk.css": "/banda/static/css/349.014a8e68.chunk.css",
     "static/js/349.36ee8651.chunk.js": "/banda/static/js/349.36ee8651.chunk.js",
     "static/css/124.c21941db.chunk.css": "/banda/static/css/124.c21941db.chunk.css",
     "static/js/124.dc4d309e.chunk.js": "/banda/static/js/124.dc4d309e.chunk.js",
     "static/css/250.093511dc.chunk.css": "/banda/static/css/250.093511dc.chunk.css",
-    "static/js/250.2f4a65e7.chunk.js": "/banda/static/js/250.2f4a65e7.chunk.js",
+    "static/js/250.5b8fcd57.chunk.js": "/banda/static/js/250.5b8fcd57.chunk.js",
     "static/css/718.57d1d96e.chunk.css": "/banda/static/css/718.57d1d96e.chunk.css",
     "static/js/718.25de0785.chunk.js": "/banda/static/js/718.25de0785.chunk.js",
     "static/css/144.9e1728fe.chunk.css": "/banda/static/css/144.9e1728fe.chunk.css",
@@ -19,8 +19,8 @@
     "static/css/740.3cbb93bf.chunk.css": "/banda/static/css/740.3cbb93bf.chunk.css",
     "static/js/740.20c64872.chunk.js": "/banda/static/js/740.20c64872.chunk.js",
     "static/css/56.251b1220.chunk.css": "/banda/static/css/56.251b1220.chunk.css",
-    "static/js/56.04a089e9.chunk.js": "/banda/static/js/56.04a089e9.chunk.js",
-    "static/js/479.32d09fe9.chunk.js": "/banda/static/js/479.32d09fe9.chunk.js",
+    "static/js/56.5ebfed71.chunk.js": "/banda/static/js/56.5ebfed71.chunk.js",
+    "static/js/479.662fa5d9.chunk.js": "/banda/static/js/479.662fa5d9.chunk.js",
     "static/css/119.a1cb0400.chunk.css": "/banda/static/css/119.a1cb0400.chunk.css",
     "static/js/119.3e402130.chunk.js": "/banda/static/js/119.3e402130.chunk.js",
     "static/css/555.d02053ed.chunk.css": "/banda/static/css/555.d02053ed.chunk.css",
@@ -61,13 +61,13 @@
     "static/media/arrow.svg": "/banda/static/media/arrow.0a8387f2b7c94f1642a6.svg",
     "static/media/tabler_exclamation-mark.svg": "/banda/static/media/tabler_exclamation-mark.df8de3225481908e77e6.svg",
     "main.283f1154.css.map": "/banda/static/css/main.283f1154.css.map",
-    "main.dac8eb64.js.map": "/banda/static/js/main.dac8eb64.js.map",
+    "main.ec21976a.js.map": "/banda/static/js/main.ec21976a.js.map",
     "349.014a8e68.chunk.css.map": "/banda/static/css/349.014a8e68.chunk.css.map",
     "349.36ee8651.chunk.js.map": "/banda/static/js/349.36ee8651.chunk.js.map",
     "124.c21941db.chunk.css.map": "/banda/static/css/124.c21941db.chunk.css.map",
     "124.dc4d309e.chunk.js.map": "/banda/static/js/124.dc4d309e.chunk.js.map",
     "250.093511dc.chunk.css.map": "/banda/static/css/250.093511dc.chunk.css.map",
-    "250.2f4a65e7.chunk.js.map": "/banda/static/js/250.2f4a65e7.chunk.js.map",
+    "250.5b8fcd57.chunk.js.map": "/banda/static/js/250.5b8fcd57.chunk.js.map",
     "718.57d1d96e.chunk.css.map": "/banda/static/css/718.57d1d96e.chunk.css.map",
     "718.25de0785.chunk.js.map": "/banda/static/js/718.25de0785.chunk.js.map",
     "144.9e1728fe.chunk.css.map": "/banda/static/css/144.9e1728fe.chunk.css.map",
@@ -79,8 +79,8 @@
     "740.3cbb93bf.chunk.css.map": "/banda/static/css/740.3cbb93bf.chunk.css.map",
     "740.20c64872.chunk.js.map": "/banda/static/js/740.20c64872.chunk.js.map",
     "56.251b1220.chunk.css.map": "/banda/static/css/56.251b1220.chunk.css.map",
-    "56.04a089e9.chunk.js.map": "/banda/static/js/56.04a089e9.chunk.js.map",
-    "479.32d09fe9.chunk.js.map": "/banda/static/js/479.32d09fe9.chunk.js.map",
+    "56.5ebfed71.chunk.js.map": "/banda/static/js/56.5ebfed71.chunk.js.map",
+    "479.662fa5d9.chunk.js.map": "/banda/static/js/479.662fa5d9.chunk.js.map",
     "119.a1cb0400.chunk.css.map": "/banda/static/css/119.a1cb0400.chunk.css.map",
     "119.3e402130.chunk.js.map": "/banda/static/js/119.3e402130.chunk.js.map",
     "555.d02053ed.chunk.css.map": "/banda/static/css/555.d02053ed.chunk.css.map",
@@ -96,6 +96,6 @@
   },
   "entrypoints": [
     "static/css/main.283f1154.css",
-    "static/js/main.dac8eb64.js"
+    "static/js/main.ec21976a.js"
   ]
 }
