@@ -34,6 +34,11 @@ export const exerciseReducer = createSlice({
     selectedCategory: 'bodyparts',
     isLoading: false,
   },
+  reducers: {
+    setCategory: (state, { payload }) => {
+      state.selectedCategory(payload);
+    }
+  },
   extraReducers: {
     [exerciseCategories.pending]: pending,
     [exerciseList.pending]: pending,
@@ -45,3 +50,4 @@ export const exerciseReducer = createSlice({
 });
 
 export default exerciseReducer.reducer;
+export const setCategory = exerciseReducer.actions.setCategory;
