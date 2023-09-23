@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './ExercisesCategories.module.css';
 import ExercisesList from '../ExercisesList';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCategories } from 'redux/exercises/selectors';
+import { exerciseCategories } from 'redux/exercises/operation';
+import { useExercise } from 'hooks';
 
 function ExercisesCategories() {
+  const { categories } = useExercise();
+  const dispatch = useDispatch();
+
+  console.log(categories)
+
+  useEffect(() => {
+    dispatch(exerciseCategories('bodyparts'));
+  }, [dispatch]);
+
   return (
     <>
       <NavLink className={styles.exercisesBtnBack} to="/products">

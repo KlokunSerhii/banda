@@ -11,8 +11,7 @@ export const exerciseList = createAsyncThunk('exercise/list', async params => {
 export const exerciseCategories = createAsyncThunk(
   'exercise/categories',
   async params => {
-    const respose = await axios.get(`exercise-categories/${params}`);
-
-    return respose.data;
+    const response = await axios.get(`exercise-categories/${params}`);
+    return response.data;
   }
 );

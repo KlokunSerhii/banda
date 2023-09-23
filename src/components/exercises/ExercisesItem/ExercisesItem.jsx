@@ -1,8 +1,9 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useAuth } from '../../../hooks/auth';
 import styles from './ExercisesItem.module.css';
 
 function ExercisesItem({ el, openModalToggle }) {
+  const { user } = useAuth();
+ 
   return (
     <li className={styles.exercisesContainer}>
       <NavLink to="/exercises">Hello</NavLink>
