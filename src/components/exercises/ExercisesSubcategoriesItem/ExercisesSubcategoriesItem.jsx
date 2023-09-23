@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ExercisesSubcategoriesItem() {
-  return <div>ExercisesSubcategoriesItem</div>;
+  return <div></div>;
 }
 
 export default ExercisesSubcategoriesItem;

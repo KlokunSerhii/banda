@@ -1,7 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { productCategories, productList } from './operation';
 
-export const productSlice = createSlice({
+const pending = state => {
+  state.isLoading = true;
+};
+
+const rejected = state => {
+  state.isLoading = false;
+};
+
+const productCategoriesFulfilled = (state, { payload }) => {
+  state.isLoading = false;
+  state.categories = payload;
+};
+
+const productListFulfilled = (state, { payload }) => {
+  state.list = payload;
+  state.isLoading = false;
+};
+
+const filter = (state, { payload }) => {
+  state.filter = payload;
+};
+
+export const productReducer = createSlice({
   name: 'products',
   initialState: {
     categories: [],
@@ -14,37 +36,17 @@ export const productSlice = createSlice({
     },
   },
   reducers: {
-    setFilter: (state, { payload }) => {
-      state.filter = payload;
-    },
+    setFilter: filter,
   },
-  extraReducers: builder =>
-    builder
-      .addCase(productCategories.pending, pending)
-      .addCase(productCategories.fulfilled, categoriesFulfilled)
-      .addCase(productCategories.rejected, rejected)
-      .addCase(productList.pending, pending)
-      .addCase(productList.fulfilled, ListFulfilled)
-      .addCase(productList.rejected, rejected),
+  extraReducers: {
+    [productCategories.pending]: pending,
+    [productList.pending]: pending,
+    [productList.fulfilled]: productListFulfilled,
+    [productCategories.fulfilled]: productCategoriesFulfilled,
+    [productCategories.rejected]: rejected,
+    [productList.rejected]: rejected,
+  },
 });
 
-function ListFulfilled(state, { payload }) {
-  state.list = payload;
-  state.isLoading = false;
-}
-
-function pending(state) {
-  state.isLoading = true;
-}
-
-function rejected(state) {
-  state.isLoading = false;
-}
-
-function categoriesFulfilled(state, { payload }) {
-  state.isLoading = false;
-  state.categories = payload;
-}
-
-export default productSlice.reducer;
-export const filterReducer = productSlice.actions.setFilter;
+export default productReducer.reducer;
+export const filterReducer = productReducer.actions.setFilter;
