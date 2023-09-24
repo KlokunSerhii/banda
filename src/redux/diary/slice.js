@@ -13,10 +13,9 @@ const pending = state => {
 
 const addDiary = (state, { payload }) => {
   const { newProduct, newExercise } = payload;
-
   if (newProduct) {
     const newElement = {
-      ...payload.consumedProducts.pop(),
+      ...payload.consumedProducts,
       product: payload.newProduct,
     };
     state.consumedProducts = [...state.consumedProducts, newElement];

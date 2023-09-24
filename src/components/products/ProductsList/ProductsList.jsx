@@ -7,9 +7,9 @@ import { productList } from '../../../redux/products/operation';
 import { useAuth } from '../../../hooks/auth';
 import SearchNotResult from '../SearchNotResult';
 import BasicModalWindow from '../../BasicModalWindow';
-import AddProductModalWindow from '../../AddProductModalWindow';
 import AddProductSuccess from '../AddProductSuccess';
 import { filterProducts } from '../../../helpers/filterProducts';
+import AddProductForm from 'components/AddProductModalWindow/';
 
 const ProductsList = () => {
   const dispatch = useDispatch();
@@ -36,12 +36,14 @@ const ProductsList = () => {
     setModalData(null);
   };
 
+  console.log(modalData);
+  console.log(typeof modalData);
   return (
     <>
       {modalData && (
         <BasicModalWindow isOpenModalToggle={closeModal}>
           {typeof modalData === 'object' ? (
-            <AddProductModalWindow
+            <AddProductForm
               eldata={modalData}
               closeModal={closeModal}
               onClick={openModalToggle}
