@@ -47,50 +47,16 @@ export const App = () => {
             path="diary"
             element={<PrivateRoute redirectto="/" component={Diary} />}
           />
+
           <Route
             path="exercises"
             element={<PrivateRoute redirectto="/" component={Exercises} />}
-          />
-          <Route
-            path="exercises"
-            element={
-              <PrivateRoute
-                redirectto="/"
-                component={<Navigate to="bodyparts" />}
-              />
-            }
-          />
-          <Route
-            path="exercises"
-            element={
-              <PrivateRoute
-                redirectto="/"
-                component={<Navigate to="muscules" />}
-              />
-            }
-          />
-          <Route
-            path="exercises"
-            element={
-              <PrivateRoute
-                redirectto="/"
-                component={<Navigate to="equipments" />}
-              />
-            }
-          />
-          <Route
-            path="exercise-categories"
-            element={
-              <PrivateRoute
-                redirectto="/"
-                component={ExercisesSubcategoriesList}
-              />
-            }
-          />
-          <Route
-            path="exercises"
-            element={<PrivateRoute redirectto="/" component={ExercisesList} />}
-          />
+          >
+            <Route index element={<Navigate to="bodyparts" />} />
+            <Route path=":category" element={<ExercisesSubcategoriesList />} />
+            <Route path="exercise-categories" element={<ExercisesList />} />
+          </Route>
+
           <Route
             path="params"
             element={<PrivateRoute redirectto="/" component={Params} />}

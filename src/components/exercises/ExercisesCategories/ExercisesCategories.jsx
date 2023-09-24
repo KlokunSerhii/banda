@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react'; // useEffect
 import { NavLink } from 'react-router-dom';
 import styles from './ExercisesCategories.module.css';
 import ExercisesList from '../ExercisesList';
-import { useExercise } from 'hooks';
-
-
+// import { useExercise } from 'hooks';
 
 function ExercisesCategories() {
-  const { selectedCategory } = useExercise();
+  // const { selectedCategory } = useExercise();
 
   return (
     <>
@@ -23,10 +21,10 @@ function ExercisesCategories() {
             </NavLink>
           </li>
           <li className={styles.exercisesItem}>
-            <NavLink to="/">Muscles</NavLink>
+            <NavLink to="muscules">Muscles</NavLink>
           </li>
           <li className={styles.exercisesItem}>
-            <NavLink to="/">Equipment</NavLink>
+            <NavLink to="esequipments">Equipment</NavLink>
           </li>
         </ul>
       </div>
