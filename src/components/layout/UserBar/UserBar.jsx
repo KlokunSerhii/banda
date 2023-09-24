@@ -19,10 +19,7 @@ const UserBar = () => {
         <AiOutlineSetting className={styles.iconSettings} />
       </button>
       <div className={styles.avatar}>
-        <img
-          src={user.avatarURL}
-          alt="avatar"
-        />
+        <img src={user.avatarURL} alt="avatar" />
       </div>
     </div>
   );

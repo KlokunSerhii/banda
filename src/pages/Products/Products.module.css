@@ -29,7 +29,13 @@
 }
 .wrapper {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
