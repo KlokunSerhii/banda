@@ -36,8 +36,6 @@ const ProductsList = () => {
     setModalData(null);
   };
 
-  console.log(modalData);
-  console.log(typeof modalData);
   return (
     <>
       {modalData && (
