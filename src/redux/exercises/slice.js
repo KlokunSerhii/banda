@@ -6,11 +6,13 @@ const pending = state => {
 };
 
 const categoryFulfilled = (state, { payload }) => {
-  const categories = payload.exerciseCategories.map(el => ({
+  const { exerciseCategories, totalCount } = payload;
+  const categories = exerciseCategories.map(el => ({
     title: el,
     srcSet: el.imgURL,
   }));
-  state.categories = categories;
+  state.categories.list = categories;
+  state.categories.total = totalCount;
   state.isLoading = false;
 };
 
@@ -29,14 +31,21 @@ export const exerciseReducer = createSlice({
     bodyparts: [],
     equipments: [],
     muscules: [],
-    categories: [],
+    categories: {
+      list: [],
+      total: '',
+    },
+    page: 1,
     exerciseList: [],
     selectedCategory: 'bodyparts',
     isLoading: false,
   },
   reducers: {
     setCategory: (state, { payload }) => {
-      state.selectedCategory(payload);
+      state.selectedCategory = payload;
+    },
+    setPage: (state, { payload }) => {
+      state.selectedCategory =payload;
     }
   },
   extraReducers: {
@@ -51,3 +60,4 @@ export const exerciseReducer = createSlice({
 
 export default exerciseReducer.reducer;
 export const setCategory = exerciseReducer.actions.setCategory;
+export const setPage = exerciseReducer.actions.setPage;
