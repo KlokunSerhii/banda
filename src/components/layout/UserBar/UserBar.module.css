@@ -34,5 +34,12 @@
   }
 }
 .avatar img {
+  object-fit: cover;
   border-radius: 50%;
+  width: 37px;
+  height: 37px;
+  @media screen and (min-width: 768px) {
+    width: 46px;
+    height: 46px;
+  }
 }

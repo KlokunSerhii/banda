@@ -81,15 +81,6 @@
 .wrapNavMob {
   display: flex;
   align-items: center;
-  /* gap: 14px; */
-
-  @media screen and (min-width: 375px) {
-    gap: 27px;
-    margin-left: 14px;
-  }
-
-  @media screen and (min-width: 768px) {
-  }
 
   @media screen and (min-width: 1440px) {
     display: none;
@@ -97,24 +88,13 @@
 }
 
 .mobileBtn {
-  display: block;
-  position: absolute;
-  right: 18px;
-  top: 19px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 14px;
   border: none;
   width: 24px;
   height: 24px;
-
-  @media screen and (min-width: 375px) {
-    right: 18px;
-    top: 16px;
-  }
-
-  @media screen and (min-width: 768px) {
-    right: 26px;
-    top: 26px;
-  }
 
   @media screen and (min-width: 1440px) {
     display: none;
