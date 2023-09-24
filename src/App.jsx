@@ -1,7 +1,6 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom/dist';
 import { useDispatch } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
 
 import PublicRoute from 'routes/PublicRoute';
 import PrivateRoute from 'routes/PrivateRoute';
@@ -80,7 +79,6 @@ export const App = () => {
           <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>
-      <ToastContainer />
     </Suspense>
   );
 };
