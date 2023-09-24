@@ -1,25 +1,6 @@
-@media screen and (min-width: 375px) {
-  .exercisesList {
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    max-width: 100%;
-    margin-bottom: 16px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .exercisesList {
-    gap: 16px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 224px;
-    max-height: 206px;
-    padding-right: 16px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .exercisesList {
-    max-width: 237px;
-    max-height: 206px;
-  }
+.exercisesList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px 16px;
+  margin-top: 64px;
 }

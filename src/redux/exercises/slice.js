@@ -6,22 +6,11 @@ const pending = state => {
 };
 
 const categoryFulfilled = (state, { payload }) => {
-  if (payload === 'bodyparts') {
-    state.bodyparts = payload.bodyparts.map(el => ({
-      title: el,
-      srcSet: el.imgURL,
-    }));
-  } else if (payload === 'muscles') {
-    state.muscules = payload.muscles.map(el => ({
-      title: el,
-      srcSet: el.imgURL,
-    }));
-  } else if (payload === 'equipments') {
-    state.equipments = payload.equipments.map(el => ({
-      title: el,
-      srcSet: el.imgURL,
-    }));
-  }
+  const categories = payload.exerciseCategories.map(el => ({
+    title: el,
+    srcSet: el.imgURL,
+  }));
+  state.categories = categories;
   state.isLoading = false;
 };
 
@@ -34,15 +23,21 @@ const rejected = state => {
   state.isLoading = false;
 };
 
-export const exrciseReducer = createSlice({
+export const exerciseReducer = createSlice({
   name: 'exercises',
   initialState: {
     bodyparts: [],
     equipments: [],
     muscules: [],
+    categories: [],
     exerciseList: [],
-    selectedCategory: '',
+    selectedCategory: 'bodyparts',
     isLoading: false,
+  },
+  reducers: {
+    setCategory: (state, { payload }) => {
+      state.selectedCategory(payload);
+    }
   },
   extraReducers: {
     [exerciseCategories.pending]: pending,
@@ -54,4 +49,5 @@ export const exrciseReducer = createSlice({
   },
 });
 
-export default exrciseReducer.reducer;
+export default exerciseReducer.reducer;
+export const setCategory = exerciseReducer.actions.setCategory;

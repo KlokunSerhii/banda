@@ -12,7 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import authSlice from './auth/slice';
 import productReducer from './products/slice';
-import exrciseReducer from './exercises/slice';
+import exerciseReducer from './exercises/slice';
 import diaryReducer from './diary/slice';
 
 const authPersistConfig = {
@@ -27,7 +27,7 @@ export const store = configureStore({
   reducer: {
     auth: persistedReducer,
     products: productReducer,
-    exrcises: exrciseReducer,
+    exercises: exerciseReducer,
     diary: diaryReducer,
   },
 
