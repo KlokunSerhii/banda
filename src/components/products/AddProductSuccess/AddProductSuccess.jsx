@@ -4,6 +4,7 @@ import avocado from '../../../images/avocado.png';
 import { Link } from 'react-router-dom';
 
 const AddProductSuccess = ({ calories, closeModal }) => {
+  console.log(calories);
   return (
     <div className={styles.SuccessModalWindow}>
       <div className={styles.SuccessModalWindowWrap}>

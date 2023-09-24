@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-
 import styles from './BasicModalWindow.module.css';
-
 import symbolDefs from '../../images/symbol-defs.svg';
+
+
 
 const BasicModalWindow = ({ children, isOpenModalToggle }) => {
   useEffect(() => {

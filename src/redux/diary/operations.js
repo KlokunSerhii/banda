@@ -20,7 +20,7 @@ export const addDiariesProduct = createAsyncThunk(
       productId,
       weight,
     });
-    return { ...data, newProduct: body.data };
+    return { ...data, newProduct: body };
   }
 );
 
