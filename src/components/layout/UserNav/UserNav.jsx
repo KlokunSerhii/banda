@@ -4,6 +4,7 @@ import styles from './UseNav.module.css';
 
 function UserNav() {
   const { pathname } = useLocation();
+  console.log(pathname);
   return (
     <nav className={styles.navList}>
       <NavLink
@@ -23,9 +24,11 @@ function UserNav() {
         Products
       </NavLink>
       <NavLink
-        className={`${styles.navItem} ${
-          pathname === '/exercises/bodyparts' ? styles.navItemActive : ''
-        }`}
+        className={`
+        ${styles.navItem}
+        ${pathname === '/exercises/bodyparts' ? styles.navItemActive : ''}
+        ${pathname === '/exercises/muscles' ? styles.navItemActive : ''}
+        ${pathname === '/exercises/equipment' ? styles.navItemActive : ''}`}
         to="/exercises"
       >
         Exercises
