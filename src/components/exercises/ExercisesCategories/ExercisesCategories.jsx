@@ -1,11 +1,8 @@
 import React from 'react'; // useEffect
 import { NavLink } from 'react-router-dom';
 import styles from './ExercisesCategories.module.css';
-import ExercisesList from '../ExercisesList';
-// import { useExercise } from 'hooks';
 
-function ExercisesCategories() {
-  // const { selectedCategory } = useExercise();
+function ExercisesCategories({ category }) {
 
   return (
     <>
@@ -16,19 +13,18 @@ function ExercisesCategories() {
         <h2 className={styles.exercisesSubTitle}>Exercises</h2>
         <ul className={styles.exercisesList}>
           <li className={styles.exercisesItem}>
-            <NavLink to="bodyparts" className={styles.exercisesLinkActive}>
+            <NavLink to="bodyparts" className={category === 'bodyparts' ? styles.exercisesLinkActive : ''}>
               Body parts
             </NavLink>
           </li>
           <li className={styles.exercisesItem}>
-            <NavLink to="muscules">Muscles</NavLink>
+            <NavLink to="muscles" className={category === 'muscles' ? styles.exercisesLinkActive : ''}>Muscles</NavLink>
           </li>
           <li className={styles.exercisesItem}>
-            <NavLink to="esequipments">Equipment</NavLink>
+            <NavLink to="equipment" className={category === 'equipment' ? styles.exercisesLinkActive : ''}>Equipment</NavLink>
           </li>
         </ul>
       </div>
-      <ExercisesList />
     </>
   );
 }
