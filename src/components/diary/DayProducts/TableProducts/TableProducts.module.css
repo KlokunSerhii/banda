@@ -1,0 +1,140 @@
+/* My */
+.tableWrapper {
+  overflow-y: auto;
+  @media screen and (min-width: 768px) {
+    max-height: 153px;
+  }
+}
+
+.table {
+  width: 100%;
+  color: white;
+
+  border-collapse: separate;
+  border-spacing: 8px;
+}
+
+/* div */
+.tableHead {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: rgba(239, 137, 100, 1);
+  font-size: 12px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+/* table */
+.tableBody {
+  grid-column: none;
+  color: white;
+  border-collapse: separate;
+  border-spacing: 8px;
+}
+
+/* p */
+.title {
+  @media screen and (min-width: 768px) {
+    margin-right: 305px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-right: 368px;
+  }
+}
+
+/* p */
+.category {
+  @media screen and (min-width: 768px) {
+    margin-right: 45px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-right: 60px;
+  }
+}
+
+/* p */
+.calories {
+  @media screen and (min-width: 768px) {
+    margin-right: 20px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-right: 35px;
+  }
+}
+
+/* p */
+.weight {
+  @media screen and (min-width: 768px) {
+    margin-right: 15px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-right: 25px;
+  }
+}
+
+/* p */
+.recommended {
+}
+
+/* tr */
+.tableRow {
+}
+
+/* td */
+.tableCell {
+  display: inline-block;
+  padding: 8px 0px 8px 14px;
+
+  border: 1px solid gray;
+  border-radius: 12px;
+  font-size: 16px;
+
+  @media screen and (min-width: 768px) {
+    display: table-cell;
+    margin-bottom: 0px;
+  }
+}
+
+/* td last-child */
+.tableCell:last-child {
+  border: none;
+}
+
+/* p */
+.isRecommended {
+  display: inline-block;
+}
+
+/* p before */
+.isRecommended::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* svg */
+.deleteBtn {
+  display: block;
+
+  cursor: pointer;
+  fill: transparent;
+  stroke: rgba(239, 137, 100, 1);
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 40%;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}

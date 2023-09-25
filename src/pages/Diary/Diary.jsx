@@ -9,21 +9,24 @@ import styles from './Dairy.module.css';
 
 function Diary() {
   return (
+
     <div className={styles.backGround}>
       <Container>
         <div className={styles.titleCont}>
-          <TitlePage title="Diary"></TitlePage>
-          <DaySwitch></DaySwitch>
+          <TitlePage title="Diary" />
+          <DaySwitch />
         </div>
         <div className={styles.container}>
           <div className={styles.itemsCont}>
-            <DayProducts></DayProducts>
-            <DayExercises></DayExercises>
+            <DayProducts />
+            <DayExercises />
           </div>
-          <DayDashboard></DayDashboard>
+          <DayDashboard />
         </div>
       </Container>
     </div>
+    
+   
   );
 }
 
