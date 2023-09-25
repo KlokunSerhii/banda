@@ -11,6 +11,7 @@ import { useFormik } from 'formik';
 import { object, string, number, date } from 'yup';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { FiArrowLeft, FiArrowRight, FiWatch } from 'react-icons/fi';
 import { AiFillPlayCircle } from 'react-icons/ai';
