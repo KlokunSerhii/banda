@@ -12,30 +12,21 @@ const pending = state => {
 };
 
 const addDiary = (state, { payload }) => {
+  const { newExercise, product } = payload;
+  if (product) state.consumedProducts = [...state.consumedProducts, product];
 
-  const { newProduct, newExercise } = payload;
-  if (newProduct) {
-    const newElement = {
-      ...payload.weight,
-      product: payload.newProduct,
-    };
-    console.log(newElement)
-    state.consumedProducts = [...state.consumedProducts, newElement];
-  }
   if (newExercise) {
     const newElement = {
       ...payload.doneExercises.pop(),
       exercise: payload.newExercise,
     };
-
     state.doneExercises = [...state.doneExercises, newElement];
   }
   state.burnedCalories = payload.burnedCalories;
-  state.consumedCalories = payload.newProduct.amountCalories;
-  state.date = payload.date;
-
+  state.consumedCalories = payload.consumedCalories;
   state.timeSport = payload.timeSport;
   state.isLoading = false;
+  state.date = product.date;
 };
 
 const getDiary = (state, { payload }) => {
@@ -54,7 +45,6 @@ const getDiary = (state, { payload }) => {
 
     return;
   }
-
   state.burnedCalories = payload.burnedCalories;
   state.consumedCalories = payload.consumedCalories;
   state.consumedProducts = payload.consumedProducts;
@@ -109,12 +99,10 @@ export const diaryReducer = createSlice({
     burnedCalories: null,
     consumedCalories: null,
     consumedProducts: [],
-    createdAt: null,
     date: null,
     doneExercises: [],
     owner: null,
     timeSport: null,
-    updatedAt: null,
     _id: null,
   },
   extraReducers: {
@@ -138,3 +126,4 @@ export const diaryReducer = createSlice({
 });
 
 export default diaryReducer.reducer;
+// export const setCalories = diaryReducer.actions.setCalories;
