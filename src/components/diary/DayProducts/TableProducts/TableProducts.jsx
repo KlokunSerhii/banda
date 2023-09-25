@@ -106,7 +106,7 @@ useEffect(() => {
     dispatch(getDiariesByDate(date));
       
 
-  }, [date]);
+  }, [date, dispatch]);
   
   
   
