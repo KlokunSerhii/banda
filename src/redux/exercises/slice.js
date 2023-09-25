@@ -17,7 +17,7 @@ const categoryFulfilled = (state, { payload }) => {
 };
 
 const listFulfilled = (state, { payload }) => {
-  state.exerciseList = payload;
+  state.exerciseList = payload.exercises;
   state.isLoading = false;
 };
 

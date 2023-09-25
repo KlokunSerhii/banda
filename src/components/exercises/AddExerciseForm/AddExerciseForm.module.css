@@ -1,0 +1,196 @@
+.Form {
+  width: 100%;
+  max-width: 694px;
+  padding: 48px 32px;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.2);
+  background-color: #10100f;
+}
+
+.FormData {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.FormImageBox {
+  aspect-ratio: 270 / 226;
+  overflow: hidden;
+  flex-grow: 1;
+  max-width: 270px;
+  border-radius: 12px;
+}
+
+.FormImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.FormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  flex-grow: 1;
+  max-width: 344px;
+}
+
+.FormItem {
+  padding: 12px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.2);
+  background: rgba(239, 237, 232, 0.05);
+}
+
+.FormItemLabel {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(239, 237, 232, 0.4);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+}
+
+.FormItemName {
+  display: block;
+  color: #efede8;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+
+.FormBottomContainer {
+  display: flex;
+}
+
+.FormTimer {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 270px;
+}
+
+.FormTimerBox {
+  width: fit-content;
+  transform: rotate(-180deg);
+  margin-bottom: 14px;
+}
+
+.FormTimerTime {
+  transform: rotate(180deg);
+  color: #efede8;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+.FormTimerButton {
+  padding: 2px;
+  width: 32px;
+  height: 32px;
+  background: url(./play.svg);
+  background-size: cover;
+  background-clip: padding-box;
+}
+
+.FormTimerButtonActive {
+  background: url(./pause-square.svg);
+}
+
+.FormTimerCaloriesLabel {
+  color: rgba(239, 237, 232, 0.3);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  margin-right: 8px;
+}
+
+.FormTimerCaloriesLabel a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.FormTimerCaloriesValue {
+  color: #e6533c;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+}
+
+.FormAddButton {
+  display: block;
+  padding: 14px 32px;
+  color: #efede8;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  border-radius: 12px;
+  background: #e6533c;
+  align-self: end;
+  margin-left: auto;
+  &:disabled {
+    cursor: default;
+    opacity: 0.8;
+  }
+}
+
+.ModalBackdrop {
+  background-color: rgba(4, 4, 4, 0.4) !important;
+}
+
+.ModalSuccess {
+  padding: 64px 134px;
+}
+
+.FormSuccessContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.FormSuccessImage {
+  width: 118px;
+  height: 73px;
+  background-image: url(./thumb_up.png);
+  background-size: cover;
+  margin-bottom: 40px;
+}
+
+.FormSuccessTitle {
+  color: #EFEDE8;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 133.333% */
+  margin-bottom: 16px;
+}
+
+.flex {
+  display: flex;
+}
+
+.success_button {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}

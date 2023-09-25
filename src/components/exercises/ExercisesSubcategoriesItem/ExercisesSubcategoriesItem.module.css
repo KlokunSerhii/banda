@@ -1,3 +1,23 @@
+.excercisesCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 16px;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 12px;
+  border: 1px solid var(--transparent-medium-3);
+  background: var(--transparent-medium-5);
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 16px) / 2);
+      overflow: hidden;
+    }
+  @media screen and (min-width: 1440px) {
+    max-width: 405px;
+  }
+}
+
 .excercisesCardDiet {
   display: inline-flex;
   padding: 5px 7.5px;
@@ -52,14 +72,15 @@
 
 .excercisesCardInfo {
   display: flex;
+  width: 100%;
   flex-direction: row;
   gap: 16px;
 }
 
 .excercisesCardInfoItem {
-  width: 40%;
   display: flex;
   flex-direction: row;
+  white-space: nowrap;
   gap: 4px;
   color: var(--transparent-medium-1);
   font-size: 12px;
@@ -80,7 +101,6 @@
   font-size: 24px;
   line-height: 1.333;
   color: var(--main-text-color);
-
   margin-bottom: 8px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -88,6 +108,10 @@
   padding-left: 40px;
   max-width: 100%;
 }
+.excercisesCardTitle::first-letter {
+  text-transform: capitalize;
+} 
+
 
 .excercisesCardTitle::before {
   content: url(../../../images/run-icon.svg);
@@ -168,3 +192,5 @@
   display: flex;
   align-items: center;
 }
+
+

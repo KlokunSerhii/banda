@@ -1,16 +1,18 @@
 import React from 'react'; // useEffect
 import { NavLink } from 'react-router-dom';
 import styles from './ExercisesCategories.module.css';
+import { useParams } from 'react-router-dom';
 
-function ExercisesCategories({ category }) {
+function ExercisesCategories() {
+  const { category, subcategory } = useParams();
 
   return (
     <>
-      <NavLink className={styles.exercisesBtnBack} to="/products">
+      <NavLink className={styles.exercisesBtnBack} hidden={!subcategory} to={`/exercises/${category || ''}`}>
         Back
       </NavLink>
       <div className={styles.exercisesTitleLocation}>
-        <h2 className={styles.exercisesSubTitle}>Exercises</h2>
+        <h2 className={styles.exercisesSubTitle}>{subcategory || "Exercises"}</h2>
         <ul className={styles.exercisesList}>
           <li className={styles.exercisesItem}>
             <NavLink to="bodyparts" className={category === 'bodyparts' ? styles.exercisesLinkActive : ''}>
