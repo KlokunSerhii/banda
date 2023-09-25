@@ -1,14 +1,17 @@
 .dayProductsWrapper {
-  height: 241px;
+  overflow-y: auto;
+  height: 824px;
 
   padding: 0 16px;
   border-radius: 12px;
+
   border: 1px solid var(--transparent-medium-3);
   background: var(--transparent-medium-5);
   box-shadow: 0px 4px 4px 0px var(--transparent-dark-5),
     0px 4px 4px 0px var(--transparent-dark-5),
-    0px 4px 4px 0px var(--transparent-dark-5);
+    0px 4px 4px 0px var(--transparent-dark-5),
 }
+
 
 .headerWrapper {
   display: flex;
@@ -55,3 +58,4 @@
     width: 826px;
   }
 }
+
