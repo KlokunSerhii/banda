@@ -4,8 +4,16 @@ import React, {
 } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { useDiary } from 'hooks';
-import { getDiariesByDate, deleteDiaryProduct } from 'redux/diary/operations';
+
+import { useDiary } from "hooks";
+// import { useAuth } from "hooks";
+// import { useProduct } from "hooks";
+// import { filterProducts } from '../../../../helpers/filterProducts';
+import { getDiariesByDate, deleteDiaryProduct } from "redux/diary/operations";
+
+
+
+// import { toast } from 'react-toastify';
 
 import {
   createColumnHelper,
@@ -16,7 +24,7 @@ import {
 
 import styles from './TableProducts.module.css';
 
-// const exampleValues = [
+// const initialValues = [
 //   {
 //     Title: 'Bread Hercules grain',
 //     Category: 'Flour',
@@ -73,54 +81,102 @@ const columnHelper = createColumnHelper();
 
 const columns = [
   columnHelper.accessor('Title', {
+    cell: info => <div className={styles.titleWrapper}>{info.getValue()}</div>,
     header: 'Title',
   }),
   columnHelper.accessor('Category', {
+    cell: info => <div className={styles.categoryWrapper}>{info.getValue()}</div>,
     header: 'Category',
   }),
   columnHelper.accessor('Calories', {
+    cell: info => <div className={styles.titleWrapper}>{info.getValue()}</div>,
     header: 'Calories',
   }),
   columnHelper.accessor('Weight', {
+    cell: info => <div className={styles.titleWrapper}>{info.getValue()}</div>,
     header: 'Weight',
   }),
+  //!===================== буде працювати лише з initialValues ===========
   columnHelper.accessor('Recommended', {
-    cell: info => <p className={styles.isRecommended}>{info.getValue()}</p>,
+    cell: info => <p className={`${info.getValue() === 'Yes'
+      ? styles.isRecommendedYes
+      : styles.isRecommendedNo}`}>{info.getValue()}</p>,
+    
     header: 'Recommended',
   }),
+
+//!================================
 ];
 
 function TableProducts() {
   const dispatch = useDispatch();
-  // const [data, setData] = useState(exampleValues);
-  const { diary } = useDiary();
 
-  console.log(diary);
 
-  // console.log("🚀 ~ file: TableProducts.jsx:84 ~ TableProducts ~ diary:", diary);
+
+  const {
+    diary,
+    // date
+  } = useDiary();
+
+  //! якщо передати цю дату в залежності то це зациклить консоль,
+  //! тому треба передавати selectedDate з redux selectors
+  const date = new Date().toISOString();
+  // console.log(date);
+
+  useEffect(() => {
+
 
   useEffect(() => {
     const date = new Date().toISOString();
     dispatch(getDiariesByDate(date));
   }, [dispatch]);
 
-  const table = useReactTable({
+
+
+
+   const table = useReactTable({
     data: diary,
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
+    // console.log(date);
+  //!=================================  ==================================================
+  // const [data, setData] = useState(initialValues);
 
-  //  const table = useReactTable({
+  //  const { user } = useAuth();
+  // const { filterProduct, selectProductsList } = useProduct();
+
+  // const bloodType = user.bodyParams.blood;
+  
+  //   const productsList = selectProductsList?.map(el => ({
+  //   ...el,
+  //   recommended: el.groupBloodNotAllowed[bloodType],
+  // }));
+  // const filteredRecList = filterProducts(productsList, filterProduct);
+  
+   //  const table = useReactTable({
   //   data,
   //   columns,
   //   getCoreRowModel: getCoreRowModel(),
   // });
 
-  const handleDelete = productId => {
-    dispatch(deleteDiaryProduct(productId));
 
-    console.log(`Delete was successful`);
-  };
+  
+  //!=================================  ==================================================  
+ 
+
+ 
+  const handleDelete = (productId) => {
+    
+    if (productId) {
+      // dispatch(deleteDiaryProduct(productId));
+      // toast.success('Delete was successful')
+      return;
+    }
+
+    // toast.error('Delete is failed');
+  }
+
 
   return (
     <>
@@ -143,32 +199,29 @@ function TableProducts() {
                   <td className={styles.tableCell} key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
+
                 ))}
-                <button
-                  className={styles.deleteBtn}
-                  onClick={() => handleDelete({ productId: row.id })}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                  >
-                    <path
-                      d="M7.5 2.5H12.5M8.33333 8.75V12.9167M11.6667 8.75V12.9167"
-                      stroke="#EF8964"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M2.5 5H17.5M15.8333 5L15.2489 13.7661C15.1612 15.0813 15.1174 15.7389 14.8333 16.2375C14.5833 16.6765 14.206 17.0294 13.7514 17.2497C13.235 17.5 12.5759 17.5 11.2578 17.5H8.74221C7.42409 17.5 6.76503 17.5 6.24861 17.2497C5.79396 17.0294 5.41674 16.6765 5.16665 16.2375C4.88259 15.7389 4.83875 15.0813 4.75107 13.7661L4.16667 5"
-                      stroke="#EF8964"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
+
+                {/* {filteredRecList.map((el) => {
+                  return <p key={el._id}
+        className={
+          el.groupBloodNotAllowed[bloodType]
+            ? styles.productsStatusRecommendedTextTrue
+            : styles.productsStatusRecommendedTextFalse
+        }
+      >
+        {el.groupBloodNotAllowed[bloodType]
+          ? 'Yes' : 'No'}
+      </p>
+
+                })
+                  
+                } */}
+                <button className={styles.deleteBtn} onClick={() => handleDelete({ productId: row.id })}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7.5 2.5H12.5M8.33333 8.75V12.9167M11.6667 8.75V12.9167" stroke="#EF8964" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M2.5 5H17.5M15.8333 5L15.2489 13.7661C15.1612 15.0813 15.1174 15.7389 14.8333 16.2375C14.5833 16.6765 14.206 17.0294 13.7514 17.2497C13.235 17.5 12.5759 17.5 11.2578 17.5H8.74221C7.42409 17.5 6.76503 17.5 6.24861 17.2497C5.79396 17.0294 5.41674 16.6765 5.16665 16.2375C4.88259 15.7389 4.83875 15.0813 4.75107 13.7661L4.16667 5" stroke="#EF8964" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
                   </svg>
                 </button>
               </tr>
@@ -181,3 +234,4 @@ function TableProducts() {
 }
 
 export default TableProducts;
+
