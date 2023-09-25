@@ -20,7 +20,6 @@ export const addDiariesProduct = createAsyncThunk(
       productId,
       weight,
     });
-    console.log(body);
     return { ...data, product: body };
   }
 );
