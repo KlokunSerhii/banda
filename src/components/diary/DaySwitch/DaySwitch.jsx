@@ -4,10 +4,10 @@ import styles from './DaySwitch.module.css';
 import symbolDefs from '../../../images/symbol-defs.svg';
 
 import Datepicker from '../Datepicker';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 function DaySwitch() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [currentDate, setCurrentDate] = useState(new Date());
   const [isDatepickerVisible, setIsDatepickerVisible] = useState(false);
 
