@@ -1,31 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styles from './DaySwitch.module.css';
 import symbolDefs from '../../../images/symbol-defs.svg';
 
 import Datepicker from '../Datepicker';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useDiary } from 'hooks';
 
 function DaySwitch() {
   // const dispatch = useDispatch();
-  const [currentDate, setCurrentDate] = useState(new Date());
+  // const { date } = useDiary();
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const [isDatepickerVisible, setIsDatepickerVisible] = useState(false);
+
+
+  // handle date changes
+  // useEffect(() => {
+  //   dispatch()
+  // }, [selectedDate])
 
 
   // handle switching to the previous day
   const handleToPreviousDay = () => {
-    const previousDay = new Date(currentDate);
+    const previousDay = new Date(selectedDate);
     previousDay.setDate(previousDay.getDate() - 1);
 
-    setCurrentDate(previousDay);
+    setSelectedDate(previousDay);
   };
 
   // handle switching to the next day
   const handleToNextDay = () => {
-    const nextDay = new Date(currentDate);
+    const nextDay = new Date(selectedDate);
     nextDay.setDate(nextDay.getDate() + 1);
 
-    setCurrentDate(nextDay);
+    setSelectedDate(nextDay);
   };
 
   // handle change datepicker value
@@ -34,9 +42,9 @@ function DaySwitch() {
   }
 
   // forrmated Date to the generally acceptable format
-  const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}/
-  ${(currentDate.getMonth() + 1).toString().padStart(2, '0')}/
-  ${currentDate.getFullYear()}`;
+  const formattedDate = `${selectedDate.getDate().toString().padStart(2, '0')}/
+  ${(selectedDate.getMonth() + 1).toString().padStart(2, '0')}/
+  ${selectedDate.getFullYear()}`;
 
 
 

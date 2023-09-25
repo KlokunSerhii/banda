@@ -39,14 +39,14 @@ function DayDashboard() {
             ></GiShinyApple>
             <p className={css.title}>Calories consumed</p>
           </div>
-          <p className={css.result}>0</p>
+          <p className={css.result}>707</p>
         </li>
         <li className={css.darkBox}>
           <div className={css.header}>
             <BsFire fill="#EF8964" size={20} style={{ width: 20 }}></BsFire>
             <p className={css.title}>Calories burned</p>
           </div>
-          <p className={css.result}>0</p>
+          <p className={css.result}>855</p>
         </li>
         <li className={css.darkBox}>
           <div className={css.header}>
@@ -57,7 +57,7 @@ function DayDashboard() {
             ></PiCirclesThreeFill>
             <p className={css.title}>Rest of the calories</p>
           </div>
-          <p className={css.result}>0</p>
+          <p className={css.result}>1493</p>
         </li>
         <li className={css.darkBox}>
           <div className={css.header}>
@@ -68,7 +68,7 @@ function DayDashboard() {
             ></MdDirectionsRun>
             <p className={css.title}>The rest of sports</p>
           </div>
-          <p className={css.result}>0</p>
+          <p className={css.result}>85 min</p>
         </li>
       </ul>
       <div className={css.textCont}>

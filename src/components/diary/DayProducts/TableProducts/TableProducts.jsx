@@ -5,7 +5,13 @@ import React, {
 import { useDispatch } from "react-redux";
 
 import { useDiary } from "hooks";
+// import { useAuth } from "hooks";
+// import { useProduct } from "hooks";
+// import { filterProducts } from '../../../../helpers/filterProducts';
 import { getDiariesByDate, deleteDiaryProduct } from "redux/diary/operations";
+
+
+// import { toast } from 'react-toastify';
 
 import {
   createColumnHelper,
@@ -16,7 +22,7 @@ import {
 
 import styles from './TableProducts.module.css'
 
-// const exampleValues = [
+// const initialValues = [
 //   {
 //     Title: 'Bread Hercules grain',
 //     Category: 'Flour',
@@ -74,59 +80,92 @@ const columnHelper = createColumnHelper();
  
 const columns = [
   columnHelper.accessor('Title', {
+    cell: info => <div className={styles.titleWrapper}>{info.getValue()}</div>,
     header: 'Title',
   }),
   columnHelper.accessor('Category', {
+    cell: info => <div className={styles.categoryWrapper}>{info.getValue()}</div>,
     header: 'Category',
   }),
   columnHelper.accessor('Calories', {
+    cell: info => <div className={styles.titleWrapper}>{info.getValue()}</div>,
     header: 'Calories',
   }),
   columnHelper.accessor('Weight', {
+    cell: info => <div className={styles.titleWrapper}>{info.getValue()}</div>,
     header: 'Weight',
   }),
+  //!===================== буде працювати лише з initialValues ===========
   columnHelper.accessor('Recommended', {
-    cell: info => <p className={styles.isRecommended}>{info.getValue()}</p>,
+    cell: info => <p className={`${info.getValue() === 'Yes'
+      ? styles.isRecommendedYes
+      : styles.isRecommendedNo}`}>{info.getValue()}</p>,
+    
     header: 'Recommended',
   }),
-
+//!================================
 ];
 
 
 function TableProducts() {
   const dispatch = useDispatch();
-  // const [data, setData] = useState(exampleValues);
-  const { diary, date } = useDiary();
-  console.log("🚀 ~ file: TableProducts.jsx:84 ~ TableProducts ~ diary:", diary);
-  
+  const {
+    diary,
+    // date
+  } = useDiary();
 
-useEffect(() => {
-    //==================================[[date format from useDiary]]===========
-      // dispatch(getDiariesByDate('2023-09-20T14:15:19.192Z'));
+  //! якщо передати цю дату в залежності то це зациклить консоль,
+  //! тому треба передавати selectedDate з redux selectors
+  const date = new Date().toISOString();
+  // console.log(date);
+
+  useEffect(() => {
+
     dispatch(getDiariesByDate(date));
       
 
-  }, [date]);
-  
-  
-  
+  }, [dispatch]);
 
-  const table = useReactTable({
+   const table = useReactTable({
     data: diary,
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
+    // console.log(date);
+  //!=================================  ==================================================
+  // const [data, setData] = useState(initialValues);
 
-  //  const table = useReactTable({
+  //  const { user } = useAuth();
+  // const { filterProduct, selectProductsList } = useProduct();
+
+  // const bloodType = user.bodyParams.blood;
+  
+  //   const productsList = selectProductsList?.map(el => ({
+  //   ...el,
+  //   recommended: el.groupBloodNotAllowed[bloodType],
+  // }));
+  // const filteredRecList = filterProducts(productsList, filterProduct);
+  
+   //  const table = useReactTable({
   //   data,
   //   columns,
   //   getCoreRowModel: getCoreRowModel(),
   // });
 
-  const handleDelete = (productId) => {
-    dispatch(deleteDiaryProduct(productId));
+  
+  //!=================================  ==================================================  
+ 
 
-    console.log(`Delete was successful`);
+ 
+  const handleDelete = (productId) => {
+    
+    if (productId) {
+      // dispatch(deleteDiaryProduct(productId));
+      // toast.success('Delete was successful')
+      return;
+    }
+
+    // toast.error('Delete is failed');
   }
 
   return (
@@ -142,18 +181,31 @@ useEffect(() => {
       
       {/* Body */}
       <div className={styles.tableWrapper}>
-
         <table className={styles.table}>
-        
           <tbody className={styles.tableBody}>
             {table.getRowModel().rows.map(row => (
               <tr className={styles.tableRow} key={row.id}>
                 {row.getVisibleCells().map(cell => (
-         
                   <td className={styles.tableCell} key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
+
                 ))}
+                {/* {filteredRecList.map((el) => {
+                  return <p key={el._id}
+        className={
+          el.groupBloodNotAllowed[bloodType]
+            ? styles.productsStatusRecommendedTextTrue
+            : styles.productsStatusRecommendedTextFalse
+        }
+      >
+        {el.groupBloodNotAllowed[bloodType]
+          ? 'Yes' : 'No'}
+      </p>
+
+                })
+                  
+                } */}
                 <button className={styles.deleteBtn} onClick={() => handleDelete({ productId: row.id })}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M7.5 2.5H12.5M8.33333 8.75V12.9167M11.6667 8.75V12.9167" stroke="#EF8964" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -171,3 +223,4 @@ useEffect(() => {
 };
 
 export default TableProducts;
+
