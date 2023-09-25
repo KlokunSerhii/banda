@@ -124,7 +124,7 @@ function TableProducts() {
     dispatch(getDiariesByDate(date));
       
 
-  }, [dispatch]);
+  }, [date, dispatch]);
 
    const table = useReactTable({
     data: diary,
@@ -160,7 +160,7 @@ function TableProducts() {
   const handleDelete = (productId) => {
     
     if (productId) {
-      // dispatch(deleteDiaryProduct(productId));
+      dispatch(deleteDiaryProduct(productId));
       // toast.success('Delete was successful')
       return;
     }

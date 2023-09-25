@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, {
+  // useEffect,
+  useState
+} from 'react';
 
 import styles from './DaySwitch.module.css';
 import symbolDefs from '../../../images/symbol-defs.svg';
 
 import Datepicker from '../Datepicker';
-import { useDispatch } from 'react-redux';
-import { useDiary } from 'hooks';
+// import { useDispatch } from 'react-redux';
+// import { useDiary } from 'hooks';
 
 function DaySwitch() {
   // const dispatch = useDispatch();
