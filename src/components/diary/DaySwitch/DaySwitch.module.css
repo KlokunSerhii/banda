@@ -24,21 +24,22 @@
     font-size: 24px;
   }
 }
-.arrowRight {
+
+.btnArrow {
+  fill: var(--transparent-medium-3);
+}
+.arrow {
   width: 16px;
   height: 16px;
 }
-.btnArrowRight {
-  fill: var(--transparent-medium-3);
-}
-.btnArrowLeft {
-  fill: var(--transparent-medium-3);
-}
-.arrowLeft {
-  width: 16px;
-  height: 16px;
-}
-.btnArrowRight:hover,
-.btnArrowLeft:hover {
+.btnArrow:hover {
   fill: var(--main-text-color);
+}
+
+.datepickerInput {
+  /* display: none; */
+  /* visibility: hidden; */
+  width: 0px;
+  height: 0px;
+  /* background-color: transparent; */
 }
