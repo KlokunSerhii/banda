@@ -14,14 +14,14 @@ export const getDiariesByDate = createAsyncThunk(
 export const addDiariesProduct = createAsyncThunk(
   'diary/addProduct',
   async body => {
-    const { date, productId, weight, eldata, consumedCalories } = body;
-    const response = await axios.post('eaten-products/', {
+    const { date, productId, weight } = body;
+    const { data } = await axios.post('eaten-products/', {
       date,
       productId,
-      weight
+      weight,
     });
-    const data = {...response.data , date  }
-    return { ...data, newProduct: {...eldata , consumedCalories} };
+    console.log(body);
+    return { ...data, product: body };
   }
 );
 
@@ -42,7 +42,7 @@ export const deleteDiaryExercise = createAsyncThunk(
   'diary/deleteExercise',
   async params => {
     const { status, data } = await axios.delete(
-      `'done-exercises/${params.exerciseId}`,
+      `done-exercises/${params.exerciseId}`,
       { data: params }
     );
     if (status === 200) {
