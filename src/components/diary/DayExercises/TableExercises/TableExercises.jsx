@@ -108,7 +108,7 @@ function TableExercises() {
     dispatch(getDiariesByDate(date));
       
 
-  }, [date]);
+  }, [date, dispatch ]);
   
   
 
