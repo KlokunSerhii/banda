@@ -5,6 +5,7 @@ import styles from './AddProductModalWindow.module.css';
 import { addDiariesProduct } from '../../redux/diary/operations';
 
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddProductForm = ({ eldata, onClick, closeModal }) => {
   const dispatch = useDispatch();
