@@ -13,7 +13,7 @@
   top: 0;
   right: 0;
 
- display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,7 @@
   padding: 19px 20px 21px 20px;
   width: 55%;
   height: 100vh;
-  background-color: #e6533c;
+  background-color: var(--accent-bright-color);
 
   z-index: 999;
 
@@ -50,7 +50,7 @@
   justify-content: center;
   align-items: center;
   gap: 16px;
-padding-top: 245px;
+  padding-top: 245px;
 }
 
 .navItem {
@@ -60,14 +60,14 @@ padding-top: 245px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  color: rgba(239, 237, 232, 1);
+  color: var(--main-text-color);
 
-  border: 1px solid rgba(239, 237, 232, 0.2);
+  border: 1px solid var(--transparent-medium-3);
   border-radius: 12px;
 
- &:hover,
+  &:hover,
   :focus {
-    border: 1px solid #EFEDE8;
+    border: 1px solid var(--main-text-color);
   }
 
   @media screen and (min-width: 768px) {
@@ -80,7 +80,7 @@ padding-top: 245px;
   position: absolute;
   right: 18px;
   top: 19px;
- 
+
   border: none;
   width: 24px;
   height: 24px;
@@ -101,7 +101,7 @@ padding-top: 245px;
 }
 
 .closeIcon {
-  fill: #efede8;
+  fill: var(--main-text-color);
   width: 24px;
   height: 24px;
 
@@ -112,23 +112,23 @@ padding-top: 245px;
 
 .navItem {
   padding: 10px 27px;
-  border: 1px solid #efede84d;
+  border: 1px solid var(--transparent-light-5);
   border-radius: 12px;
   font-size: 16px;
 
   &:hover {
-    border-color: #e6533c;
+    border-color: var(--accent-bright-color);
   }
 
   &:active {
-    border-color: #e6533c;
-    background-color: #e6533c;
+    border-color: var(--accent-bright-color);
+    background-color: var(--accent-bright-color);
   }
 }
 
 @media (max-width: 768px) {
   .navItem {
-    border: 1px solid #efede84d;
+    border: 1px solid var(--transparent-light-5);
   }
 }
 
@@ -142,7 +142,7 @@ padding-top: 245px;
   right: 32px;
   background: none;
   border: none;
-/* 
+  /* 
   @media screen and (min-width: 375px) {
     right: 18px;
     top: 16px;
@@ -159,7 +159,7 @@ padding-top: 245px;
 }
 
 .closeIcon {
-  fill: #efede8;
+  fill: var(--main-text-color);
   width: 24px;
   height: 24px;
 
@@ -177,7 +177,7 @@ padding-top: 245px;
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  color: #efede8;
+  color: var(--main-text-color);
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -187,5 +187,5 @@ padding-top: 245px;
 .btnIcon {
   width: 30px;
   height: 30px;
-  fill: #efede8;
+  fill: var(--main-text-color);
 }
