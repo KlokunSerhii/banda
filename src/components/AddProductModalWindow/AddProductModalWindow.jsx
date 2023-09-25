@@ -12,17 +12,17 @@ const AddProductForm = ({ eldata, onClick, closeModal }) => {
   const { title, calories, _id: productId } = eldata;
   const [quantity, setQuantity] = useState('');
 
-  const amount = Math.round((quantity * calories) / 100);
+  const consumedCalories = Math.round((quantity * calories) / 100);
   const date = new Date().toISOString();
 
   const handleAddToDiary = () => {
-    if (!amount) {
+    if (!consumedCalories) {
       toast.error('Must be greater than 0');
       return;
     }
-    dispatch(addDiariesProduct({ date, productId, weight: quantity }))
+    dispatch(addDiariesProduct({ date, productId, weight: quantity, eldata, consumedCalories} ))
       .then(() => {
-        onClick(amount);
+        onClick(consumedCalories);
       })
       .catch(error => {
         toast(error.message);
@@ -55,7 +55,7 @@ const AddProductForm = ({ eldata, onClick, closeModal }) => {
         <p>
           <span className={styles.calories}>
             <span className={styles.titleCalories}>Calories:</span>
-            {amount}
+            {consumedCalories}
           </span>
         </p>
         <br />
