@@ -126,10 +126,9 @@ function TableProducts() {
   useEffect(() => {
 
 
-  useEffect(() => {
-    const date = new Date().toISOString();
-    dispatch(getDiariesByDate(date));
-  }, [dispatch]);
+
+  }, [date, dispatch]);
+
 
 
 
@@ -169,7 +168,7 @@ function TableProducts() {
   const handleDelete = (productId) => {
     
     if (productId) {
-      // dispatch(deleteDiaryProduct(productId));
+      dispatch(deleteDiaryProduct(productId));
       // toast.success('Delete was successful')
       return;
     }

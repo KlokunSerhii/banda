@@ -120,9 +120,7 @@ function TableExercises() {
   useEffect(() => {
     dispatch(getDiariesByDate(date));
 
-
-  }, [dispatch]);
-
+  }, [date, dispatch]);
 
   
   
