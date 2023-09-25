@@ -4,7 +4,6 @@ import styles from './UseNav.module.css';
 
 function UserNav() {
   const { pathname } = useLocation();
-  console.log(pathname);
   return (
     <nav className={styles.navList}>
       <NavLink

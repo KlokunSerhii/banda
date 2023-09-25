@@ -99,7 +99,7 @@ function TableExercises() {
   const dispatch = useDispatch();
 //   const [data, setData] = useState(exampleValues);
   const { diary, date } = useDiary();
-  console.log("🚀 ~ file: TableExercises.jsx:84 ~ TableExercises ~ diary:", diary);
+  // console.log("🚀 ~ file: TableExercises.jsx:84 ~ TableExercises ~ diary:", diary);
   
 
   useEffect(() => {

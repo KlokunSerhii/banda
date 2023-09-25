@@ -96,20 +96,21 @@ const columns = [
 function TableProducts() {
   const dispatch = useDispatch();
   // const [data, setData] = useState(exampleValues);
-  const { diary, date } = useDiary();
-  console.log("🚀 ~ file: TableProducts.jsx:84 ~ TableProducts ~ diary:", diary);
+  const { diary } = useDiary();
+  console.log(diary)
+  // console.log("🚀 ~ file: TableProducts.jsx:84 ~ TableProducts ~ diary:", diary);
   
-
 useEffect(() => {
     //==================================[[date format from useDiary]]===========
-      // dispatch(getDiariesByDate('2023-09-20T14:15:19.192Z'));
+      // dispatch(getDiariesByDate('2023-09-25T14:15:19.192Z'));
+      const date = new Date().toISOString();
+
     dispatch(getDiariesByDate(date));
       
 
-  }, [date, dispatch]);
+  }, [dispatch]);
   
-  
-  
+
 
   const table = useReactTable({
     data: diary,

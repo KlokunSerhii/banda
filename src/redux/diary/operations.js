@@ -6,21 +6,22 @@ axios.defaults.baseURL = 'https://node-server-team-proj.onrender.com/api/';
 export const getDiariesByDate = createAsyncThunk(
   'diary/getByDate',
   async currentDate => {
-    const { data } = await axios.get('diaries/' + currentDate);
-    return data;
+    const { data } = await axios.get(`diaries/${currentDate}`);
+    return data.meal;
   }
 );
 
 export const addDiariesProduct = createAsyncThunk(
   'diary/addProduct',
   async body => {
-    const { date, productId, weight } = body;
-    const { data } = await axios.post('eaten-products/', {
+    const { date, productId, weight, eldata, consumedCalories } = body;
+    const response = await axios.post('eaten-products/', {
       date,
       productId,
-      weight,
+      weight
     });
-    return { ...data, newProduct: body };
+    const data = {...response.data , date  }
+    return { ...data, newProduct: {...eldata , consumedCalories} };
   }
 );
 
