@@ -109,6 +109,7 @@ const columns = [
 
 function TableProducts() {
   const dispatch = useDispatch();
+
   const {
     diary,
     // date
@@ -125,6 +126,7 @@ function TableProducts() {
       
 
   }, [dispatch]);
+
 
    const table = useReactTable({
     data: diary,

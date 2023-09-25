@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 axios.defaults.baseURL = 'https://node-server-team-proj.onrender.com/api/';
 
@@ -19,7 +20,9 @@ export const register = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (e) {
-      toast.error('Sorry, something went wrong. This user may not exist. Please try again');
+      toast.error(
+        'Sorry, something went wrong. This user may not exist. Please try again'
+      );
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -33,8 +36,8 @@ export const login = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (e) {
-      toast.error('Sorry, something went wrong. Check Email or Password')
-      return thunkAPI.rejectWithValue(e.message)
+      toast.error('Sorry, something went wrong. Check Email or Password');
+      return thunkAPI.rejectWithValue(e.message);
     }
   }
 );

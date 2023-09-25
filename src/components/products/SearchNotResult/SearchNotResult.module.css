@@ -5,7 +5,7 @@
   }
 
   .products_SearchNotResult_text {
-    color: rgba(239, 237, 232, 0.3);
+    color: var(--transparent-medium-2);
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
@@ -16,7 +16,7 @@
   }
 
   .products_SearchNotResult_orangeText {
-    color: var(--orange, #e6533c);
+    color: var(--accent-bright-color);
     font-size: 14px;
     line-height: 18px;
     display: inline-block;

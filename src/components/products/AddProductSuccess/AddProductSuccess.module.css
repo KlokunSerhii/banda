@@ -58,7 +58,7 @@
 
 .SuccessModalWindowBtn:hover {
   background-color: var(--accent-bright-transparent-color);
-  color: #efede8;
+  color: var(--main-text-color);
 }
 
 .arrowIcon {

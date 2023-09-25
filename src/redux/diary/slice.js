@@ -12,13 +12,14 @@ const pending = state => {
 };
 
 const addDiary = (state, { payload }) => {
-  const { newProduct, newExercise } = payload;
 
+  const { newProduct, newExercise } = payload;
   if (newProduct) {
     const newElement = {
-      ...payload.consumedProducts.pop(),
+      ...payload.weight,
       product: payload.newProduct,
     };
+    console.log(newElement)
     state.consumedProducts = [...state.consumedProducts, newElement];
   }
   if (newExercise) {
@@ -30,7 +31,8 @@ const addDiary = (state, { payload }) => {
     state.doneExercises = [...state.doneExercises, newElement];
   }
   state.burnedCalories = payload.burnedCalories;
-  state.consumedCalories = payload.consumedCalories;
+  state.consumedCalories = payload.newProduct.amountCalories;
+  state.date = payload.date;
 
   state.timeSport = payload.timeSport;
   state.isLoading = false;
