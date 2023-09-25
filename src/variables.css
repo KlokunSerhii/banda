@@ -5,18 +5,27 @@
 
   --accent-bright-transparent-color: rgba(230, 83, 60, 1);
   --accent-medium-transparent-color: rgba(239, 137, 100, 1);
+  --accent-dark-transparent-color: rgba(230, 83, 60, 0.8);
 
   --positive-color: #3cbf61;
   --negative-color: #d80027;
+  --negative-dark-color: #b4210a;
 
   --main-text-color: rgba(239, 237, 232, 1);
   --main-bg-color: rgba(4, 4, 4, 1);
 
+  --dark-color: #303030;
+  --medium-color: #efede8a6;
+  --radio-border-color: gray;
+
+  --transparent-light: rgba(239, 237, 232, 0.8);
   --transparent-light-1: rgba(255, 255, 255, 1);
   --transparent-light-2: rgba(239, 237, 232, 0.6);
   --transparent-light-3: rgba(239, 237, 232, 0.65);
   --transparent-light-4: rgba(239, 237, 232, 0.5);
+  --transparent-light-5: #efede84d;
 
+  --transparent-medium: rgba(255, 255, 255, 0.4);
   --transparent-medium-1: rgba(239, 237, 232, 0.4);
   --transparent-medium-2: rgba(239, 237, 232, 0.3);
   --transparent-medium-3: rgba(239, 237, 232, 0.2);
@@ -27,6 +36,7 @@
   --transparent-dark-2: rgba(48, 48, 48, 0.3);
   --transparent-dark-3: rgba(4, 4, 4, 0);
   --transparent-dark-4: rgba(4, 4, 4, 0.5);
+  --transparent-dark-5: rgba(0, 0, 0, 0.25);
 
   --transition-cubic: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-duration: 250ms;

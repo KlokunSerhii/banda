@@ -4,14 +4,14 @@
   align-items: center;
 
   font-size: 16px;
-  color: #efede8;
+  color: var(--main-text-color);
   :hover {
-    color: #e6533c;
+    color: var(--accent-bright-color);
   }
 }
 
 .btnIcon {
   width: 30px;
   height: 30px;
-  fill: #e6533c;
+  fill: var(--accent-bright-color);
 }

@@ -9,7 +9,7 @@
 
 .table {
   width: 100%;
-  color: white;
+  color: var(--main-text-color);
 
   border-collapse: separate;
   border-spacing: 8px;
@@ -22,7 +22,7 @@
   padding-bottom: 4px;
   padding-left: 10px;
   padding-right: 10px;
-  color: rgba(239, 137, 100, 1);
+  color: var(--accent-medium-transparent-color);
   font-size: 12px;
 
   @media screen and (min-width: 768px) {
@@ -33,7 +33,7 @@
 /* table */
 .tableBody {
   grid-column: none;
-  color: white;
+  color: var(--main-text-color);
   border-collapse: separate;
   border-spacing: 8px;
 }
@@ -120,7 +120,7 @@
   display: inline-block;
   padding: 8px 14px 8px 14px;
 
-  border: 1px solid gray;
+  border: 1px solid var(--transparent-medium-3);
   border-radius: 12px;
   font-size: 16px;
 
@@ -149,7 +149,7 @@
   display: inline-block;
   width: 10px;
   height: 10px;
-  background-color: green;
+  background-color: var(--positive-color);
   border-radius: 50%;
   margin-right: 5px;
   vertical-align: middle;
@@ -178,7 +178,7 @@
 
   cursor: pointer;
   fill: transparent;
-  stroke: rgba(239, 137, 100, 1);
+  stroke: var(--accent-medium-transparent-color);
   width: 20px;
   height: 20px;
   margin-bottom: 24px;
