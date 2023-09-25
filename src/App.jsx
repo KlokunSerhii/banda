@@ -1,7 +1,6 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom/dist';
 import { useDispatch } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
 
 import PublicRoute from 'routes/PublicRoute';
 import PrivateRoute from 'routes/PrivateRoute';
@@ -17,9 +16,9 @@ const Products = lazy(() => import('pages/Products'));
 const Exercises = lazy(() => import('pages/Exercises'));
 const Params = lazy(() => import('pages/Params'));
 const Profile = lazy(() => import('pages/Profile'));
-const ExercisesSubcategoriesList = lazy(() =>
+/* const ExercisesSubcategoriesList = lazy(() =>
   import('components/exercises/ExercisesSubcategoriesList')
-);
+); */
 const ExercisesList = lazy(() => import('components/exercises/ExercisesList'));
 const Page404 = lazy(() => import('components/Page404'));
 
@@ -53,9 +52,17 @@ export const App = () => {
             element={<PrivateRoute redirectto="/" component={Exercises} />}
           >
             <Route index element={<Navigate to="bodyparts" />} />
+            <Route path=":category" element={<ExercisesList />} />
+          </Route>
+
+          {/* <Route
+            path="exercises"
+            element={<PrivateRoute redirectto="/" component={Exercises} />}
+          >
+            <Route index element={<Navigate to="bodyparts" />} />
             <Route path=":category" element={<ExercisesSubcategoriesList />} />
             <Route path="exercise-categories" element={<ExercisesList />} />
-          </Route>
+          </Route> */}
 
           <Route
             path="params"
@@ -72,7 +79,6 @@ export const App = () => {
           <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>
-      <ToastContainer />
     </Suspense>
   );
 };

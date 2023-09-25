@@ -192,8 +192,9 @@ function UserForm() {
   return (
     <Container className={style.container}>
       <div
-        className={`${style.UserForm} ${pending ? style.UserForm_disabled : ''
-          }`}
+        className={`${style.UserForm} ${
+          pending ? style.UserForm_disabled : ''
+        }`}
       >
         <TitlePage title="Profile Settings" />
 

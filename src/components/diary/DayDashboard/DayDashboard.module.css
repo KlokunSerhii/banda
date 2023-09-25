@@ -8,9 +8,9 @@
   list-style: none;
   width: 157px;
   height: 96px;
-  background-color: #e6533c;
+  background-color: var(--accent-bright-color);
   border-radius: 12px;
-  color: #efede8;
+  color: var(--main-text-color);
   font-size: 12px;
   padding: 14px;
 }
@@ -19,12 +19,12 @@
   list-style: none;
   width: 157px;
   height: 96px;
-  background-color: rgba(48, 48, 48, 0.3);
-  border: 1px solid rgba(239, 237, 232, 0.3);
+  background-color: var(--transparent-dark-2);
+  border: 1px solid var(--transparent-medium-2);
   border-radius: 12px;
   font-size: 12px;
   padding: 14px;
-  color: #efede8;
+  color: var(--main-text-color);
 }
 
 .header {
@@ -34,7 +34,7 @@
 }
 
 .title {
-  color: rgba(239, 237, 232, 0.3);
+  color: var(--transparent-medium-2);
 }
 
 .result {
@@ -50,7 +50,7 @@
 }
 
 .text {
-  color: rgba(239, 237, 232, 0.3);
+  color: var(--transparent-medium-2);
   font-size: 14px;
 }
 

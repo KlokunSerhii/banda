@@ -1,8 +1,8 @@
 import css from "./Loader.module.css";
 
-function Loader() {
+function Loader({ className }) {
   return (
-    <div className={css.loader}>
+    <div className={`${css.loader} ${className || ''}`}>
       {[...Array(8)].map((e, i) => (
         <div key={i} />
       ))}

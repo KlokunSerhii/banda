@@ -4,18 +4,13 @@
 
   padding: 0 16px;
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
-  background: rgba(239, 237, 232, 0.05);
-  box-shadow:
-    0px 4px 4px 0px rgba(0, 0, 0, 0.25),
-    0px 4px 4px 0px rgba(0, 0, 0, 0.25),
-    0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-     @media screen and (min-width: 768px) {
+  border: 1px solid var(--transparent-medium-3);
+  background: var(--transparent-medium-5);
+  box-shadow: 0px 4px 4px 0px var(--transparent-dark-5),
+    0px 4px 4px 0px var(--transparent-dark-5),
+    0px 4px 4px 0px var(--transparent-dark-5);
 
-          height: 241px;
-
-    }
 }
 
 .headerWrapper {
@@ -25,14 +20,14 @@
   /* margin-bottom: 32px; */
 }
 
-.btnWrapper{
+.btnWrapper {
   display: flex;
   align-items: center;
-  color: #e6533c;
+  color: var(--accent-bright-color);
 }
 
-.title{
-   color: rgba(239, 237, 232, 0.5);
+.title {
+  color: var(--transparent-light-4);
   font-size: 14px;
   line-height: 1.2;
 }
@@ -45,9 +40,8 @@
   margin-right: 8px;
 }
 
-
-.errNotFound{
-   color: rgba(239, 237, 232, 0.3);
+.errNotFound {
+  color: var(--transparent-medium-2);
   font-size: 16px;
   line-height: 24px;
   text-align: center;
@@ -56,9 +50,7 @@
 @media screen and (min-width: 768px) {
   .dayExercisesWrapper {
     width: 704px;
-  
   }
-
 }
 
 @media screen and (min-width: 1440px) {

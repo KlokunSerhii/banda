@@ -103,6 +103,7 @@ const columns = [
 
 function TableExercises() {
   const dispatch = useDispatch();
+
   // const [data, setData] = useState(initialValues);
   const {
     diary,
@@ -110,6 +111,7 @@ function TableExercises() {
   } = useDiary();
 
   // console.log( diary);
+
   
 
   const date = new Date().toISOString();
@@ -119,6 +121,7 @@ function TableExercises() {
     dispatch(getDiariesByDate(date));
 
   }, [date, dispatch]);
+
   
   
 

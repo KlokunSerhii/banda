@@ -2,15 +2,17 @@ import Container from 'components/Container';
 import TitlePage from 'components/diary/TitlePage';
 import ExercisesCategories from 'components/exercises/ExercisesCategories';
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 
 function Exercices() {
+  const { category } = useParams();
+
   return (
     <div>
       <Container>
         <div>
           <TitlePage text="Exercises" />
-          <ExercisesCategories />
+          <ExercisesCategories category={category}/>
         </div>
         <Outlet />
       </Container>
