@@ -47,7 +47,7 @@ const getDiary = (state, { payload }) => {
   }
   state.burnedCalories = payload.burnedCalories;
   state.consumedCalories = payload.consumedCalories;
-  state.consumedProducts = payload.consumedProducts;
+  state.consumedProducts = [...payload];
   state.date = payload.date;
   state.doneExercises = payload.doneExercises;
   state.owner = payload.owner;
