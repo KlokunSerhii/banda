@@ -27,6 +27,7 @@ const AddProductForm = ({ eldata, onClick, closeModal }) => {
         weight: quantity,
         ...eldata,
         caloriesEaten,
+        quantity,
       })
     )
       .then(() => {

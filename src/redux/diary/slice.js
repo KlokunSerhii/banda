@@ -13,21 +13,18 @@ const pending = state => {
 
 const addDiary = (state, { payload }) => {
   const { newProduct } = payload;
+  console.log(newProduct);
   if (newProduct) {
-    state.consumedProducts =[...state.consumedProducts, newProduct] 
-    state.date = newProduct.date
+    state.consumedProducts = [...state.consumedProducts, newProduct];
+    state.date = newProduct.date;
     state.isLoading = false;
   }
-
-
 };
 
-
-
 const getDiary = (state, { payload }) => {
-  const { meal , workout } = payload;
+  const { meal, workout } = payload;
   state.consumedProducts = [...meal];
-  state.doneExercises = [...workout]
+  state.doneExercises = [...workout];
   state.isLoading = false;
 };
 

@@ -14,11 +14,11 @@ export const getDiariesByDate = createAsyncThunk(
 export const addDiariesProduct = createAsyncThunk(
   'diary/addProduct',
   async body => {
-    const { date, productId, weight } = body;
+    const { date, productId, quantity } = body;
     const { data } = await axios.post('eaten-products/', {
       date,
       productId,
-      weight,
+      weight: quantity,
     });
     return { ...data, newProduct: body };
   }
