@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkbanda=self.webpackChunkbanda||[]).push([[647],{6647:function(a,e,s){s(2791);e.Z=s.p+"static/media/symbol-defs.a7f6369a1e0aa835654eb295f07d28f2.svg"}}]);
+//# sourceMappingURL=647.2f28b26c.chunk.js.map
