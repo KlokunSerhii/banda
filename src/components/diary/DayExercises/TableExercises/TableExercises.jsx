@@ -10,15 +10,15 @@ function TableExercises({ exercises }) {
   //!===================================================
 
   const handleDelete = async params => {
-    await axios.delete(`eaten-products/${params._id}`);
+    await axios.delete(`eaten-products/${params}`);
   };
 
   //!=====================================================
 
   const listOfExercises = exercises?.map(obj => {
-    const num = nanoid();
+    // const num = nanoid();
     return (
-      <tr key={num}>
+      <tr key={obj._id}>
         <td className={styles.tdBodyPart}>
           <div>{obj.exercise.bodyPart}</div>
         </td>

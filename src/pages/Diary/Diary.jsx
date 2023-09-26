@@ -12,6 +12,7 @@ axios.defaults.baseURL = 'https://node-server-team-proj.onrender.com/api/';
 function Diary() {
   const [data, setData] = useState([]);
   const { meal, workout } = data;
+  console.log(meal);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const date = selectedDate.toISOString();
   const getData = useCallback(async () => {
@@ -22,6 +23,7 @@ function Diary() {
   useEffect(() => {
     getData();
   }, [getData]);
+
 
   const handleToPreviousDay = () => {
     const previousDay = new Date(selectedDate);
