@@ -2,21 +2,20 @@ import React from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import symbolDefs from '../../../../images/symbol-defs.svg';
 import styles from './TableProducts.module.css';
-import { toast } from 'react-toastify';
 import { useAuth } from 'hooks';
+import axios from 'axios';
 
 function TableProducts({ products }) {
-  console.log(products);
   const { user } = useAuth();
   const bloodType = user.bodyParams.blood;
 
-  const handleDelete = productId => {
-    if (productId) {
-      toast.success('Delete was successful');
-      return;
-    }
-    toast.error('Delete is failed');
+  //!===================================================
+
+  const handleDelete = async params => {
+    await axios.delete(`eaten-products/${params._id}`);
   };
+
+  //!=====================================================
 
   const recomendProduct = groupBloodNotAllowed => {
     return groupBloodNotAllowed[bloodType];
@@ -61,7 +60,7 @@ function TableProducts({ products }) {
           )}
         </td>
         <td className={styles.tdDellete}>
-          <button onClick={() => handleDelete(obj.product._id)}>
+          <button onClick={() => handleDelete(obj)}>
             <svg>
               <use href={symbolDefs + '#trash-icon'}></use>
             </svg>

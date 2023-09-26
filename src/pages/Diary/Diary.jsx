@@ -11,9 +11,9 @@ axios.defaults.baseURL = 'https://node-server-team-proj.onrender.com/api/';
 
 function Diary() {
   const [data, setData] = useState([]);
-  const date = new Date().toISOString();
   const { meal, workout } = data;
-
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const date = selectedDate.toISOString();
   const getData = useCallback(async () => {
     const { data } = await axios.get(`diaries/${date}`);
     return setData(data);
@@ -21,15 +21,32 @@ function Diary() {
 
   useEffect(() => {
     getData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [getData]);
+
+  const handleToPreviousDay = () => {
+    const previousDay = new Date(selectedDate);
+    previousDay.setDate(previousDay.getDate() - 1);
+
+    setSelectedDate(previousDay);
+  };
+
+  const handleToNextDay = () => {
+    const nextDay = new Date(selectedDate);
+    nextDay.setDate(nextDay.getDate() + 1);
+    setSelectedDate(nextDay);
+  };
 
   return (
     <div className={styles.backGround}>
       <Container>
         <div className={styles.titleCont}>
           <TitlePage title="Diary" />
-          <DaySwitch />
+          <DaySwitch
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+            handleToPreviousDay={handleToPreviousDay}
+            handleToNextDay={handleToNextDay}
+          />
         </div>
         <div className={styles.container}>
           <div className={styles.itemsCont}>
