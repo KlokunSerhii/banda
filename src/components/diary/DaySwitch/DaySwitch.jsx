@@ -50,7 +50,6 @@ function DaySwitch() {
   ${selectedDate.getFullYear()}`;
 
 
-
   return (
     <div className={styles.container}>
       <p className={styles.text}>{formattedDate}</p>

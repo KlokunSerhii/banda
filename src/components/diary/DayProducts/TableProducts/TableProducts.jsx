@@ -1,81 +1,16 @@
-import React from // useEffect,
-// useRef,
-// useState
-'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-
-import { useDiary } from 'hooks';
-// import { useAuth } from "hooks";
-// import { useProduct } from "hooks";
-// import { filterProducts } from '../../../../helpers/filterProducts';
-import {
-  // getDiariesByDate,
-  deleteDiaryProduct,
-} from 'redux/diary/operations';
-
-// import { toast } from 'react-toastify';
-
+import { deleteDiaryProduct } from 'redux/diary/operations';
+import { toast } from 'react-toastify';
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-
 import styles from './TableProducts.module.css';
-
-// const initialValues = [
-//   {
-//     Title: 'Bread Hercules grain',
-//     Category: 'Flour',
-//     Calories: 289,
-//     Weight: 100,
-//     Recommended: 'Yes',
-//   },
-//   {
-//     Title: 'Rice semolina Garnets gluten-free',
-//     Category: 'Cereals',
-//     Calories: 340,
-//     Weight: 100,
-//     Recommended: 'No',
-//   },
-//   {
-//     Title: 'Venison stew Specia',
-//     Category: 'Meat',
-//     Calories: 81,
-//     Weight: 100,
-//     Recommended: 'Yes',
-//   },
-//   {
-//     Title: 'Bread Hercules grain',
-//     Category: 'Flour',
-//     Calories: 289,
-//     Weight: 100,
-//     Recommended: 'No',
-//   },
-
-//   {
-//     Title: 'Rice semolina Garnets gluten-free',
-//     Category: 'Cereals',
-//     Calories: 340,
-//     Weight: 100,
-//     Recommended: 'No',
-//   },
-//   {
-//     Title: 'Venison stew Specia',
-//     Category: 'Meat',
-//     Calories: 81,
-//     Weight: 100,
-//     Recommended: 'Yes',
-//   },
-//   {
-//     Title: 'Bread Hercules grain',
-//     Category: 'Flour',
-//     Calories: 289,
-//     Weight: 100,
-//     Recommended: 'No',
-//   },
-// ];
+import axios from 'axios';
+axios.defaults.baseURL = 'https://node-server-team-proj.onrender.com/api/';
 
 const columnHelper = createColumnHelper();
 
@@ -118,58 +53,38 @@ const columns = [
   //!================================
 ];
 
+
+
+
 function TableProducts() {
   const dispatch = useDispatch();
+  const [products, setProducts] = useState([]);
+  const date = new Date().toISOString()
 
-  const {
-    diary,
-    // date
-  } = useDiary();
+  const getData = useCallback(async () => {
+    const { data } = await axios.get(`diaries/${date}`)
+    return setProducts(data.meal)
+  }, [date])
 
-  //! якщо передати цю дату в залежності то це зациклить консоль,
-  //! тому треба передавати selectedDate з redux selectors
-  // const date = new Date().toISOString();
-
-  // useEffect(() => {
-  //   dispatch(getDiariesByDate(date));
-  // }, [dispatch]);
+  useEffect(() => {
+    getData()
+  }, [getData])
 
   const table = useReactTable({
-    data: diary,
+    data: products,
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
-  // console.log(date);
-  //!=================================  ==================================================
-  // const [data, setData] = useState(initialValues);
 
-  //  const { user } = useAuth();
-  // const { filterProduct, selectProductsList } = useProduct();
-
-  // const bloodType = user.bodyParams.blood;
-
-  //   const productsList = selectProductsList?.map(el => ({
-  //   ...el,
-  //   recommended: el.groupBloodNotAllowed[bloodType],
-  // }));
-  // const filteredRecList = filterProducts(productsList, filterProduct);
-
-  //  const table = useReactTable({
-  //   data,
-  //   columns,
-  //   getCoreRowModel: getCoreRowModel(),
-  // });
-
-  //!=================================  ==================================================
 
   const handleDelete = productId => {
     if (productId) {
       dispatch(deleteDiaryProduct(productId));
-      // toast.success('Delete was successful')
+      toast.success('Delete was successful')
       return;
     }
 
-    // toast.error('Delete is failed');
+    toast.error('Delete is failed');
   };
 
   return (
