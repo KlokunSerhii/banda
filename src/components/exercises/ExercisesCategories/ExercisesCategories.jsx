@@ -7,7 +7,7 @@ function ExercisesCategories() {
   const { category, subcategory } = useParams();
 
   return (
-    <>
+    <div className={styles.categories_container}>
       <NavLink className={styles.exercisesBtnBack} hidden={!subcategory} to={`/exercises/${category || ''}`}>
         Back
       </NavLink>
@@ -27,7 +27,7 @@ function ExercisesCategories() {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 

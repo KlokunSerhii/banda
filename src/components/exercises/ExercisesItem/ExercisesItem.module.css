@@ -1,13 +1,11 @@
 .exercisesContainer {
-  /* max-width: 237px;
-  width: 100%; */
   aspect-ratio: 237 / 206;
   border-radius: 12px;
   background-position: center;
   background-size: cover;
-  /* @media screen and (min-width: 1440px) {
-    height: 206px;
-  } */
+  @media screen and (max-width: 767px) {
+    aspect-ratio: 335 / 206;
+  }
 }
 
 .text_container {
@@ -33,6 +31,11 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 1.3;
+  text-align: center;
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }
 
 .text_name::first-letter {
