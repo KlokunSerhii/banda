@@ -24,9 +24,8 @@ const addDiary = (state, { payload }) => {
 
 
 
-const getDiary = (state, { payload }) => {
+const getByDate = (state, { payload }) => {
   const { meal , workout } = payload;
-  
   state.consumedProducts = [...meal];
   state.doneExercises = [...workout]
   state.isLoading = false;
@@ -90,7 +89,7 @@ export const diaryReducer = createSlice({
     [deleteDiaryExercise.pending]: pending,
     [deleteDiaryProduct.pending]: pending,
 
-    [getDiariesByDate.fulfilled]: getDiary,
+    [getDiariesByDate.fulfilled]: getByDate,
     [addDiariesProduct.fulfilled]: addDiary,
     [addDiaryExercise.fulfilled]: addDiary,
     [deleteDiaryExercise.fulfilled]: deleteDiary,

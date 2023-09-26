@@ -3,6 +3,9 @@ import axios from 'axios';
 import { nanoid } from "@reduxjs/toolkit";
 import symbolDefs from "../../../../images/symbol-defs.svg";
 import styles from "./TableProducts.module.css";
+import { getDiariesByDate } from 'redux/diary/operations';
+import { useDiary } from 'hooks';
+import { useDispatch } from 'react-redux';
 
 axios.defaults.baseURL = 'https://node-server-team-proj.onrender.com/api/';
 
@@ -10,10 +13,17 @@ function TableProducts() {
   const [products, setProducts] = useState([]);
   const date = new Date().toISOString()
 
-  const getData = useCallback(async () => {
-    const { data } = await axios.get(`diaries/${date}`)
-    return setProducts(data.meal)
-  }, [date])
+  // const getData = useCallback(async () => {
+  //   const { data } = await axios.get(`diaries/${date}`)
+  //   return setProducts(data.meal)
+  // }, [date])
+  const { diary } = useDiary()
+  console.log(diary)
+  const dispatch = useDispatch()
+
+ const getData = useCallback(() => {
+  dispatch(getDiariesByDate(date))
+  }, [dispatch])
 
   useEffect(() => {
     getData()
@@ -37,6 +47,8 @@ function TableProducts() {
 
   const listOfProducts = products.map((obj) => {
     const num = nanoid();
+    const caloriesEaten = Math.round((obj.weight * obj.product.calories) / 100);
+
     return (
       <tr key={num}>
         <td className={styles.tdTitle}>
@@ -46,7 +58,8 @@ function TableProducts() {
           <div>{obj.product.category}</div>
         </td>
         <td className={styles.tdCalories}>
-          <div>{obj.product.calories}</div>
+          <div>{caloriesEaten}</div>
+
         </td>
         <td className={styles.tdWeight}>
           <div>{obj.weight}</div>
