@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/banda/static/css/main.f351e695.css",
-    "main.js": "/banda/static/js/main.ff51eebb.js",
+    "main.js": "/banda/static/js/main.6719fad6.js",
     "static/css/115.eacd97cb.chunk.css": "/banda/static/css/115.eacd97cb.chunk.css",
     "static/js/115.23e76c20.chunk.js": "/banda/static/js/115.23e76c20.chunk.js",
     "static/css/530.e33d2856.chunk.css": "/banda/static/css/530.e33d2856.chunk.css",
@@ -68,7 +68,7 @@
     "static/media/arrow.svg": "/banda/static/media/arrow.0a8387f2b7c94f1642a6.svg",
     "static/media/tabler_exclamation-mark.svg": "/banda/static/media/tabler_exclamation-mark.df8de3225481908e77e6.svg",
     "main.f351e695.css.map": "/banda/static/css/main.f351e695.css.map",
-    "main.ff51eebb.js.map": "/banda/static/js/main.ff51eebb.js.map",
+    "main.6719fad6.js.map": "/banda/static/js/main.6719fad6.js.map",
     "115.eacd97cb.chunk.css.map": "/banda/static/css/115.eacd97cb.chunk.css.map",
     "115.23e76c20.chunk.js.map": "/banda/static/js/115.23e76c20.chunk.js.map",
     "530.e33d2856.chunk.css.map": "/banda/static/css/530.e33d2856.chunk.css.map",
@@ -107,6 +107,6 @@
   },
   "entrypoints": [
     "static/css/main.f351e695.css",
-    "static/js/main.ff51eebb.js"
+    "static/js/main.6719fad6.js"
   ]
 }
