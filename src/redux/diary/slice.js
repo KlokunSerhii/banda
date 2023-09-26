@@ -12,46 +12,22 @@ const pending = state => {
 };
 
 const addDiary = (state, { payload }) => {
-  const { newExercise, product } = payload;
-  if (product) state.consumedProducts = [...state.consumedProducts, product];
-
-  if (newExercise) {
-    const newElement = {
-      ...payload.doneExercises.pop(),
-      exercise: payload.newExercise,
-    };
-    state.doneExercises = [...state.doneExercises, newElement];
+  const { newProduct } = payload;
+  if (newProduct) {
+    state.consumedProducts =[...state.consumedProducts, newProduct] 
+    state.date = newProduct.date
+    state.isLoading = false;
   }
-  state.burnedCalories = payload.burnedCalories;
-  state.consumedCalories = payload.consumedCalories;
-  state.timeSport = payload.timeSport;
-  state.isLoading = false;
-  state.date = product.date;
+
+
 };
 
-const getDiary = (state, { payload }) => {
-  if (payload === null) {
-    state.consumedCalories = 0;
-    state.burnedCalories = 0;
-    state.consumedProducts = [];
-    state.createdAt = null;
-    state.date = null;
-    state.doneExercises = [];
-    state.owner = null;
-    state.timeSport = null;
-    state.updatedAt = null;
-    state._id = null;
-    state.isLoading = false;
 
-    return;
-  }
-  state.burnedCalories = payload.burnedCalories;
-  state.consumedCalories = payload.consumedCalories;
-  state.consumedProducts = [...payload];
-  state.date = payload.date;
-  state.doneExercises = payload.doneExercises;
-  state.owner = payload.owner;
-  state.timeSport = payload.timeSport;
+
+const getDiary = (state, { payload }) => {
+  const { meal , workout } = payload;
+  state.consumedProducts = [...meal];
+  state.doneExercises = [...workout]
   state.isLoading = false;
 };
 
@@ -105,6 +81,7 @@ export const diaryReducer = createSlice({
     timeSport: null,
     _id: null,
   },
+
   extraReducers: {
     [getDiariesByDate.pending]: pending,
     [addDiariesProduct.pending]: pending,
