@@ -7,7 +7,7 @@ export const getDiariesByDate = createAsyncThunk(
   'diary/getByDate',
   async currentDate => {
     const { data } = await axios.get(`diaries/${currentDate}`);
-    return data.meal;
+    return data;
   }
 );
 
@@ -20,7 +20,7 @@ export const addDiariesProduct = createAsyncThunk(
       productId,
       weight,
     });
-    return { ...data, product: body };
+    return { ...data, newProduct: body };
   }
 );
 
