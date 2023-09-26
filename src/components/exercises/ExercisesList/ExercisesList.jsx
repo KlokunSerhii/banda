@@ -43,17 +43,20 @@ function ExercisesList() {
       // array with CSS styles
       injectStyles: [
         `
+        .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+          bottom: var(--swiper-pagination-bottom,32px);
+        }
         .swiper-pagination-bullet {
           background-color: var(--transparent-light-2);
           box-sizing: border-box;
-          width: 20px;
-          height: 20px;
+          width: 14px;
+          height: 14px;
           padding: 2px;
         }
         .swiper-pagination-bullet-active {
           background: var(--accent-bright-color);
           background-clip: content-box;
-          border: 2px solid var(--accent-bright-color);
+          border: 1px solid var(--accent-bright-color);
         }
         `,
       ],
@@ -73,8 +76,7 @@ function ExercisesList() {
     return pagesArray;
   }, [list, itemsPerPage]);
 
-  if (isLoading) return <Loader className={styles.loader}/>
-
+  if (isLoading) return <Loader className={styles.loader} />;
 
   return (
     <swiper-container

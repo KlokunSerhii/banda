@@ -59,38 +59,18 @@ export default function AddExerciseForm({ item, handleSuccess }) {
     <div className={styles.Form}>
       {/* Form Data */}
       <div className={styles.FormData}>
+
+        {/* Animation */}
         <div className={styles.FormImageBox}>
           <img src={gifUrl} alt={name} className={styles.FormImage} />
         </div>
-        <div className={styles.FormGrid}>
-          <div className={styles.FormItem}>
-            <span className={styles.FormItemLabel}>Name</span>
-            <span className={styles.FormItemName}>{name}</span>
-          </div>
-          <div className={styles.FormItem}>
-            <span className={styles.FormItemLabel}>Target</span>
-            <span className={styles.FormItemName}>{target}</span>
-          </div>
-          <div className={styles.FormItem}>
-            <span className={styles.FormItemLabel}>Body Part</span>
-            <span className={styles.FormItemName}>{bodyPart}</span>
-          </div>
-          <div className={styles.FormItem}>
-            <span className={styles.FormItemLabel}>Equipment</span>
-            <span className={styles.FormItemName}>{equipment}</span>
-          </div>
-          <div className={styles.FormItem}>
-            <span className={styles.FormItemLabel}>Time</span>
-            <span className={styles.FormItemName}>{time}</span>
-          </div>
-        </div>
-      </div>
 
-      <div className={styles.FormBottomContainer}>
+        {/* Timer */}
         <div className={styles.FormTimer}>
           <span className={styles.FormItemLabel}>Timer</span>
           <div className={styles.FormTimerBox}>
             <CountdownCircleTimer
+              className="hello"
               isPlaying={timerActive}
               duration={time * 60}
               colors={['#E6533C', '#F7B801', '#A30000', '#A30000']}
@@ -135,6 +115,36 @@ export default function AddExerciseForm({ item, handleSuccess }) {
             <span className={styles.FormTimerCaloriesValue}>{calories}</span>
           </div>
         </div>
+
+      </div>
+
+      <div className={styles.FormBottomContainer}>
+        {/* Data fields */}
+        <div className={styles.FormGrid}>
+          <div className={styles.FormItem}>
+            <span className={styles.FormItemLabel}>Name</span>
+            <span className={styles.FormItemName}>{name}</span>
+          </div>
+          <div className={styles.FormItem}>
+            <span className={styles.FormItemLabel}>Target</span>
+            <span className={styles.FormItemName}>{target}</span>
+          </div>
+          <div className={styles.FormItem}>
+            <span className={styles.FormItemLabel}>Body Part</span>
+            <span className={styles.FormItemName}>{bodyPart}</span>
+          </div>
+          <div className={styles.FormItem}>
+            <span className={styles.FormItemLabel}>Equipment</span>
+            <span className={styles.FormItemName}>{equipment}</span>
+          </div>
+          <div className={styles.FormItem}>
+            <span className={styles.FormItemLabel}>Time</span>
+            <span className={styles.FormItemName}>{time}</span>
+          </div>
+        </div>
+        
+
+        {/* Submit button */}
         <button
           className={styles.FormAddButton}
           disabled={passedTime < 1}
@@ -142,6 +152,7 @@ export default function AddExerciseForm({ item, handleSuccess }) {
         >
           Add to diary
         </button>
+
       </div>
     </div>
   );

@@ -11,8 +11,8 @@
 
   @media screen and (min-width: 768px) {
     width: calc((100% - 16px) / 2);
-      overflow: hidden;
-    }
+    overflow: hidden;
+  }
   @media screen and (min-width: 1440px) {
     max-width: 405px;
   }
@@ -75,6 +75,10 @@
   width: 100%;
   flex-direction: row;
   gap: 16px;
+  @media screen and (max-width: 1439px) {
+  flex-wrap: wrap;
+  }
+ 
 }
 
 .excercisesCardInfoItem {
@@ -95,6 +99,9 @@
   font-size: 12px;
   line-height: 18px;
 }
+.excercisesCardInfoValue::first-letter {
+  text-transform: uppercase;
+}
 
 .excercisesCardTitle {
   position: relative;
@@ -107,11 +114,14 @@
   white-space: nowrap;
   padding-left: 40px;
   max-width: 100%;
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }
 .excercisesCardTitle::first-letter {
   text-transform: capitalize;
-} 
-
+}
 
 .excercisesCardTitle::before {
   content: url(../../../images/run-icon.svg);
@@ -192,5 +202,3 @@
   display: flex;
   align-items: center;
 }
-
-
