@@ -4,17 +4,16 @@ import symbolDefs from '../../../../images/symbol-defs.svg';
 // import { toast } from 'react-toastify';
 
 import styles from './TableExercises.module.css';
+import axios from 'axios';
 
 function TableExercises({ exercises }) {
-  const handleDelete = exerciseId => {
-    if (exerciseId) {
-      // dispatch(deleteDiaryExercise(exerciseId));
-      // toast.success('Delete was successful')
-      return;
-    }
+  //!===================================================
 
-    // toast.error('Delete is failed');
+  const handleDelete = async params => {
+    await axios.delete(`eaten-products/${params._id}`);
   };
+
+  //!=====================================================
 
   const listOfExercises = exercises?.map(obj => {
     const num = nanoid();
