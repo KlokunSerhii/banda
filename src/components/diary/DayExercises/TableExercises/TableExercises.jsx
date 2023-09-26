@@ -118,7 +118,7 @@ function TableExercises() {
   // console.log(date);
 
   useEffect(() => {
-    dispatch(getDiariesByDate(date));
+    // dispatch(getDiariesByDate(date));
 
   }, [date, dispatch]);
 

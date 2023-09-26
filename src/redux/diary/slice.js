@@ -26,6 +26,7 @@ const addDiary = (state, { payload }) => {
 
 const getDiary = (state, { payload }) => {
   const { meal , workout } = payload;
+  
   state.consumedProducts = [...meal];
   state.doneExercises = [...workout]
   state.isLoading = false;
