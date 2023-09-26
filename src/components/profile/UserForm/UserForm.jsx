@@ -37,7 +37,7 @@ const formSchema = {
       return birthdate <= cutoff;
     }
   ),
-  levelActivity: string().oneOf(['1', '2', '3', '4']).required(reqmsg),
+  levelActivity: string().oneOf(['1', '2', '3', '4', '5']).required(reqmsg),
 };
 
 const validationSchema = object(formSchema);
@@ -45,7 +45,7 @@ const validationSchema = object(formSchema);
 const backendSchema = object({
   ...formSchema,
   blood: number().oneOf([1, 2, 3, 4]).required(),
-  levelActivity: number().oneOf([1, 2, 3, 4]).required(),
+  levelActivity: number().oneOf([1, 2, 3, 4, 5]).required(),
 });
 
 const defaultValues = {

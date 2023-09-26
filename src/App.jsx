@@ -16,9 +16,9 @@ const Products = lazy(() => import('pages/Products'));
 const Exercises = lazy(() => import('pages/Exercises'));
 const Params = lazy(() => import('pages/Params'));
 const Profile = lazy(() => import('pages/Profile'));
-/* const ExercisesSubcategoriesList = lazy(() =>
+const ExercisesSubcategoriesList = lazy(() =>
   import('components/exercises/ExercisesSubcategoriesList')
-); */
+);
 const ExercisesList = lazy(() => import('components/exercises/ExercisesList'));
 const Page404 = lazy(() => import('components/Page404'));
 
@@ -53,17 +53,11 @@ export const App = () => {
           >
             <Route index element={<Navigate to="bodyparts" />} />
             <Route path=":category" element={<ExercisesList />} />
+            <Route
+              path=":category/:subcategory"
+              element={<ExercisesSubcategoriesList />}
+            />
           </Route>
-
-          {/* <Route
-            path="exercises"
-            element={<PrivateRoute redirectto="/" component={Exercises} />}
-          >
-            <Route index element={<Navigate to="bodyparts" />} />
-            <Route path=":category" element={<ExercisesSubcategoriesList />} />
-            <Route path="exercise-categories" element={<ExercisesList />} />
-          </Route> */}
-
           <Route
             path="params"
             element={<PrivateRoute redirectto="/" component={Params} />}

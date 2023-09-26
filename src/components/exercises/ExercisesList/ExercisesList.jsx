@@ -4,7 +4,7 @@ import styles from './ExercisesList.module.css';
 import { useDispatch } from 'react-redux';
 import { exerciseCategories } from 'redux/exercises/operation';
 import { useExercise } from 'hooks';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import { useMediaQuery } from '@uidotdev/usehooks';
 import Loader from 'components/Loader/Loader';
 
@@ -90,7 +90,9 @@ function ExercisesList() {
           <swiper-slide key={index + item[0].title.name}>
             <ul className={styles.exercisesList}>
               {item.map(category => (
-                <ExercisesItem item={category.title} />
+                <NavLink to={category.title.name} key={category.title._id}>
+                  <ExercisesItem item={category.title} />
+                </NavLink>
               ))}
             </ul>
           </swiper-slide>

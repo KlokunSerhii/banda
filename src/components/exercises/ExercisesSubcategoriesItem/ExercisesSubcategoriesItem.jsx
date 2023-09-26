@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './ExercisesSubcategoriesItem.module.css';
 
-function ExercisesSubcategoriesItem(el, openModalToggle) {
+function ExercisesSubcategoriesItem({ item, handleClick } ) {
+  const { bodyPart, burnedCalories, name, target } =
+    item;
   return (
     <li className={styles.excercisesCard}>
       <div className={styles.excercisesCardStatus}>
@@ -9,9 +11,7 @@ function ExercisesSubcategoriesItem(el, openModalToggle) {
           <p className={styles.excercisesCardDietText}>workout</p>
         </span>
         <button
-          onClick={() => {
-            openModalToggle(el);
-          }}
+          onClick={() => handleClick(item)}
           className={styles.exercisesCardBtnStart}
           type="button"
         >
@@ -19,16 +19,19 @@ function ExercisesSubcategoriesItem(el, openModalToggle) {
         </button>
       </div>
 
-      <h4 className={styles.excercisesCardTitle}>Air bike</h4>
+      <h4 className={styles.excercisesCardTitle}>{name}</h4>
       <ul className={styles.excercisesCardInfo}>
         <li className={styles.excercisesCardInfoItem}>
-          Burned calories:<p className={styles.excercisesCardInfoValue}></p>
+          Burned calories:
+          <span className={styles.excercisesCardInfoValue}>
+            {burnedCalories}
+          </span>
         </li>
         <li className={styles.excercisesCardInfoItem}>
-          Body part:<p className={styles.excercisesCardInfoValue}></p>
+          Body part:<p className={styles.excercisesCardInfoValue}>{bodyPart}</p>
         </li>
         <li className={styles.excercisesCardInfoItem}>
-          Target: <p className={styles.excercisesCardInfoValue}></p>
+          Target: <p className={styles.excercisesCardInfoValue}>{target}</p>
         </li>
       </ul>
     </li>

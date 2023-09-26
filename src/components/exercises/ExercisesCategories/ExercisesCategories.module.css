@@ -27,6 +27,9 @@
   font-weight: 700;
   line-height: 1.17;
   margin-top: 8px;
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 .exercisesList {
   display: flex;

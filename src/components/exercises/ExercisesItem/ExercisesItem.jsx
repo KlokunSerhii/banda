@@ -1,6 +1,4 @@
-// import { useAuth } from '../../../hooks/auth';
 import styles from './ExercisesItem.module.css';
-// import { NavLink } from 'react-router-dom';
 
 function ExercisesItem({ item }) {
   const { filter, name, imgURL } = item;

@@ -5,7 +5,7 @@ import symbolDefs from '../../images/symbol-defs.svg';
 
 
 
-const BasicModalWindow = ({ children, isOpenModalToggle }) => {
+const BasicModalWindow = ({ children, isOpenModalToggle, className, innerClasses }) => {
   useEffect(() => {
     document.body.classList.add(`${styles.overflowHidden}`);
     return () => {
@@ -32,8 +32,8 @@ const BasicModalWindow = ({ children, isOpenModalToggle }) => {
   };
 
   const modal = (
-    <div className={styles.basicModalWindow} onClick={handleClickBackground}>
-      <div className={styles.modal}>
+    <div className={`${styles.basicModalWindow} ${className || ''}`} onClick={handleClickBackground}>
+      <div className={`${styles.modal} ${innerClasses || ''}`}>
         <button className={styles.closeSvg} onClick={() => isOpenModalToggle()}>
           <svg className={styles.colorSvg} width="20" height="20">
             <use href={symbolDefs + '#close-icon'}></use>
