@@ -43,18 +43,19 @@ function Diary() {
           <TitlePage title="Diary" />
           <DaySwitch
             selectedDate={selectedDate}
-            setSelectedDate={setSelectedDate}
+            setSelectedDate={(date) => setSelectedDate(date)}
+            
             handleToPreviousDay={handleToPreviousDay}
             handleToNextDay={handleToNextDay}
           />
         </div>
         <div className={styles.container}>
           <div className={styles.itemsCont}>
-            <DayProducts 
-            products={consumedProducts}
+            <DayProducts
+              products={consumedProducts}
             />
-            <DayExercises 
-            exercises={doneExercises} 
+            <DayExercises
+              exercises={doneExercises}
             />
           </div>
           <DayDashboard />
