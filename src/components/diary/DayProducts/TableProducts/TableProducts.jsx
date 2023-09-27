@@ -9,13 +9,13 @@ function TableProducts({ products }) {
   const { user } = useAuth();
   const bloodType = user.bodyParams.blood;
 
-  //!===================================================
 
   const handleDelete = async params => {
-    await axios.delete(`eaten-products/${params._id}`);
+    await axios.delete(`eaten-products/${params}`);
+     console.log(params)
+
   };
 
-  //!=====================================================
 
   const recomendProduct = groupBloodNotAllowed => {
     return groupBloodNotAllowed[bloodType];
@@ -23,9 +23,9 @@ function TableProducts({ products }) {
 
   const listOfProducts = products?.map(obj => {
     const caloriesEaten = Math.round((obj.weight * obj.product.calories) / 100);
-    const num = nanoid();
+    // const num = nanoid();
     return (
-      <tr key={num}>
+      <tr key={obj._id}>
         <td className={styles.tdTitle}>
           <div>{obj.product.title}</div>
         </td>
@@ -60,7 +60,7 @@ function TableProducts({ products }) {
           )}
         </td>
         <td className={styles.tdDellete}>
-          <button onClick={() => handleDelete(obj)}>
+          <button onClick={() => handleDelete(obj._id)}>
             <svg>
               <use href={symbolDefs + '#trash-icon'}></use>
             </svg>
