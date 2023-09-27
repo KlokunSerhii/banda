@@ -1,19 +1,17 @@
 import React from 'react';
-import { nanoid } from '@reduxjs/toolkit';
 import symbolDefs from '../../../../images/symbol-defs.svg';
 import styles from './TableProducts.module.css';
 import { useAuth } from 'hooks';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { deleteDiaryProduct } from 'redux/diary/operations';
 
 function TableProducts({ products }) {
   const { user } = useAuth();
   const bloodType = user.bodyParams.blood;
-
+  const dispatch = useDispatch()
 
   const handleDelete = async params => {
-    await axios.delete(`eaten-products/${params}`);
-     console.log(params)
-
+    dispatch(deleteDiaryProduct(params))
   };
 
 
@@ -23,7 +21,6 @@ function TableProducts({ products }) {
 
   const listOfProducts = products?.map(obj => {
     const caloriesEaten = Math.round((obj.weight * obj.product.calories) / 100);
-    // const num = nanoid();
     return (
       <tr key={obj._id}>
         <td className={styles.tdTitle}>
