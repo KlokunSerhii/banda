@@ -14,7 +14,6 @@ function Diary() {
   const {diary} = useDiary()
   const { consumedProducts, doneExercises
   } = diary;
-console.log(diary)
   const [selectedDate, setSelectedDate] = useState(new Date());
   const date = selectedDate.toISOString();
   const dispatch = useDispatch()

@@ -2,13 +2,15 @@ import { useState } from 'react';
 import styles from './AddExerciseForm.module.css';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { object, string, number } from 'yup';
-import axios from 'axios';
+import { addDiaryExercise } from 'redux/diary/operations';
+import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
 const exerciseSchema = object({
   exerciseId: string().required(),
   date: string().required(),
   duration: number().min(1).required(),
-  //calories: number().min(1).required(),
+
 });
 
 export default function AddExerciseForm({ item, handleSuccess }) {
@@ -25,7 +27,7 @@ export default function AddExerciseForm({ item, handleSuccess }) {
   const [timerActive, setTimerActive] = useState(false);
   const [calories, setCalories] = useState(0);
   const [passedTime, setPassedTime] = useState(0);
-
+  const dispatch = useDispatch()
   const handleTimerToggle = () => setTimerActive(!timerActive);
 
   const handleSubmit = () => {
@@ -35,25 +37,19 @@ export default function AddExerciseForm({ item, handleSuccess }) {
       date: new Date().toISOString(),
       duration: passedTime,
     };
-
     const validatedData = exerciseSchema.cast(data);
-    axios.post('/done-exercises', validatedData).then(
-      () => {
+    dispatch(addDiaryExercise(validatedData))
+      .then(() => {
         handleSuccess({
           passedTime,
           calories,
         })
-      },
-      () => console.warn('error')
-    );
-  };
+      }
+      ).catch(error => {
+        toast(error.message);
+      })
 
-  /* const handleReset = () => {
-    setTimerId(timerId === 1 ? 2 : 1);
-    setCalories(0);
-    setPassedTime(0);
-    setTimerActive(false);
-  } */
+  };
 
   return (
     <div className={styles.Form}>
@@ -103,9 +99,8 @@ export default function AddExerciseForm({ item, handleSuccess }) {
             </CountdownCircleTimer>
           </div>
           <button
-            className={`${styles.FormTimerButton} ${
-              timerActive ? styles.FormTimerButtonActive : ''
-            }`}
+            className={`${styles.FormTimerButton} ${timerActive ? styles.FormTimerButtonActive : ''
+              }`}
             onClick={handleTimerToggle}
           ></button>
           <div>
@@ -142,7 +137,7 @@ export default function AddExerciseForm({ item, handleSuccess }) {
             <span className={styles.FormItemName}>{time}</span>
           </div>
         </div>
-        
+
 
         {/* Submit button */}
         <button
