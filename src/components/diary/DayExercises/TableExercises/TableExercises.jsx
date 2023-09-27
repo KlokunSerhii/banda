@@ -65,9 +65,6 @@ function TableExercises({ exercises }) {
         </div>
       ) : (
         <div className={styles.DayExercises}>
-          <div className={styles.DayExercisesHead}>
-            <h2>Exercises</h2>
-          </div>
           <div className={styles.DayExercisesTable}>
             <p className={styles.not_found}>Not found exercises</p>
           </div>
