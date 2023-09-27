@@ -33,7 +33,7 @@ export const addDiaryExercise = createAsyncThunk(
       exerciseId,
       duration,
     });
-    return { ...data, newExercise: body.data };
+    return { ...data, exercise: body };
   }
 );
 
@@ -41,7 +41,7 @@ export const deleteDiaryExercise = createAsyncThunk(
   'diary/deleteExercise',
   async params => {
     const { data } = await axios.delete(`done-exercises/${params}`);
-      return { data };
+    return  data ;
     }
 
   
@@ -50,7 +50,7 @@ export const deleteDiaryExercise = createAsyncThunk(
 export const deleteDiaryProduct = createAsyncThunk(
   'diary/deleteProduct',
   async params => {
-  const{ data } = await axios.delete(`eaten-products/${params}`);
+  const { data } = await axios.delete(`eaten-products/${params}`);
   return data
   }
 );

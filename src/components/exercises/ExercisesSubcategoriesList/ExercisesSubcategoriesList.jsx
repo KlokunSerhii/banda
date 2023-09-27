@@ -29,7 +29,7 @@ function ExercisesSubcategoriesList() {
 
   const openModalToggle = item => {
     setModalData(item);
-    console.log(item)
+
   };
 
   const closeModal = () => {

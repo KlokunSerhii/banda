@@ -12,9 +12,13 @@ const pending = state => {
 };
 
 const addDiary = (state, { payload }) => {
-  const { newProduct } = payload;
+  const { newProduct, newExercise } = payload;
   if (newProduct) {
     state.consumedProducts = [payload];
+    state.isLoading = false;
+  }
+  if (newExercise) {
+    state.doneExercises = [payload];
     state.isLoading = false;
   }
 };
@@ -28,7 +32,6 @@ const getDiary = (state, { payload }) => {
 
 const deleteDiary = (state, { payload }) => {
   const { exerciseId, productId } = payload;
-
   if (productId) {
     const index = state.consumedProducts.findIndex(
       obj => obj.product._id === productId
@@ -37,12 +40,12 @@ const deleteDiary = (state, { payload }) => {
   }
   if (exerciseId) {
     const index = state.doneExercises.findIndex(
-      obj => console.log(obj._id === exerciseId) 
+      obj => obj.exercise._id === exerciseId
     );
     state.doneExercises.splice(index, 1)
   }
 
-  // state.isLoading = false;
+  state.isLoading = false;
 };
 
 const rejected = state => {
@@ -60,7 +63,7 @@ export const diaryReducer = createSlice({
   initialState: {
     consumedProducts: [],
     doneExercises: [],
-    isLoading: true
+    isLoading: false
   },
 
   extraReducers: {
