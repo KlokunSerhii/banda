@@ -8,11 +8,13 @@ import LogOutBtn from '../LogOutBtn';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import styles from './Header.module.css';
 import Container from 'components/Container';
+import { useLocation } from 'react-router-dom';
 
 function Header() {
   const { isLoggedIn } = useAuth();
   const [menuActive, setMenuActive] = useState(false);
   const [className, setClassName] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     setClassName(!isLoggedIn ? styles.headerPosition : styles.headerNoPosition);
@@ -22,7 +24,7 @@ function Header() {
     <Container className={styles.container}>
       <header className={className}>
         <Logo />
-        {isLoggedIn && (
+        {isLoggedIn && pathname !== '/params' && (
           <>
             <div className={styles.wrapNavDesktop}>
               <UserNav />
@@ -39,7 +41,9 @@ function Header() {
               />
               <button
                 className={styles.mobileBtn}
-                onClick={()=>{setMenuActive(true)}}
+                onClick={() => {
+                  setMenuActive(true);
+                }}
               >
                 <RiMenu2Line className={styles.mobileIcon} />
               </button>
@@ -52,4 +56,3 @@ function Header() {
 }
 
 export default Header;
-

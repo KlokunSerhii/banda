@@ -3,20 +3,18 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import { refreshUser } from 'redux/auth/operations';
+import { refreshUser, updateUser } from 'redux/auth/operations';
 
 import styles from './ParamsForm.module.css';
 
 import { useFormik } from 'formik';
 import { object, string, number, date } from 'yup';
-import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { FiArrowLeft, FiArrowRight, FiWatch } from 'react-icons/fi';
 import { AiFillPlayCircle } from 'react-icons/ai';
 import { MdDirectionsRun } from 'react-icons/md';
-
 
 import StepBar from '../StepBar/StepBar';
 
@@ -65,8 +63,6 @@ const backendSchema = object({
   levelActivity: number().oneOf([1, 2, 3, 4]).required(),
 });
 
-
-
 const initialValues = {
   height: '',
   currentWeight: '',
@@ -89,20 +85,13 @@ function ParamsForm() {
     validateOnBlur: true,
     onSubmit: values => {
       const formData = new FormData();
-
       const { ...bodyParams } = backendSchema.cast(values);
       setPending(!pending);
-
       formData.append('bodyParams', JSON.stringify(bodyParams));
-
-      ///api/user/current
-      axios.patch('/users/current', formData).then(
-        res => {
+      dispatch(updateUser(formData)).then(
+        () => {
           setParamsData(values);
           initialValues.values = values;
-
-          toast.success('Your profile has been successfully updated');
-
           dispatch(refreshUser());
           setPending(false);
         },
@@ -112,8 +101,6 @@ function ParamsForm() {
           setPending(false);
         }
       );
-
-
     },
   });
 
@@ -128,7 +115,7 @@ function ParamsForm() {
     } else if (formik.errors.height || formik.values.height === '') {
       return toast.error(
         'Your form should be done to get to the next step! ' +
-        `${formik.errors.height}`
+          `${formik.errors.height}`
       );
     } else if (
       formik.errors.currentWeight ||
@@ -136,7 +123,7 @@ function ParamsForm() {
     ) {
       return toast.error(
         'Your form should be done to get to the next step! ' +
-        `${formik.errors.currentWeight}`
+          `${formik.errors.currentWeight}`
       );
     } else if (
       formik.errors.desiredWeight ||
@@ -144,42 +131,42 @@ function ParamsForm() {
     ) {
       return toast.error(
         'Your form should be done to get to the next step! ' +
-        `${formik.errors.desiredWeight}`
+          `${formik.errors.desiredWeight}`
       );
     } else if (formik.errors.birthdate || formik.values.birthdate === '') {
       return toast.error(
         'Your form should be done to get to the next step! ' +
-        `${formik.errors.birthdate}`
+          `${formik.errors.birthdate}`
       );
     } else if (formik.errors.blood) {
       return toast.error(
         'Your form should be done to get to the next step! ' +
-        `${formik.errors.blood}`
+          `${formik.errors.blood}`
       );
     } else if (formik.errors.sex) {
       return toast.error(
         'Your form should be done to get to the next step! ' +
-        `${formik.errors.sex}`
+          `${formik.errors.sex}`
       );
     } else if (formik.errors.levelActivity) {
       return toast.error(
         'Your form should be done to get to the next step! ' +
-        `${formik.errors.levelActivity}`
+          `${formik.errors.levelActivity}`
       );
     } else if (formik.errors.blood) {
       return toast.error(
         'Your form should be done to get to the next step! ' +
-        `${formik.errors.blood}`
+          `${formik.errors.blood}`
       );
     } else if (formik.errors.sex) {
       return toast.error(
         'Your form should be done to get to the next step! ' +
-        `${formik.errors.sex}`
+          `${formik.errors.sex}`
       );
     } else if (formik.errors.levelActivity) {
       return toast.error(
         'Your form should be done to get to the next step! ' +
-        `${formik.errors.levelActivity}`
+          `${formik.errors.levelActivity}`
       );
     }
 
@@ -283,7 +270,7 @@ function ParamsForm() {
                   className={`${styles.nextBtn}  ${styles.btn}`}
                   onClick={handleNextClick}
                 >
-                  Next{' '}
+                  Next
                   <FiArrowRight
                     style={{
                       width: '18px',
