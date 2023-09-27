@@ -1,22 +1,17 @@
 import React from 'react';
-import { nanoid } from '@reduxjs/toolkit';
 import symbolDefs from '../../../../images/symbol-defs.svg';
-// import { toast } from 'react-toastify';
-
-import styles from './TableExercises.module.css';
-import axios from 'axios';
+import styles from './TableExercises.module.css'
+import { deleteDiaryExercise } from 'redux/diary/operations';
+import { useDispatch } from 'react-redux';
 
 function TableExercises({ exercises }) {
-  //!===================================================
+  const dispatch = useDispatch()
 
   const handleDelete = async params => {
-    await axios.delete(`eaten-products/${params}`);
+    dispatch(deleteDiaryExercise(params))
   };
 
-  //!=====================================================
-
   const listOfExercises = exercises?.map(obj => {
-    // const num = nanoid();
     return (
       <tr key={obj._id}>
         <td className={styles.tdBodyPart}>

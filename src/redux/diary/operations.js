@@ -20,7 +20,7 @@ export const addDiariesProduct = createAsyncThunk(
       productId,
       weight: quantity,
     });
-    return { ...data, newProduct: body };
+    return { ...data, produst: body };
   }
 );
 
@@ -40,27 +40,17 @@ export const addDiaryExercise = createAsyncThunk(
 export const deleteDiaryExercise = createAsyncThunk(
   'diary/deleteExercise',
   async params => {
-    const { status, data } = await axios.delete(
-      `done-exercises/${params.exerciseId}`,
-      { data: params }
-    );
-    if (status === 200) {
-      return { exerciseId: params.exerciseId, data };
+    const { data } = await axios.delete(`done-exercises/${params}`);
+      return { data };
     }
-    return {};
-  }
+
+  
 );
 
 export const deleteDiaryProduct = createAsyncThunk(
   'diary/deleteProduct',
   async params => {
-    const { status, data } = await axios.delete(
-      `eaten-products/${params.productId}`,
-      { data: params }
-    );
-    if (status === 200) {
-      return { productId: params.productId, data };
-    }
-    return {};
+  const{ data } = await axios.delete(`eaten-products/${params}`);
+  return data
   }
 );

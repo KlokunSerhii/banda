@@ -13,10 +13,8 @@ const pending = state => {
 
 const addDiary = (state, { payload }) => {
   const { newProduct } = payload;
-  console.log(newProduct);
   if (newProduct) {
-    state.consumedProducts = [...state.consumedProducts, newProduct];
-    state.date = newProduct.date;
+    state.consumedProducts = [payload];
     state.isLoading = false;
   }
 };
@@ -29,23 +27,22 @@ const getDiary = (state, { payload }) => {
 };
 
 const deleteDiary = (state, { payload }) => {
-  const { exerciseId, productId, data } = payload;
+  const { exerciseId, productId } = payload;
 
   if (productId) {
-    state.consumedProducts = [...state.consumedProducts].filter(
-      el => el._id !== productId
+    const index = state.consumedProducts.findIndex(
+      obj => obj.product._id === productId
     );
+    state.consumedProducts.splice(index, 1)
   }
   if (exerciseId) {
-    state.doneExercises = [...state.doneExercises].filter(
-      el => el._id !== exerciseId
+    const index = state.doneExercises.findIndex(
+      obj => console.log(obj._id === exerciseId) 
     );
+    state.doneExercises.splice(index, 1)
   }
 
-  state.burnedCalories = data.burnedCalories;
-  state.consumedCalories = data.consumedCalories;
-  state.timeSport = data.timeSport;
-  state.isLoading = false;
+  // state.isLoading = false;
 };
 
 const rejected = state => {
@@ -53,30 +50,17 @@ const rejected = state => {
 };
 
 const diaryRejected = state => {
-  state.burnedCalories = 0;
-  state.consumedCalories = 0;
   state.consumedProducts = [];
-  state.createdAt = null;
-  state.date = null;
   state.doneExercises = [];
-  state.owner = null;
-  state.timeSport = null;
-  state.updatedAt = null;
-  state._id = null;
   state.isLoading = false;
 };
 
 export const diaryReducer = createSlice({
   name: 'diary',
   initialState: {
-    burnedCalories: null,
-    consumedCalories: null,
     consumedProducts: [],
-    date: null,
     doneExercises: [],
-    owner: null,
-    timeSport: null,
-    _id: null,
+    isLoading: true
   },
 
   extraReducers: {
