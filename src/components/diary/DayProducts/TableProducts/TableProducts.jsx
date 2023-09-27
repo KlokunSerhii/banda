@@ -88,9 +88,6 @@ function TableProducts({ products }) {
         </div>
       ) : (
         <div className={styles.DayProducts}>
-          <div className={styles.DayProductsHead}>
-            <h2>Products</h2>
-          </div>
           <div className={styles.DayProductsTable}>
             <p className={styles.not_found}>Not found products</p>
           </div>
