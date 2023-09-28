@@ -8,7 +8,7 @@ import TableProducts from './TableProducts';
 
 function DayProducts({ products }) {
   return (
-    <div className={styles.dayProductsWrapper}>
+    <div className={styles.dayProductsWrapperr}>
       <div className={styles.headerWrapper}>
         <p className={styles.title}>Products</p>
         <div className={styles.btnWrapper}>
