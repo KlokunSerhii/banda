@@ -44,7 +44,7 @@ function DayDashboard() {
       return element.duration + total;
     }, 0);
 
-    const restOfCalories = totalConsumedCalories - totalBurnedCalories;
+    const restOfCalories = dailyCalorieIntake - totalConsumedCalories;
 
     const restOfSports = dailyNormOfSports - totalTimeOfSports;
 
@@ -52,7 +52,7 @@ function DayDashboard() {
     setBurnedCalories(Math.round(totalBurnedCalories));
     setCaloriesRest(Math.round(restOfCalories));
     setSportsRest(Math.round(restOfSports));
-  }, [diary, dailyNormOfSports]);
+  }, [diary, dailyCalorieIntake, dailyNormOfSports]);
 
   return (
     <div>
@@ -117,10 +117,11 @@ function DayDashboard() {
         </li>
       </ul>
       <div className={styles.textCont}>
-        <PiWarningCircleBold className={styles.warningIcon}
+        <PiWarningCircleBold
+          className={styles.warningIcon}
           fill="#EF8964"
           size={24}
-          style={{ width: 80}}
+          style={{ width: 80 }}
         ></PiWarningCircleBold>
         <p className={styles.text}>
           Record all your meals in a calorie diary every day. This will help me
