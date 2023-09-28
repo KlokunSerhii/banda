@@ -9,16 +9,18 @@ import { MdDirectionsRun } from 'react-icons/md';
 import { PiWarningCircleBold } from 'react-icons/pi';
 import { PiCirclesThreeFill } from 'react-icons/pi';
 import { useDiary } from 'hooks/diary.js';
+import { useAuth } from 'hooks/auth.js';
 
 function DayDashboard() {
-  const DAILY_CALORIE_INTAKE = 2200;
-  const DAILY_NORM_OF_SPORTS = 110;
-
   const diary = useDiary();
+  const auth = useAuth();
+  const dailyCalorieIntake = auth.user.bodyParams.bmr;
+  const dailyNormOfSports = auth.user.bodyParams.dailySportTime;
+
   const [consumedCalories, setConsumedCalories] = useState(0);
   const [burnedCalories, setBurnedCalories] = useState(0);
   const [caloriesRest, setCaloriesRest] = useState(0);
-  const [sportsRest, setSportsRest] = useState(DAILY_NORM_OF_SPORTS);
+  const [sportsRest, setSportsRest] = useState(dailyNormOfSports);
 
   useEffect(() => {
     const products = diary.diary.consumedProducts;
@@ -44,13 +46,13 @@ function DayDashboard() {
 
     const restOfCalories = totalConsumedCalories - totalBurnedCalories;
 
-    const restOfSports = DAILY_NORM_OF_SPORTS - totalTimeOfSports;
+    const restOfSports = dailyNormOfSports - totalTimeOfSports;
 
     setConsumedCalories(Math.round(totalConsumedCalories));
     setBurnedCalories(Math.round(totalBurnedCalories));
     setCaloriesRest(Math.round(restOfCalories));
     setSportsRest(Math.round(restOfSports));
-  }, [diary]);
+  }, [diary, dailyNormOfSports]);
 
   return (
     <div>
@@ -64,14 +66,14 @@ function DayDashboard() {
             ></PiForkKnifeFill>
             <p>Daily calorie intake</p>
           </div>
-          <p className={css.result}>{DAILY_CALORIE_INTAKE}</p>
+          <p className={css.result}>{dailyCalorieIntake}</p>
         </li>
         <li className={css.box}>
           <div className={css.header}>
             <CgGym fill="#EF8964" size={20} style={{ width: 20 }}></CgGym>
             <p>Daily norm of sports</p>
           </div>
-          <p className={css.result}>{DAILY_NORM_OF_SPORTS} min</p>
+          <p className={css.result}>{dailyNormOfSports} min</p>
         </li>
         <li className={css.darkBox}>
           <div className={css.header}>
