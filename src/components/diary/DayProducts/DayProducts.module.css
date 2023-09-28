@@ -1,7 +1,5 @@
 .dayProductsWrapper {
- padding: 16px;
   border-radius: 12px;
-
   border: 1px solid var(--transparent-medium-3);
   background: var(--transparent-medium-5);
   box-shadow: 0px 4px 4px 0px var(--transparent-dark-5),
@@ -10,9 +8,12 @@
 }
 
 .headerWrapper {
+  padding: 0 16px;
+
   display: flex;
   justify-content: space-between;
-}
+  padding-top: 12px;
+
 
 .btnWrapper {
   display: flex;
@@ -50,5 +51,6 @@
 @media screen and (min-width: 1440px) {
   .dayProductsWrapper {
     width: 826px;
+    height: 234px;
   }
 }
