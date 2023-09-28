@@ -8,16 +8,21 @@ import DaySwitch from 'components/diary/DaySwitch';
 import styles from './Dairy.module.css';
 import { useDispatch } from 'react-redux';
 import { getDiariesByDate } from 'redux/diary/operations';
-import { useDiary } from 'hooks';
+import { useDiary, useAuth } from 'hooks';
+
 
 function Diary() {
-  const {diary} = useDiary()
-  const { consumedProducts, doneExercises
-  } = diary;
+  const { diary } = useDiary()
+  const { user } = useAuth();
+  
+  const { consumedProducts, doneExercises } = diary;
+
   const [selectedDate, setSelectedDate] = useState(new Date());
   const date = selectedDate.toISOString();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const minDate = new Date(user.createdAt);
 
+ 
   useEffect(() => {
     dispatch(getDiariesByDate(date))
   }, [date, dispatch ]);
@@ -36,25 +41,30 @@ function Diary() {
     setSelectedDate(nextDay);
   };
 
+   
+ 
+
   return (
     <div className={styles.backGround}>
       <Container>
         <div className={styles.titleCont}>
           <TitlePage title="Diary" />
           <DaySwitch
+            minDate={minDate}
             selectedDate={selectedDate}
-            setSelectedDate={setSelectedDate}
+            setSelectedDate={(date) => setSelectedDate(date)}
+            
             handleToPreviousDay={handleToPreviousDay}
             handleToNextDay={handleToNextDay}
           />
         </div>
         <div className={styles.container}>
           <div className={styles.itemsCont}>
-            <DayProducts 
-            products={consumedProducts}
+            <DayProducts
+              products={consumedProducts}
             />
-            <DayExercises 
-            exercises={doneExercises} 
+            <DayExercises
+              exercises={doneExercises}
             />
           </div>
           <DayDashboard />
