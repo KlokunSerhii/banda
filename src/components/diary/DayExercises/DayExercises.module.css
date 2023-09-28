@@ -1,8 +1,8 @@
 .dayExercisesWrapper {
-  border-radius: 12px;
-  min-height: 335px;
+  min-height: 234px;
   border: 1px solid var(--transparent-medium-3);
   background: var(--transparent-medium-5);
+  border-radius: 12px;
   box-shadow: 0px 4px 4px 0px var(--transparent-dark-5),
     0px 4px 4px 0px var(--transparent-dark-5),
     0px 4px 4px 0px var(--transparent-dark-5);
@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 12px;
+  /* margin-bottom: 32px; */
 }
 
 .btnWrapper {
@@ -20,33 +21,28 @@
   align-items: center;
   color: var(--accent-bright-color);
 }
-
 .title {
   color: var(--transparent-light-4);
   font-size: 14px;
   line-height: 1.2;
 }
-
 .addExerciseBtn {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   margin-right: 8px;
 }
-
 .errNotFound {
   color: var(--transparent-medium-2);
   font-size: 16px;
   line-height: 24px;
   text-align: center;
 }
-
 @media screen and (min-width: 768px) {
   .dayExercisesWrapper {
     width: 704px;
   }
 }
-
 @media screen and (min-width: 1440px) {
   .dayExercisesWrapper {
     height: 234px;
