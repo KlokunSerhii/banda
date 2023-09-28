@@ -9,7 +9,6 @@ function TableProducts({ products }) {
   const { user } = useAuth();
   const bloodType = user.bodyParams.blood;
   const dispatch = useDispatch()
-
   const handleDelete = async params => {
     dispatch(deleteDiaryProduct(params))
   };
