@@ -21,18 +21,18 @@ function TableProducts({ products }) {
   const listOfProducts = products?.map(obj => {
     const caloriesEaten = Math.round((obj.weight * obj.product.calories) / 100);
     return (
-      <tr key={obj._id}>
+      <tr key={obj._id} >
         <td className={styles.tdTitle}>
-          <div>{obj.product.title}</div>
+          <div className={styles.tdTitle}>{obj.product.title}</div>
         </td>
         <td className={styles.tdCategory}>
-          <div>{obj.product.category}</div>
+          <div className={styles.tdCategory}>{obj.product.category}</div>
         </td>
         <td className={styles.tdCalories}>
-          <div>{caloriesEaten}</div>
+          <div className={styles.tdCalories}>{caloriesEaten}</div>
         </td>
         <td className={styles.tdWeight}>
-          <div>{obj.weight}</div>
+          <div className={styles.tdWeight}>{obj.weight}</div>
         </td>
         <td className={styles.tdRecommend}>
           {recomendProduct(obj.product.groupBloodNotAllowed) ? (
@@ -86,10 +86,8 @@ function TableProducts({ products }) {
           </div>
         </div>
       ) : (
-        <div className={styles.DayProducts}>
-          <div className={styles.DayProductsTable}>
+        <div className={styles.DayProductsNotFound}>
             <p className={styles.not_found}>Not found products</p>
-          </div>
         </div>
       )}
     </>

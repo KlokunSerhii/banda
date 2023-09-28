@@ -1,7 +1,9 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  justify-content: space-between;
+  row-gap: 20px;
+  column-gap: 13px;
 }
 
 .box {
@@ -45,7 +47,9 @@
 
 .textCont {
   display: flex;
+  gap: 8px;
   flex-direction: row;
+  align-items: flex-start;
   margin-top: 20px;
 }
 
@@ -53,6 +57,11 @@
   color: var(--transparent-medium-2);
   font-size: 14px;
 }
+
+.warningIcon {
+
+}
+
 
 @media screen and (min-width: 768px) {
   .box {
