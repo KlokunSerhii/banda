@@ -1,5 +1,5 @@
 .dayProductsWrapper {
-  /* padding: 0 16px; */
+  min-height: 335px;
   border-radius: 12px;
   min-height: 335px;
   border: 1px solid var(--transparent-medium-3);
