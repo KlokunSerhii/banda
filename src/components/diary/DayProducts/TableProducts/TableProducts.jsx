@@ -8,11 +8,10 @@ import { deleteDiaryProduct } from 'redux/diary/operations';
 function TableProducts({ products }) {
   const { user } = useAuth();
   const bloodType = user.bodyParams.blood;
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const handleDelete = async params => {
-    dispatch(deleteDiaryProduct(params))
+    dispatch(deleteDiaryProduct(params));
   };
-
 
   const recomendProduct = groupBloodNotAllowed => {
     return groupBloodNotAllowed[bloodType];
@@ -21,7 +20,7 @@ function TableProducts({ products }) {
   const listOfProducts = products?.map(obj => {
     const caloriesEaten = Math.round((obj.weight * obj.product.calories) / 100);
     return (
-      <tr key={obj._id} >
+      <tr key={obj._id}>
         <td className={styles.tdTitle}>
           <div className={styles.tdTitle}>{obj.product.title}</div>
         </td>
@@ -86,8 +85,10 @@ function TableProducts({ products }) {
           </div>
         </div>
       ) : (
-        <div className={styles.DayProductsNotFound}>
+        <div className={styles.DayProducts}>
+          <div className={styles.DayProductsTable}>
             <p className={styles.not_found}>Not found products</p>
+          </div>
         </div>
       )}
     </>
