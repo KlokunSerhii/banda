@@ -2,19 +2,20 @@ import React, {
     // useState
 } from "react";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-//  import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
+import "react-datepicker/dist/react-datepicker.css";
+import { CalendarGlobalStyles} from './Datepicker.styled'
 
 const Datepicker = ({ date, onChange, minDate }) => {
     return (
-       
-            
+        <>
             <DatePicker
                 inline
                 selected={date}
                 onChange={onChange}
-                minDate={new Date()}
+                minDate={minDate}
+                calendarStartDay={1}
+
                 popperPlacement="bottom-end"
                 popperModifiers={[
                     {
@@ -33,10 +34,11 @@ const Datepicker = ({ date, onChange, minDate }) => {
                     },
                 ]}
             />
-            
-        
-      
-        
+
+            <CalendarGlobalStyles />
+        </>
+
     );
 };
 export default Datepicker;
+

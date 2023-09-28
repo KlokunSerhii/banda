@@ -1,22 +1,23 @@
 .container {
   display: flex;
-  margin-top: 40px;
   align-items: flex-end;
-  position: absolute;
-  right: 0;
-  align-items: center;
-  justify-content: center;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.wrapDate{
+  display: flex;
+  gap: 8px;
 }
 
 .text {
   font-size: 18px;
   font-weight: 700;
   color: var(--main-text-color);
-  margin-right: 8px;
 }
 
 .btnCont {
-  margin-left: 20px;
+align-items: center;
 }
 
 @media screen and (min-width: 768px) {
