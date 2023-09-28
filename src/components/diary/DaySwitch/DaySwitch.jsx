@@ -10,7 +10,13 @@ import Datepicker from '../Datepicker';
 // import { useDispatch } from 'react-redux';
 // import { useDiary } from 'hooks';
 
-function DaySwitch({ selectedDate, handleToNextDay, handleToPreviousDay }) {
+function DaySwitch({
+  minDate,
+  selectedDate,
+  setSelectedDate,
+  handleToNextDay,
+  handleToPreviousDay }) {
+  
   // const dispatch = useDispatch();
   // const { date } = useDiary();
   const [isDatepickerVisible, setIsDatepickerVisible] = useState(false);
@@ -34,13 +40,14 @@ function DaySwitch({ selectedDate, handleToNextDay, handleToPreviousDay }) {
 
   return (
     <div className={styles.container}>
+      <div className={styles.wrapDate}>
       <p className={styles.text}>{formattedDate}</p>
       <button className={styles.calendar} onClick={handleDatepickerBtnClick}>
         <svg style={{ width: '24px', height: '24px' }}>
           <use href={symbolDefs + '#calendar-icon'}></use>
         </svg>
       </button>
-
+      </div>
       <div className={styles.btnCont}>
         <button className={styles.btnArrow} onClick={handleToPreviousDay}>
           <svg className={styles.arrow}>
@@ -54,7 +61,11 @@ function DaySwitch({ selectedDate, handleToNextDay, handleToPreviousDay }) {
           </svg>
         </button>
       </div>
-      {isDatepickerVisible ? <Datepicker /> : null}
+      {isDatepickerVisible ? <Datepicker
+        date={selectedDate}
+        onChange={setSelectedDate}
+        minDate={minDate}
+      /> : null}
     </div>
   );
 }
