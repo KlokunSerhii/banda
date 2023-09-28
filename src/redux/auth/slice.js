@@ -52,6 +52,7 @@ const authSlice = createSlice({
       email: '',
       name: '',
       avatarURL: '',
+      createdAt:'',
       bodyParams: {
         height: '',
         currentWeight: '',
