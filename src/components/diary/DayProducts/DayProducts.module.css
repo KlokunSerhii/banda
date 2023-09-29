@@ -1,5 +1,4 @@
 .dayProductsWrapper {
-
   border-radius: 12px;
   border: 1px solid var(--transparent-medium-3);
   background: var(--transparent-medium-5);
@@ -9,11 +8,10 @@
 }
 
 .headerWrapper {
-    padding: 0 16px;
+  padding: 0 16px;
   display: flex;
   justify-content: space-between;
   padding-top: 12px;
-
 }
 
 .btnWrapper {
