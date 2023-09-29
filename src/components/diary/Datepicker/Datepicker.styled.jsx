@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const CalendarGlobalStyles = createGlobalStyle`
   .react-datepicker__wrapper {
@@ -10,7 +10,6 @@ export const CalendarGlobalStyles = createGlobalStyle`
     z-index:9;
 
     right: 20px;
-    top: 40px;
     transform: translate(-1%, 0%);
     display: flex;
     flex-direction: column;
