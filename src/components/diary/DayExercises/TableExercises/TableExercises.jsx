@@ -12,6 +12,7 @@ function TableExercises({ exercises }) {
   };
 
   const listOfExercises = exercises?.map(obj => {
+
     return (
       <tr key={obj._id}>
         <td className={styles.tdBodyPart}>
