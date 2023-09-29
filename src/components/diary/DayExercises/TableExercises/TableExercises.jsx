@@ -1,18 +1,17 @@
 import React from 'react';
 import symbolDefs from '../../../../images/symbol-defs.svg';
-import styles from './TableExercises.module.css'
+import styles from './TableExercises.module.css';
 import { deleteDiaryExercise } from 'redux/diary/operations';
 import { useDispatch } from 'react-redux';
 
 function TableExercises({ exercises }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleDelete = async params => {
-    dispatch(deleteDiaryExercise(params))
+    dispatch(deleteDiaryExercise(params));
   };
 
   const listOfExercises = exercises?.map(obj => {
-
     return (
       <tr key={obj._id}>
         <td className={styles.tdBodyPart}>
@@ -28,7 +27,11 @@ function TableExercises({ exercises }) {
           <div>{obj.exercise.target}</div>
         </td>
         <td className={styles.tdBurnedCalories}>
-          <div>{obj.exercise.burnedCalories}</div>
+          <div>
+            {Math.round(
+              (obj.exercise.burnedCalories / obj.exercise.time) * obj.duration
+            )}
+          </div>
         </td>
         <td className={styles.tdTime}>
           <div>{obj.duration}</div>
