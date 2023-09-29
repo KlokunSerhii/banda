@@ -1,6 +1,9 @@
 .DayExercises {
-  padding: 16px 0;
   border-radius: 12px;
+  padding: 16px 0;
+  margin-bottom: 32px;
+
+  position: relative;
   min-height: 335px;
   max-width: 824px;
   overflow: hidden;
@@ -75,6 +78,7 @@ span p {
   font-weight: 400;
   text-align: left;
   color: #ef8964;
+
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -90,6 +94,7 @@ span p {
   border: 1px solid var(--transparent-medium-2);
   padding: 8px 14px;
   margin: 4px;
+
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -231,7 +236,7 @@ span p {
   .DayExercises tbody tr {
     display: block;
     height: 320px;
-    margin-bottom: 40px;
+
     margin-top: 24px;
   }
   .DayExercises td {
@@ -329,4 +334,9 @@ span p {
 
 .linkExercises {
   transition: color var(--transition-duration) var(--transition-cubic);
+}
+
+.linkExercises:hover,
+.linkExercises:focus {
+  color: var(--white);
 }

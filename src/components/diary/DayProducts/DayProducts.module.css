@@ -1,5 +1,4 @@
 .dayProductsWrapper {
-  min-height: 234px;
 
   border-radius: 12px;
   border: 1px solid var(--transparent-medium-3);
@@ -10,12 +9,11 @@
 }
 
 .headerWrapper {
-  padding: 0 16px;
-
+    padding: 0 16px;
   display: flex;
   justify-content: space-between;
   padding-top: 12px;
-  /* margin-bottom: 32px; */
+
 }
 
 .btnWrapper {
@@ -42,12 +40,15 @@
 }
 @media screen and (min-width: 768px) {
   .dayProductsWrapper {
+    height: 234px;
+
     width: 704px;
   }
 }
 @media screen and (min-width: 1440px) {
   .dayProductsWrapper {
     height: 234px;
+
     width: 826px;
   }
 }

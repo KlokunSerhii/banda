@@ -1,9 +1,15 @@
 .DayProducts {
-  border-radius: 12px;
   padding: 16px 0;
-  overflow: hidden;
+  margin-bottom: 32px;
+  position: relative;
+  width: 100%;
   min-height: 335px;
   max-width: 824px;
+  box-sizing: border-box;
+}
+.DayProductsTable tbody {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .DayProducts ::-webkit-scrollbar {
@@ -13,7 +19,16 @@
   background: #efede81a;
   border-radius: 12px;
 }
-
+span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 span p {
   display: inline-block;
 }
@@ -76,6 +91,7 @@ span p {
   height: 40px;
   border-radius: 12px;
   margin: 4px;
+
   border: 1px solid var(--transparent-medium-2);
   padding: 8px 14px;
   text-overflow: ellipsis;
@@ -83,9 +99,6 @@ span p {
   overflow: hidden;
 }
 .DayProducts td span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   font-size: 14px;
   height: 40px;
   border-radius: 12px;
@@ -176,6 +189,7 @@ span p {
 
 @media screen and (min-width: 768px) {
   .DayProducts {
+    min-height: 0;
     height: 234px;
   }
   .DayProducts tbody {
@@ -226,7 +240,7 @@ span p {
   .DayProducts tbody tr {
     display: block;
     height: 240px;
-    margin-bottom: 40px;
+
     margin-top: 24px;
   }
   .DayProducts td {
@@ -315,10 +329,4 @@ span p {
 .linkProducts:hover,
 .linkProducts:focus {
   color: var(--main-text-color);
-}
-/* .tdCalories {
-  width: ;
-} */
-.DayProducts div {
-  gap: 4px;
 }

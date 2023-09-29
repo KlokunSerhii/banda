@@ -22,16 +22,16 @@ function TableProducts({ products }) {
     return (
       <tr key={obj._id}>
         <td className={styles.tdTitle}>
-          <div className={styles.tdTitle}>{obj.product.title}</div>
+          <div>{obj.product.title}</div>
         </td>
         <td className={styles.tdCategory}>
-          <div className={styles.tdCategory}>{obj.product.category}</div>
+          <div>{obj.product.category}</div>
         </td>
         <td className={styles.tdCalories}>
-          <div className={styles.tdCalories}>{caloriesEaten}</div>
+          <div>{caloriesEaten}</div>
         </td>
         <td className={styles.tdWeight}>
-          <div className={styles.tdWeight}>{obj.weight}</div>
+          <div>{obj.weight}</div>
         </td>
         <td className={styles.tdRecommend}>
           {recomendProduct(obj.product.groupBloodNotAllowed) ? (
