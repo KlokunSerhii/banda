@@ -7,10 +7,6 @@
   max-width: 824px;
   box-sizing: border-box;
 }
-.DayProductsTable tbody {
-  display: flex;
-  flex-direction: column-reverse;
-}
 
 .DayProducts ::-webkit-scrollbar {
   width: 6px;
@@ -19,11 +15,7 @@
   background: #efede81a;
   border-radius: 12px;
 }
-span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+
 span {
   display: flex;
   align-items: center;
@@ -35,7 +27,7 @@ span p {
 
 .DayProducts .tdDellete {
   border: none;
-  padding-left: 4px;
+  padding-left: 30px;
 }
 .DayProducts .tdDellete button {
   display: block;
@@ -53,7 +45,7 @@ span p {
   margin: 0px;
   position: relative;
   padding-left: 24px;
-  padding-right: 8px;
+  padding-right: 10px;
   border-spacing: 8px;
   border: none;
 }
@@ -156,7 +148,7 @@ span p {
     padding-left: 8px;
   }
   .DayProducts .tdDellete {
-    padding-left: 2px;
+    padding-left: 30px;
   }
 
   .tdTitle,
@@ -203,7 +195,7 @@ span p {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .DayProducts {
     padding-left: 16px;
     padding-right: 8px;
