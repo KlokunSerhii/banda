@@ -13,7 +13,7 @@ import { useLocation } from 'react-router-dom';
 function Header() {
   const { isLoggedIn } = useAuth();
   const [menuActive, setMenuActive] = useState(false);
-  const [className, setClassName] = useState(false);
+  const [className, setClassName] = useState(styles.headerPosition);
   const { pathname } = useLocation();
 
   useEffect(() => {
